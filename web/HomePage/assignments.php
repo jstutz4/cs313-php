@@ -13,7 +13,7 @@ print('
 <h1>Welcome To The Assignments Page</h1> ');
 print("<ul>");
 for($i = 0; $i < sizeof($assignment_links); $i++){
-	print("<li><a href='".$assignment_links[i]."'>".substr($assignment_links[i],0, -5)."</a></li>");
+	print('<li><a href="' . $assignment_links[i] . '">' . substr($assignment_links[i],0, -5) . "</a></li>");
 }
 print("</ul>");
 print("
