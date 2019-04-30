@@ -1,7 +1,7 @@
 <?php
 $assignment_links = array();
 $assignment_links[] = "assignment1.html";
-
+print('
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +10,13 @@ $assignment_links[] = "assignment1.html";
     <link rel="stylesheet" type="text/css" href="assign.css" />
 </head>
 <body>
-<h1>Welcome To The Assignments Page</h1>
+<h1>Welcome To The Assignments Page</h1> ');
 print("<ul>");
 for($i = 0; $i < sizeof($assignment_links); $i++){
 	print("<li><a href='".$assignment_links[i]."'>".substr($assignment_links[i],0, -5)."</a></li>");
 }
-print("</ul>")
+print("</ul>");
+print("
 </body>
-<html>
+<html>");
 ?>
