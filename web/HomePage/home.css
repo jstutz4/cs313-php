@@ -1,6 +1,7 @@
 body{
     background-color: azure;
     padding:4px;
+    font-size: 14px;
 }
 
 h1{
@@ -10,17 +11,17 @@ h1{
 nav {
     text-align: left;
     padding: 5px;
+    font-size: 18px;
 }
+
 nav a{
-    padding: 1px 3px;
+    padding: 1px 5px;
 }
 nav a:hover{
     background-color:aqua;
 }
 
 #race{
-   //border:solid black 3px;
-    margin: 2px 0;
     display: flex; 
 }
 #paragraphs {
@@ -29,4 +30,7 @@ nav a:hover{
 img {
     height: 200px;
     width: auto
+}
+#container{
+    margin: 5px;
 }
