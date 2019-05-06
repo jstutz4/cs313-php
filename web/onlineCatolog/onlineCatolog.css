@@ -1,0 +1,16 @@
+.mainColor{
+    padding: 5px;
+    padding-left: 10px;
+    background-color: lawngreen;
+    text-align:center;
+}
+.margin0{
+    margin: 0;
+}
+.navbar-text{
+    position: absolute;
+    left: 65%;
+}
+.navbar{
+    margin: 1em 0;
+}
