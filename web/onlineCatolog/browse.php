@@ -18,11 +18,15 @@ fclose($titles_file);
 $num_groups = (sizeof($titles) % $row_length) - 1;
 $num_groups = number_format($num_groups, 0);
 reset($titles);
-print("<tr><td>" . current($titles) . "</td><td>" . next($titles) . "</td><td>" . next($titles) . "</td></tr>");
 for($i = 0; $i < $num_groups; $i++){
 	print("<tr>");
-	for($i = 0; $i < $row_length; $i++){
-	print("<td>" . next($titles) . "</td>");
+	for($j = 0; $j < $row_length; $j++){
+		if($i == 0){
+			print("<td>" . current($titles) . "</td>")
+		}
+		else{
+		print("<td>" . next($titles) . "</td>");
+		}
 	}
 	print("</tr>");
 }
