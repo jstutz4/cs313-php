@@ -16,7 +16,7 @@ fclose($titles_file);
 		
 <?php
 reset($titles);
-while(next($titles){
+while(next($titles)){
 	print("<tr>");
 	for($i = 0; $i <= $row_length; $i++){
 	print("<td>" . next($titles) . "</td>");
