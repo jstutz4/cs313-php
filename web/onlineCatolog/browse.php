@@ -13,13 +13,17 @@ fclose($titles_file);
 ?>
 <div id="items">
 	<table>
-		<tr>
+		
 <?php
-for($i = 0; $i < sizeof($titles); $i++){
-	
+reset($titles);
+while(next($titles){
+	print("<tr>");
+	for($i = 0; $i <= $row_length; $i++){
 	print("<td>" . next($titles) . "</td>");
+	}
+	print("</tr>");
 }
 ?>
-		</tr>
+		
 	</table>
 </div>
