@@ -21,7 +21,7 @@ reset($titles);
 for($i = 0; $i < $num_groups; $i++){
 	print("<tr>");
 	for($j = 0; $j < $row_length; $j++){
-		if($i == 0){
+		if($i == 0 && $j == 0){
 			print("<td>" . current($titles) . "</td>");
 		}
 		else{
