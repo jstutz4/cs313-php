@@ -18,3 +18,5 @@ for($i = 0; $i < sizeof($titles); $i++){
 }
 ?>
 		</tr>
+	</table>
+</div>
