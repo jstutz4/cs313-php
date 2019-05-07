@@ -15,10 +15,10 @@ fclose($titles_file);
 	<table>
 		
 <?php
-$num_groups = (sizeof($titles) % $row_length) -1;
+$num_groups = (sizeof($titles) % $row_length) - 1;
 $num_groups = number_format($num_groups, 0);
 reset($titles);
-print("<tr><td>" . current($titles) "</td><td>" . next($titles) . "</td><td>" . next($titles) . "</td></tr>");
+print("<tr><td>" . current($titles) . "</td><td>" . next($titles) . "</td><td>" . next($titles) . "</td></tr>");
 for($i = 0; $i < $num_groups; $i++){
 	print("<tr>");
 	for($i = 0; $i < $row_length; $i++){
