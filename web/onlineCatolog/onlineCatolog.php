@@ -28,7 +28,8 @@
     !-->
 
    <?php
-   printfile_get_contents("browse.html"));
+   $html = file_get_contents("browse.html");
+   print($html);
    ?>
 
     <footer class="mainColor">
