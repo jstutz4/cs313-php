@@ -9,7 +9,7 @@
 }
 .navbar-text{
     position: absolute;
-    left: 65%;
+    right: 5%;
 }
 .navbar{
     margin: 1em 0;
@@ -26,4 +26,8 @@ img{
 
 table{
     margin: auto;
+}
+
+.add_to_cart{
+    margin: 20px 0;
 }

@@ -59,7 +59,7 @@ for($i = 0; $i < $num_groups; $i++){
 		}
 	print("</tr>");
 	//adding add to cart button
-	print("<tr>");
+	print('<tr class="add_to_cart">');
 		for($j = 0; $j < $row_length; $j++){
 			if($i >= $num_groups - 1 && $j >= $stop ){
 				//do nothing
@@ -73,6 +73,7 @@ for($i = 0; $i < $num_groups; $i++){
 			}
 		}
 	print("</tr>");
+	print("<hr>")
 }
 ?>
 		
