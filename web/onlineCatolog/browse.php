@@ -38,7 +38,7 @@
 
 	$titles_file = fopen("titles.txt", "r");
 	while(! feof($titles_file)){
-		list($titles[], $imges[], $img_description, $prices[]) = explode(",", fgets($titles_file), -1);
+		list($titles[], $imges[], $img_description, $prices[]) = explode(",", fgets($titles_file));
 	}
 	fclose($titles_file);
 	print($titles[0].$images[0].$img_description[0].$prices[0])
