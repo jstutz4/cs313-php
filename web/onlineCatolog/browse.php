@@ -5,7 +5,7 @@
 	$prices;
 	$img_description;
 	$buttons;
-	$row_length = $GET_["numRow"];
+	$row_length = $_GET["numRow"];
 
 	$titles_file = fopen("titles.txt", "r");
 	while(! feof($titles_file)){
