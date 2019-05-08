@@ -22,8 +22,7 @@ reset($titles);
 reset($images);
 reset($img_description);
 reset($prices);
-print($num_groups."<br>");
-print($stop."<br>");
+
 for($i = 0; $i < $num_groups; $i++){
 	//adding item titles
 	print("<tr>");
