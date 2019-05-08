@@ -23,7 +23,7 @@ function table(query3) {
     }
 }
 
-var query3 = window.matchMedia("(max-width: 775px"));
+var query3 = window.matchMedia("(max-width: 775px)");
 query3.addListener(table);
 var query5 = window.matchMedia("(min-width: 776px)");
 table(query5);
