@@ -46,6 +46,7 @@
 	<table>
 		
 <?php
+$stop = sizeof($titles % $row_length);
 $num_groups = ceil((sizeof($titles) / $row_length));
 $num_groups = number_format($num_groups, 0);
 reset($titles);
@@ -53,6 +54,7 @@ reset($images);
 reset($img_description);
 reset($prices);
 print($num_groups."<br>");
+print($stop."<br>");
 for($i = 0; $i < $num_groups; $i++){
 	//adding item titles
 	print("<tr>");
@@ -91,7 +93,12 @@ for($i = 0; $i < $num_groups; $i++){
 
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
-			print('<td> <input type="button" value="add to cart" /></td>');
+			if($i >= $num_groups && $j >= $stop){
+				//do nothing
+			}
+			else{
+				print('<td> <input type="button" value="add to cart" /></td>');
+			}
 		}
 	print("</tr>");
 }
