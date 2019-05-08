@@ -34,7 +34,7 @@
 	$prices;
 	$img_description;
 	$buttons;
-	$row_length = 2;
+	$row_length = 4;
 
 	$titles_file = fopen("titles.txt", "r");
 	while(! feof($titles_file)){
