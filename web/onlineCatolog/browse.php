@@ -38,10 +38,10 @@
 
 	$titles_file = fopen("titles.txt", "r");
 	while(! feof($titles_file)){
-		list($titles[], $imges[], $img_description, $prices[]) = explode(",", fgets($titles_file));
+		list($titles[], $images[], $img_description, $prices[]) = explode(",", fgets($titles_file));
 	}
 	fclose($titles_file);
-	print($titles[0].$images[0].$img_description[0].$prices[0])
+	print($titles[0]."<br>".$images[0]."<br>".$img_description[0]."<br>".$prices[0])
 ?>
 <div id="items">
 	<table>
@@ -68,10 +68,10 @@ for($i = 0; $i < $num_groups; $i++){
 		print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i == 0 && $j == 0){
-				print('<td><img src="' . current($imges) . '" alt="' . current($img_description) . '"/></td>');
+				print('<td><img src="' . current($images) . '" alt="' . current($img_description) . '"/></td>');
 			}
 			else{
-				print('<td><img src="' . next($imges) . '" alt="' . next($img_description) . '"/></td>');
+				print('<td><img src="' . next($images) . '" alt="' . next($img_description) . '"/></td>');
 			}
 		}
 		print("</tr>");
