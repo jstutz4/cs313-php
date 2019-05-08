@@ -13,8 +13,7 @@
 	}
 	fclose($titles_file);
 ?>
-	<table>
-		
+	<table>	
 <?php
 $stop = sizeof($titles % $row_length);
 $num_groups = ceil((sizeof($titles) / $row_length));
@@ -49,7 +48,7 @@ for($i = 0; $i < $num_groups; $i++){
 			}
 		}
 		print("</tr>");
-
+	//adding prices
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i == 0 && $j == 0){
@@ -60,7 +59,7 @@ for($i = 0; $i < $num_groups; $i++){
 			}
 		}
 	print("</tr>");
-
+	//adding add to cart button
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i >= $num_groups - 1 && $j >= $stop){
@@ -75,5 +74,3 @@ for($i = 0; $i < $num_groups; $i++){
 ?>
 		
 	</table>
-
-
