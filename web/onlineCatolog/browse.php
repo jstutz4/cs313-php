@@ -28,19 +28,20 @@
     !-->
 
    <!--generate table!-->
-   <?php
-$titles;
-$images;
-$prices;
-$img_description;
-$buttons;
-$row_length = 2;
+<?php
+	$titles;
+	$images;
+	$prices;
+	$img_description;
+	$buttons;
+	$row_length = 2;
 
-$titles_file = fopen("titles.txt", "r");
-while(! feof($titles_file)){
-	list($titles[], $imges[], $img_description, $prices[]) = explode(",", fgets($titles_file), -1);
-}
-fclose($titles_file);
+	$titles_file = fopen("titles.txt", "r");
+	while(! feof($titles_file)){
+		list($titles[], $imges[], $img_description, $prices[]) = explode(",", fgets($titles_file), -1);
+	}
+	fclose($titles_file);
+	print($titles[0].$images[0].$img_description[0].$prices[0])
 ?>
 <div id="items">
 	<table>
