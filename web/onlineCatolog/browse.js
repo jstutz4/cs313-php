@@ -43,7 +43,7 @@ function table5(query5) {
 var query3 = window.matchMedia("(max-width: 765px)");
 table3(query3);
 query3.addListener(table3);
-var query4 = window.matchMedia("(max-width: 765px) && (min-width:900)");
+var query4 = window.matchMedia("(min-width: 765px) && (max-width:900px)");
 table4(query4);
 query4.addListener(table3);
 var query5 = window.matchMedia("(min-width: 901px)");
