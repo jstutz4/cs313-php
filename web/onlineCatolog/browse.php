@@ -46,7 +46,7 @@
 	<table>
 		
 <?php
-$num_groups = (sizeof($titles) % $row_length);
+$num_groups = (sizeof($titles) / $row_length);
 $num_groups = number_format($num_groups, 0);
 reset($titles);
 print($num_groups."<br>");
