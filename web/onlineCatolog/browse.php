@@ -15,7 +15,7 @@
 ?>
 	<table>	
 <?php
-$stop = sizeof($titles % $row_length);
+$stop = (sizeof($titles) % $row_length);
 $num_groups = ceil((sizeof($titles) / $row_length));
 $num_groups = number_format($num_groups, 0);
 reset($titles);
