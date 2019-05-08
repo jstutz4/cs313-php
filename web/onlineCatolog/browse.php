@@ -91,9 +91,9 @@ for($i = 0; $i < $num_groups; $i++){
 
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
-			if(current($titles) == "")
-			print(current($titles));
-			print('<td> <input type="button" value="add to cart" /></td>');
+			if(current($titles)){
+				print('<td> <input type="button" value="add to cart" /></td>');
+			}
 		}
 	print("</tr>");
 }
