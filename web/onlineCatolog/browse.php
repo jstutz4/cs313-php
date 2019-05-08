@@ -49,6 +49,9 @@
 $num_groups = (sizeof($titles) / $row_length);
 $num_groups = number_format($num_groups, 0);
 reset($titles);
+reset($images);
+reset($img_description);
+reset($prices);
 print($num_groups."<br>");
 for($i = 0; $i < $num_groups; $i++){
 	//adding item titles
@@ -63,8 +66,7 @@ for($i = 0; $i < $num_groups; $i++){
 	}
 	print("</tr>");
 	//adding images row
-	reset($images);
-	reset($img_description);
+	
 		print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i == 0 && $j == 0){
@@ -76,7 +78,6 @@ for($i = 0; $i < $num_groups; $i++){
 		}
 		print("</tr>");
 
-	reset($prices);
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i == 0 && $j == 0){
