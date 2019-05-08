@@ -1,8 +1,8 @@
-.mainColor{
+.mainColor {
     padding: 5px;
     padding-left: 10px;
     background-color: lawngreen;
-    text-align:center;
+    text-align: center;
 }
 .margin0{
     margin: 0;
@@ -28,9 +28,9 @@ table{
     margin: auto;
 }
 
-.add_to_cart{
+.add_to_cart {
     padding-bottom: 20px;
-    border-bottom: 2px solid darkblue;
+    border-bottom: 2px solid #007bff;
 }
 
 .lastRow {

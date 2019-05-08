@@ -1,79 +1,34 @@
-   <!--generate table!-->
-<?php
-	$titles;
-	$images;
-	$prices;
-	$img_description;
-	$buttons;
-	$row_length = $_GET["numRow"];
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	$titles_file = fopen("titles.txt", "r");
-	while(! feof($titles_file)){
-		list($titles[], $images[], $img_description[], $prices[]) = explode(",", fgets($titles_file));
-	}
-	fclose($titles_file);
-?>
-	<table>	
-<?php
-$stop = (sizeof($titles) % $row_length);
-$num_groups = ceil((sizeof($titles) / $row_length));
-$num_groups = number_format($num_groups, 0);
-reset($titles);
-reset($images);
-reset($img_description);
-reset($prices);
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="onlineCatolog.css">
+    <script src="browse.js"></script>
+    <title>Online Catolog | Everything Moms need</title>
+</head>
+<body>
+    <h1 class="mainColor">Online Mom's Catolog</h1>
+    <nav class="navbar">
+        <span class="navbar-text">
+            <a class="navbar-brand" href="#">Browse</a>
+            <a class="navbar-brand" href="#">shopping Cart</a>
+        </span>
+    </nav>
+    
+    <div id="items">
 
-for($i = 0; $i < $num_groups; $i++){
-	//adding item titles
-	print('<tr class="bold">');
-	for($j = 0; $j < $row_length; $j++){
-		if($i == 0 && $j == 0){
-			print("<td>" . current($titles) . "</td>");
-		}
-		else{
-			print("<td>" . next($titles) . "</td>");
-		}
-	}
-	print("</tr>");
-	//adding images row
-	
-		print("<tr>");
-		for($j = 0; $j < $row_length; $j++){
-			if($i == 0 && $j == 0){
-				print('<td><img src="' . current($images) . '" alt="' . current($img_description) . '"/></td>');
-			}
-			else{
-				print('<td><img src="' . next($images) . '" alt="' . next($img_description) . '"/></td>');
-			}
-		}
-		print("</tr>");
-	//adding prices
-	print("<tr>");
-		for($j = 0; $j < $row_length; $j++){
-			if($i == 0 && $j == 0){
-				print('<td>' . current($prices) . '</td>');
-			}
-			else{
-				print('<td>' . next($prices) . '</td>');
-			}
-		}
-	print("</tr>");
-	//adding add to cart button
-	print('<tr>');
-		for($j = 0; $j < $row_length; $j++){
-			if($i >= $num_groups - 1 && $j >= $stop ){
-				//do nothing
-			}
-			else{
-				print('<td class="add_to_cart"> <input type="button" value="add to cart" /></td>');
-			
-			}
-			if($i >= $num_groups - 1 && $stop == 0) {
-				print('<td class="add_to_cart lastRow"> <input type="button" value="add to cart" /></td>');
-			}
-		}
-	print("</tr>");
-}
-?>
-		
-	</table>
+    </div>
+
+    <footer class="mainColor">
+        <p class="margin0">Mom's Catolog</p>
+        <p>Rexburg, Idaho 83440</p>
+        <p class="margin0">208-356-6526</p>
+        <p>momscatolog@gmail.com</p>
+    </footer>
+</body>
+</html>
