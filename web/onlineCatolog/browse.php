@@ -73,7 +73,7 @@ for($i = 0; $i < $num_groups; $i++){
 			}
 		}
 	print("</tr>");
-	print("<hr>")
+	print("<hr>");
 }
 ?>
 		
