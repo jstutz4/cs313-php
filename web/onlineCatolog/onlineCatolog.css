@@ -33,7 +33,7 @@ table{
     border-bottom: 2px solid darkblue;
 }
 
-.add_to_cart:last-child {
+.lastRow {
     padding-bottom: 20px;
     border-bottom: none;
 }
