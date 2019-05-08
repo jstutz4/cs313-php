@@ -34,7 +34,7 @@
 	$prices;
 	$img_description;
 	$buttons;
-	$row_length = 2;
+	$row_length = 4;
 
 	$titles_file = fopen("titles.txt", "r");
 	while(! feof($titles_file)){
@@ -91,6 +91,8 @@ for($i = 0; $i < $num_groups; $i++){
 
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
+			if(current($titles) == "")
+			print(current($titles));
 			print('<td> <input type="button" value="add to cart" /></td>');
 		}
 	print("</tr>");
