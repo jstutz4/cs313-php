@@ -1,7 +1,7 @@
 function table1(query1) {
     console.log("five");
     if (query1.matches) {
-        var url = "browse.php?numRow=" + "1";
+        var url = "table.php?numRow=" + "1";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -16,7 +16,7 @@ function table1(query1) {
 function table2(query2) {
     console.log("five");
     if (query2.matches) {
-        var url = "browse.php?numRow=" + "2";
+        var url = "table.php?numRow=" + "2";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -31,7 +31,7 @@ function table2(query2) {
 function table3(query3) {
     console.log("three");
     if (query3.matches) {
-        var url = "browse.php?numRow=" + "3";
+        var url = "table.php?numRow=" + "3";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -46,7 +46,7 @@ function table3(query3) {
 function table4(query4) {
     console.log("four");
     if (query4.matches) {
-        var url = "browse.php?numRow=" + "4";
+        var url = "table.php?numRow=" + "4";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -61,7 +61,7 @@ function table4(query4) {
 function table5(query5) {
     console.log("five");
     if (query5.matches) {
-        var url = "browse.php?numRow=" + "5";
+        var url = "table.php?numRow=" + "5";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
