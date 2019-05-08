@@ -14,7 +14,7 @@ function table3(query3) {
 
 function table5(query5) {
     if (query5.matches) {
-        var url = "browse.php?numRow=" + "3";
+        var url = "browse.php?numRow=" + "5";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
