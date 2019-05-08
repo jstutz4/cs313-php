@@ -69,7 +69,7 @@ for($i = 0; $i < $num_groups; $i++){
 				print('<td> <input type="button" value="add to cart" /></td>');
 			
 			}
-			if($i >= $num_groups - 1 && $stop == 0 {
+			if($i >= $num_groups - 1 && $stop == 0) {
 				print('<td> <input type="button" value="add to cart" /></td>');
 			}
 		}
