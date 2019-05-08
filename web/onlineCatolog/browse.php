@@ -62,10 +62,14 @@ for($i = 0; $i < $num_groups; $i++){
 	//adding add to cart button
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
-			if($i >= $num_groups - 1 && $j >= $stop){
+			if($i >= $num_groups - 1 && $j >= $stop ){
 				//do nothing
 			}
 			else{
+				print('<td> <input type="button" value="add to cart" /></td>');
+			
+			}
+			if($i >= $num_groups - 1 && $stop == 0 {
 				print('<td> <input type="button" value="add to cart" /></td>');
 			}
 		}
