@@ -1,4 +1,5 @@
 function table3(query3) {
+    console.log("three");
     if (query3.matches) {
         var url = "browse.php?numRow=" + "3";
         var httpRequest = new XMLHttpRequest();
@@ -13,6 +14,7 @@ function table3(query3) {
 }
 
 function table4(query4) {
+    console.log("four");
     if (query4.matches) {
         var url = "browse.php?numRow=" + "4";
         var httpRequest = new XMLHttpRequest();
@@ -27,6 +29,7 @@ function table4(query4) {
 }
 
 function table5(query5) {
+    console.log("five");
     if (query5.matches) {
         var url = "browse.php?numRow=" + "5";
         var httpRequest = new XMLHttpRequest();
