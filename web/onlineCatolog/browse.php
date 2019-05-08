@@ -41,7 +41,6 @@
 		list($titles[], $images[], $img_description[], $prices[]) = explode(",", fgets($titles_file));
 	}
 	fclose($titles_file);
-	print($titles[0]."<br>".$images[0]."<br>".$img_description[0]."<br>".$prices[0])
 ?>
 <div id="items">
 	<table>
@@ -50,6 +49,7 @@
 $num_groups = (sizeof($titles) % $row_length);
 $num_groups = number_format($num_groups, 0);
 reset($titles);
+print($num_groups."<br>");
 for($i = 0; $i < $num_groups; $i++){
 	//adding item titles
 	print("<tr>");
