@@ -26,9 +26,9 @@ function table5(query5) {
     }
 }
 
-var query3 = window.matchMedia("(max-width: 755px)");
+var query3 = window.matchMedia("(max-width: 765px)");
 table3(query3);
 query3.addListener(table3);
-var query5 = window.matchMedia("(min-width: 756px)");
+var query5 = window.matchMedia("(min-width: 766px)");
 table5(query5);
 query5.addListener(table5);
