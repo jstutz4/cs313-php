@@ -1,6 +1,6 @@
 function table(query3) {
     if (query3.matches) {
-        var url = "/browse.php?numRow=" + "3";
+        var url = "browse.php?numRow=" + "3";
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
