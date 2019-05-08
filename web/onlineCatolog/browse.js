@@ -73,11 +73,11 @@ function table5(query5) {
     }
 }
 
-var query1 = window.matchMedia("(max-width: 400px)");
+var query1 = window.matchMedia("(max-width: 430px)");
 table1(query1);
 query1.addListener(table1);
 
-var query2 = window.matchMedia("(min-width: 401px) and (max-width: 600px)");
+var query2 = window.matchMedia("(min-width: 431px) and (max-width: 600px)");
 table2(query2);
 query2.addListener(table2);
 
@@ -85,10 +85,10 @@ var query3 = window.matchMedia("(min-width: 601px) and (max-width: 800px)");
 table3(query3);
 query3.addListener(table3);
 
-var query4 = window.matchMedia("(min-width: 801px) and (max-width: 950px)");
+var query4 = window.matchMedia("(min-width: 801px) and (max-width: 990px)");
 table4(query4);
 query4.addListener(table4);
 
-var query5 = window.matchMedia("(min-width: 951px)");
+var query5 = window.matchMedia("(min-width: 991px)");
 table5(query5);
 query5.addListener(table5);
