@@ -93,7 +93,7 @@ for($i = 0; $i < $num_groups; $i++){
 
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
-			if($i >= $num_groups && $j >= $stop){
+			if($i >= $num_groups - 1 && $j >= $stop - 1){
 				//do nothing
 			}
 			else{
