@@ -25,7 +25,7 @@ reset($prices);
 
 for($i = 0; $i < $num_groups; $i++){
 	//adding item titles
-	print("<th>");
+	print('<tr class="bold">');
 	for($j = 0; $j < $row_length; $j++){
 		if($i == 0 && $j == 0){
 			print("<td>" . current($titles) . "</td>");
@@ -34,7 +34,7 @@ for($i = 0; $i < $num_groups; $i++){
 			print("<td>" . next($titles) . "</td>");
 		}
 	}
-	print("</th>");
+	print("</tr>");
 	//adding images row
 	
 		print("<tr>");
