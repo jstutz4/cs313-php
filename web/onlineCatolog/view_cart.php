@@ -27,6 +27,7 @@ session_start();
 		<?php
 		if(!isset($SESSION["title"])){
 			print("*** first one ****");
+			print(!isset($SESSION["title"]));
 			$titles[] = $_GET["title"];
 		}
 		else {
