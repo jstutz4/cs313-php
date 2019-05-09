@@ -61,7 +61,7 @@ session_start();
 		<table>
 			<tr>
 				<?php
-					print('<td><img src="' . $_SESSSION["image_src"][0] . '"/></td>');
+					//print('<td><img src="' . $_SESSSION["image_src"][0] . '"/></td>');
 					print('<td>' . $_SESSSION["title"][0] . '</td>');
 					print('<td>' . $_SESSSION["price"][0] . '</td>');
 				?>
