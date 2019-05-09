@@ -27,6 +27,8 @@ session_start();
 		<?php
 		if(!isset($_SESSION["title"])){
 			$titles[] = $_GET["title"];
+			session_unset();
+			session_destroy();
 		}
 		else {
 			$titles = $_SESSION["title"];
@@ -60,16 +62,23 @@ session_start();
 		?>
 		<table>
 			<tr>
-			<th></th>
-			<th></th>
-			<th>PRICE</th>
-			<th>Quantity</th>
+				<th></th>
+				<th></th>
+				<th>PRICE</th>
+				<th>Quantity</th>
 			</tr>
 			<tr>
 				<?php
 					print('<td><img src="' . $_SESSION["image_src"][0] . '"/></td>');
 					print('<td>' . $_SESSION["title"][0] . '</td>');
 					print('<td>' . $_SESSION["price"][0] . '</td>');
+				?>
+			</tr>
+			<tr>
+				<?php
+					print('<td><img src="' . $_SESSION["image_src"][1] . '"/></td>');
+					print('<td>' . $_SESSION["title"][1] . '</td>');
+					print('<td>' . $_SESSION["price"][1] . '</td>');
 				?>
 			</tr>
 		</table>
