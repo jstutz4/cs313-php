@@ -36,7 +36,8 @@ session_start();
 		$_SESSION["image"];
 		$_SESSION["price"];
 
-		print_r($SESSION);
+		print_r($_SESSION);
+		print($_SESSION["title"]);
 
 		?>
     </div>
