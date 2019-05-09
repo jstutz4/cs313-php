@@ -25,9 +25,9 @@ session_start();
     
     <div id="cart">
 		<?php
-		if(!isset($SESSION["title"])){
+		if(!isset($_SESSION["title"])){
 			print("*** first one ****");
-			print(!isset($SESSION["title"]));
+			print(!isset($_SESSION["title"]));
 			$titles[] = $_GET["title"];
 		}
 		else {
