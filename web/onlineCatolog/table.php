@@ -28,10 +28,10 @@ for($i = 0; $i < $num_groups; $i++){
 	print('<tr class="bold">');
 	for($j = 0; $j < $row_length; $j++){
 		if($i == 0 && $j == 0){
-			print("<td>" . current($titles) . "</td>");
+			print('<td name="'.$i .',' . $j .'">'. current($titles) . '</td>');
 		}
 		else{
-			print("<td>" . next($titles) . "</td>");
+			print('<td name="'.$i .',' . $j .'">' . next($titles) . '</td>');
 		}
 	}
 	print("</tr>");
@@ -40,10 +40,10 @@ for($i = 0; $i < $num_groups; $i++){
 		print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i == 0 && $j == 0){
-				print('<td><img src="' . current($images) . '" alt="' . current($img_description) . '"/></td>');
+				print('<td name="'.$i .',' . $j .'"><img src="' . current($images) . '" alt="' . current($img_description) . '"/></td>');
 			}
 			else{
-				print('<td><img src="' . next($images) . '" alt="' . next($img_description) . '"/></td>');
+				print('<td name="'.$i .',' . $j .'"><img src="' . next($images) . '" alt="' . next($img_description) . '"/></td>');
 			}
 		}
 		print("</tr>");
@@ -51,10 +51,10 @@ for($i = 0; $i < $num_groups; $i++){
 	print("<tr>");
 		for($j = 0; $j < $row_length; $j++){
 			if($i == 0 && $j == 0){
-				print('<td>' . current($prices) . '</td>');
+				print('<td name="'.$i .',' . $j .'">' . current($prices) . '</td>');
 			}
 			else{
-				print('<td>' . next($prices) . '</td>');
+				print('<td name="'.$i .',' . $j .'">' . next($prices) . '</td>');
 			}
 		}
 	print("</tr>");
