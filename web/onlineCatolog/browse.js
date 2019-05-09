@@ -100,6 +100,13 @@ function add_to_session(item) {
     console.log("row: " + row);
     console.log("col: " + col);
 
+    var group = document.getElementsByName(item.getAttribute("name"));
+    console.log(group[0].value);
+    console.log(group[1]);
+    console.log(group[2]);
+    console.log(group[3]);
+
+
     /*
     var url = "view_cart.php";
     var httpRequest = new XMLHttpRequest();
