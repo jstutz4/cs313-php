@@ -25,9 +25,19 @@ session_start();
     
     <div id="cart">
 		<?php
-			$_SESSION["title"];
-			$_SESSION["image"];
-			$_SESSION["price"];
+		if(!isset($SESSION["title"])){
+			$titles[] = $_GET["title"];
+		}
+		else {
+			$titles = $_SESSION["title"];
+			$titles[] = $_GET["title"];
+		}
+		$_SESSION["title"] = $titles;
+		$_SESSION["image"];
+		$_SESSION["price"];
+
+		print_r($SESSION);
+
 		?>
     </div>
 

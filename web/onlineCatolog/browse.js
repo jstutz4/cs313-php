@@ -94,29 +94,23 @@ table5(query5);
 query5.addListener(table5);
 
 function add_to_session(item) {
-    var array = (item.getAttribute("name").split(","));
-    var row = array[0];
-    var col = array[1];
-    console.log("row: " + row);
-    console.log("col: " + col);
-
     var group = document.getElementsByName(item.getAttribute("name"));
-    console.log("title " + group[0].innerHTML);
-    console.log("image " + group[1].firstChild.getAttribute("src"));
-    console.log("image " + group[1].firstChild.getAttribute("alt"));
-    console.log("price " + group[2]. innerHTML);
+    var title = group[0].innerHTML
+    var img_src = group[1].firstChild.getAttribute("src");
+    var img_alt = group[1].firstChild.getAttribute("alt");
+    var price = group[2]. innerHTML;
 
 
-    /*
-    var url = "view_cart.php";
+
+    var url = "view_cart.php?title=" + title + "&img_src=" + img_src + "&img_alt=" + img_alt + "&price=" + price;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             //no return just send values
         }
     }
-    httpRequest.open("POST", url, true);
+    httpRequest.open("GET", url, true);
     httpRequest.send();
     }
-*/
+
 }
