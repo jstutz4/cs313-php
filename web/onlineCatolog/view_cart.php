@@ -11,7 +11,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="onlineCatolog.css">
-    <script src="browse.js"></script>
+    
     <title>Online Catolog | Shopping Card</title>
 </head>
 <body>
@@ -54,6 +54,8 @@ session_start();
 		$_SESSION["price"] = $prices;
 
 		print(sizeof($_SESSION["title"]));
+		print(sizeof($_SESSION["image_src"]));
+		print(sizeof($_SESSION["price"]));
 		print($_SESSION["title"][0]);
 		?>
 		<table>
