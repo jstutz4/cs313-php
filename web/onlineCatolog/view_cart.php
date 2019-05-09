@@ -60,6 +60,12 @@ session_start();
 		?>
 		<table>
 			<tr>
+			<th></th>
+			<th></th>
+			<th>PRICE</th>
+			<th>Quantity</th>
+			</tr>
+			<tr>
 				<?php
 					print('<td><img src="' . $_SESSION["image_src"][0] . '"/></td>');
 					print('<td>' . $_SESSION["title"][0] . '</td>');
