@@ -97,6 +97,7 @@ function add_to_session(item) {
     var array = (item.getAttribute.name).split(",");
     var row = array[0];
     var col = array[1];
+    console.log(item.getAttribute.name);
     console.log("row: " + row);
     console.log("col: " + col);
 
