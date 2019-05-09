@@ -26,8 +26,6 @@ session_start();
     <div id="cart">
 		<?php
 		if(!isset($_SESSION["title"])){
-			print("*** first one ****");
-			print(!isset($_SESSION["title"]));
 			$titles[] = $_GET["title"];
 		}
 		else {
@@ -39,8 +37,7 @@ session_start();
 		$_SESSION["image"];
 		$_SESSION["price"];
 
-		print_r($_SESSION);
-		print($_SESSION["title"]);
+		print(sizeof($_SESSION["title"]));
 
 		?>
     </div>
