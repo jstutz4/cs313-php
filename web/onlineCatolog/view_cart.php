@@ -27,8 +27,6 @@ session_start();
 		<?php
 		if(!isset($_SESSION["title"])){
 			$titles[] = $_GET["title"];
-			session_unset();
-			session_destroy();
 		}
 		else {
 			$titles = $_SESSION["title"];
