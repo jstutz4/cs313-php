@@ -26,10 +26,12 @@ session_start();
     <div id="cart">
 		<?php
 		if(!isset($SESSION["title"])){
+			print("*** first one ****");
 			$titles[] = $_GET["title"];
 		}
 		else {
-			$titles = $_SESSION["title"];
+		print("*** adding another ****");
+			$titles[] = $_SESSION["title"];
 			$titles[] = $_GET["title"];
 		}
 		$_SESSION["title"] = $titles;
