@@ -30,7 +30,7 @@ session_start();
 		}
 		else {
 		print("*** adding another ****");
-			$titles[] = $_SESSION["title"];
+			$titles = $_SESSION["title"];
 			$titles[] = $_GET["title"];
 		}
 		$_SESSION["title"] = $titles;
