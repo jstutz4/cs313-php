@@ -29,17 +29,38 @@ session_start();
 			$titles[] = $_GET["title"];
 		}
 		else {
-		print("*** adding another ****");
 			$titles = $_SESSION["title"];
 			$titles[] = $_GET["title"];
 		}
+
+		if(!isset($_SESSION["image_src"])){
+			$images[] = $_GET["img_src"];
+		}
+		else {
+			$images = $_SESSION["image_src"];
+			$images[] = $_GET["img_src"];
+		}
+
+		if(!isset($_SESSION["price"])){
+			$prices[] = $_GET["price"];
+		}
+		else {
+			$prices = $_SESSION["price"];
+			$prices[] = $_GET["price"];
+		}
+
 		$_SESSION["title"] = $titles;
-		$_SESSION["image"];
-		$_SESSION["price"];
+		$_SESSION["image_src"] = $images;
+		$_SESSION["price"] = $prices;
 
 		print(sizeof($_SESSION["title"]));
-
+		print($_SESSION["title"][0]);
 		?>
+		<table>
+			<tr>
+				
+			</tr>
+		</table>
     </div>
 
     <footer class="mainColor">
