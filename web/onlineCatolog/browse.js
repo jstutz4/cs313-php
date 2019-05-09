@@ -104,7 +104,7 @@ function add_to_session(item) {
     console.log("title " + group[0].innerHTML);
     console.log("image " + group[1].firstChild.getAttribute("src"));
     console.log("image " + group[1].firstChild.getAttribute("alt"));
-    console.log("price " + group[2], innerHTML);
+    console.log("price " + group[2]. innerHTML);
 
 
     /*
