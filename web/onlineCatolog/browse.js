@@ -101,10 +101,10 @@ function add_to_session(item) {
     console.log("col: " + col);
 
     var group = document.getElementsByName(item.getAttribute("name"));
-    console.log(group[0].value);
-    console.log(group[1]);
-    console.log(group[2]);
-    console.log(group[3]);
+    console.log("title " + group[0].innerHTML);
+    console.log("image " + group[1].firstChild.getAttribute("src"));
+    console.log("image " + group[1].firstChild.getAttribute("alt"));
+    console.log("price " + group[2], innerHTML);
 
 
     /*
