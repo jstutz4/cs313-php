@@ -25,36 +25,40 @@ session_start();
     
     <div id="cart">
 		<?php
-		if(!in_array($_GET["title"], $_SESSION["title"])){
-			if(!isset($_SESSION["title"])){
-				$titles[] = $_GET["title"];
-			}
-			else {
-				$titles = $_SESSION["title"];
-				$titles[] = $_GET["title"];
-			}
+		if($_GET["ajax"]){
+			$titles;
+			$images;
+			$prices;
+			if(!in_array($_GET["title"], $_SESSION["title"])){
+				if(!isset($_SESSION["title"])){
+					$titles[] = $_GET["title"];
+				}
+				else {
+					$titles = $_SESSION["title"];
+					$titles[] = $_GET["title"];
+				}
 
-			if(!isset($_SESSION["image_src"])){
-				$images[] = $_GET["img_src"];
-			}
-			else {
-				$images = $_SESSION["image_src"];
-				$images[] = $_GET["img_src"];
-			}
+				if(!isset($_SESSION["image_src"])){
+					$images[] = $_GET["img_src"];
+				}
+				else {
+					$images = $_SESSION["image_src"];
+					$images[] = $_GET["img_src"];
+				}
 
-			if(!isset($_SESSION["price"])){
-				$prices[] = $_GET["price"];
-			}
-			else {
-				$prices = $_SESSION["price"];
-				$prices[] = $_GET["price"];
-			}
+				if(!isset($_SESSION["price"])){
+					$prices[] = $_GET["price"];
+				}
+				else {
+					$prices = $_SESSION["price"];
+					$prices[] = $_GET["price"];
+				}
 
-			$_SESSION["title"] = $titles;
-			$_SESSION["image_src"] = $images;
-			$_SESSION["price"] = $prices;
+				$_SESSION["title"] = $titles;
+				$_SESSION["image_src"] = $images;
+				$_SESSION["price"] = $prices;
+			}
 		}
-
 		print(sizeof($titles));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));

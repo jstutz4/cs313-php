@@ -102,7 +102,7 @@ function add_to_session(item) {
 
 
 
-    var url = "view_cart.php?title=" + title + "&img_src=" + img_src + "&img_alt=" + img_alt + "&price=" + price;
+    var url = "view_cart.php?title=" + title + "&img_src=" + img_src + "&img_alt=" + img_alt + "&price=" + price + '&ajax="true"';
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
