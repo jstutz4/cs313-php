@@ -71,7 +71,8 @@ session_start();
 
 		print("<br> size of prices array" . sizeof($prices) . "<br>");
 		$totals = 0;
-		for($i = 0; $i < $prices; $i++){
+		for($i = 0; $i < sizeof($prices); $i++){
+			print("<br>" . $_SESSION["price"][$i] ."<br>");
 			$temp = $_SESSION["price"][$i];
 			$totals = floatval($temp);
 			print("<br>" . $totals . "<br>");
