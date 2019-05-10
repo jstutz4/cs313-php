@@ -59,6 +59,12 @@ session_start();
 				$_SESSION["price"] = $prices;
 			}
 		}
+		else{
+			$_SESSION["title"] = $_SESSION["title"];
+			$_SESSION["image_src"] = $_SESSION["image_src"];
+			$_SESSION["price"] = $_SESSION["price"];
+
+		}
 		print(sizeof($titles));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
