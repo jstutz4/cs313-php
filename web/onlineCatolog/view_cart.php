@@ -57,6 +57,8 @@ session_start();
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
 		print($_SESSION["title"][0]);
+		print('$' . array_sum($_SESSION["price"]));
+		print('<br> $' . array_sum($prices);
 		?>
 		<table>
 		<?php
@@ -73,7 +75,7 @@ session_start();
 			<tr id="total">
 				<td></td>
 				<td>Total</td>
-				<td> <?php print('$' . array_sum($_SESSION["price"])); ?></td>
+				<td> <?php print('$' . array_sum($_SESSION["price"])); ?> </td>
 			</tr>
 		</table>
     </div>
