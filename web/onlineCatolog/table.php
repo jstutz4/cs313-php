@@ -75,5 +75,5 @@ for($i = 0; $i < $num_groups; $i++){
 	print("</tr>");
 }
 ?>
-		
+		<tr> <input type="button" value="View Cart" onclick="window.location.href = "view_cart.php"/> </tr>
 	</table>
