@@ -52,6 +52,10 @@ session_start();
 					$prices[] = $_GET["price"];
 				}
 
+				$_SESSION["title"] = $titles;
+				$_SESSION["image_src"] = $images;
+				$_SESSION["price"] = $prices;
+
 		print(sizeof($titles));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
