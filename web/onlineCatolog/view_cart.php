@@ -56,7 +56,7 @@ session_start();
 				if(!isset($_SESSION["price"])){
 					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
-						$totals	= 0;
+						$totals = $totals + floatval($_GET["price"]);
 						print($totals);
 					}
 				}
@@ -64,7 +64,7 @@ session_start();
 					$prices = $_SESSION["price"];
 					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
-						$totals = $totals + $_GET["price"];
+						$totals = $totals + floatval($_GET["price"]);
 						print("**" . $totals);
 					}
 				}
