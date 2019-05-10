@@ -27,9 +27,13 @@ session_start();
 			<fieldset>
 			<legend>Address</legend>
 			<label>Street: </label> <input type="text" name="street" maxlength="25"/>
+			<br>
 			<label>City: </label> <input type="text" name="city" maxlength="15"/>
+			<br>
 			<label>State: </label> <input type="text" name="state" maxlength="2"/>
+			<br>
 			<label>Zip Code: </label> <input type="number" name="zip" min="00001" max="99999"/>
+			<br>
 			<input type="submit" name="address" value="Place Order"/>
 			<fieldst>
 		</form>

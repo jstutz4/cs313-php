@@ -22,16 +22,26 @@ session_start();
         </span>
     </nav>
     
-	<div>
-		<h1>Your Order</h1>
-
+	<div id="order">
+		<h1>Your Order Will Be Shipped To:</h1>
+		<p>
+		<?php
+		$street = htmlspecialchars ($_POST["street"]);
+		$city = htmlspecialchars ($_POST["city"]);
+		$state = htmlspecialchars ($_POST["state"]);
+		$zip = htmlspecialchars ($_POST["zip"]);
+		?>
+		</p>
 		<?php
 			for($i = 0; $i < sizeof($_SESSION["image_src"]); $i++ ){
 					print('<img src="' . $_SESSION["image_src"][$i] . '"/>');
 			}
+
+			session_unset();
+			session_destroy();
 		?>
 		<h2>Your Order Will Arrive In Three Days!</h2>
-		<p>Thanks For Shopping With Mom\'s Catolog</p>
+		<p>Thanks For Shopping With Mom's Catolog</p>
 	</div>
 
     <footer class="mainColor">
