@@ -69,7 +69,6 @@ session_start();
 				$_SESSION["image_src"] = $images;
 				$_SESSION["price"] = $prices;
 
-		print("<br> size of prices array" . sizeof($prices) . "<br>");
 		$totals = 0;
 		for($i = 0; $i < sizeof($prices); $i++){
 			$temp = substr($_SESSION["price"][$i], 2);
