@@ -23,16 +23,15 @@ session_start();
     </nav>
     
 	<div>
-		<form action="order.php" method="POST">
-			<fieldset>
-			<legend>Address</legend>
-			<label>Street: </label> <input type="text" name="street" maxlength="25"/>
-			<label>City: </label> <input type="text" name="city" maxlength="15"/>
-			<label>State: </label> <input type="text" name="state" maxlength="2"/>
-			<label>Zip Code: </label> <input type="number" name="zip" min="00001" max="99999"/>
-			<input type="submit" name="address" value="Place Order"/>
-			<fieldst>
-		</form>
+		<h1>Your Order</h1>
+
+		<?php
+			for($i = 0; $i < sizeof($_SESSION["image_src"]); $i++ ){
+					print('<img src="' . $_SESSION["image_src"][$i] . '"/>');
+			}
+		?>
+		<h2>Your Order Will Arrive In Three Days!</h2>
+		<p>Thanks For Shopping With Mom\'s Catolog</p>
 	</div>
 
     <footer class="mainColor">
