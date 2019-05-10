@@ -68,6 +68,8 @@ session_start();
 				$_SESSION["title"] = $titles;
 				$_SESSION["image_src"] = $images;
 				$_SESSION["price"] = $prices;
+
+		print(sizeof($prices));
 		$total = array_sum($prices);
 		print("$prices <br>");
 		print("array_sum($prices) <br>");
@@ -75,7 +77,7 @@ session_start();
 
 		
 		for($i = 0; $i < sizeof($prices); $i++){
-			$total = $total + $prices[$i];
+			$total = $total + $_SESSION["price"][$i];
 		}
 		print('<br>' .$total . '<br>')
 		?>
