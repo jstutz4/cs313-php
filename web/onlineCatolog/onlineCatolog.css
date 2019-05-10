@@ -49,3 +49,8 @@ td{
 .align_right{
     text-align: right;
 }
+
+#viewCart {
+    width: 90%;
+    color: #0056b3;
+}

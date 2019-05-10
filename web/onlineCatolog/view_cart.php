@@ -25,7 +25,6 @@ session_start();
     
     <div id="cart">
 		<?php
-		if($_GET["ajax"]){
 			$titles;
 			$images;
 			$prices;
@@ -64,7 +63,6 @@ session_start();
 			$_SESSION["image_src"] = $_SESSION["image_src"];
 			$_SESSION["price"] = $_SESSION["price"];
 
-		}
 		print(sizeof($titles));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
