@@ -74,6 +74,7 @@ session_start();
 		for($i = 0; $i < sizeof($prices); $i++){
 			print("<br>" . $_SESSION["price"][$i] ."<br>");
 			$temp = $_SESSION["price"][$i];
+			print("<br>" . $temp ."<br>");
 			$totals = floatval($temp);
 			print("<br>" . $totals . "<br>");
 		}
@@ -84,7 +85,6 @@ session_start();
 		$totals = 0;
 			for($i = 0; $i < sizeof($titles); $i++ ){
 			print('<tr>');
-				
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
