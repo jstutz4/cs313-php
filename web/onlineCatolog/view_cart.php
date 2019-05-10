@@ -58,7 +58,7 @@ session_start();
 		print(sizeof($_SESSION["price"]));
 		print($_SESSION["title"][0]);
 		print('$' . array_sum($_SESSION["price"]));
-		print('<br> $' . array_sum($prices);
+		print('<br> $' . array_sum($prices));
 		?>
 		<table>
 		<?php
