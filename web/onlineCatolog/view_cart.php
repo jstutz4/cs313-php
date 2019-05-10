@@ -73,7 +73,7 @@ session_start();
 				$_SESSION["image_src"] = $images;
 				$_SESSION["price"] = $prices;
 
-		print(sizeof("size of prices array" .$prices));
+		print("<br> size of prices array" . sizeof($prices) . "<br>");
 		
 		?>
 		<table>
