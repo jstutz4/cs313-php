@@ -39,7 +39,6 @@ session_start();
 					print('<img src="' . $_SESSION["image_src"][$i] . '"/>');
 			}
 
-			
 		?>
 		<h2>Your Order Will Arrive In Three Days!</h2>
 		<p>Thanks For Shopping With Mom's Catolog</p>
@@ -53,3 +52,7 @@ session_start();
     </footer>
 </body>
 </html>
+<?php
+	session_unset();
+	session_destroy();
+?>
