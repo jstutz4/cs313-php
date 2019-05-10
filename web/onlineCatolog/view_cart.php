@@ -33,7 +33,9 @@ session_start();
 				}
 				else {
 					$titles = $_SESSION["title"];
-					$titles[] = $_GET["title"];
+					if(!(in_array($_GET["title"], $titles)){
+						$titles[] = $_GET["title"];
+					}
 				}
 
 				if(!isset($_SESSION["image_src"])){
@@ -56,13 +58,11 @@ session_start();
 				$_SESSION["image_src"] = $images;
 				$_SESSION["price"] = $prices;
 
-		print(sizeof($titles));
+		print(sizeof($prices));
+		print(sizeof($_SESSION["title"]));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
-		print($_SESSION["title"][0]);
-		print('$' . array_sum($_SESSION["price"]));
-		print('<br> $' . array_sum($prices));
-		$total;
+		
 		for($i = 0; $i < sizeof($prices); $i++){
 			$total = total + $_SESSION["price"][$i];
 		}
