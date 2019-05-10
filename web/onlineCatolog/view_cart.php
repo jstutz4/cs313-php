@@ -69,7 +69,7 @@ session_start();
 				$_SESSION["image_src"] = $images;
 				$_SESSION["price"] = $prices;
 
-		print(sizeof($title));
+		print(sizeof($titles));
 		print(sizeof($images));
 		print(sizeof($prices));
 		print('<br>');
@@ -103,7 +103,7 @@ session_start();
     </div>
 
 	<div>
-		<form action="Checkout.php" method="POST">
+		<form action="checkout.php" method="POST">
 		<input id="viewCart" type="submit" value="Checkout" onclick="checkOut()"/>
 		</form>
 	</div>

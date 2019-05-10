@@ -20,6 +20,7 @@ session_start();
         <span class="navbar-text">
             <a class="navbar-brand" href="browse.php">Browse</a>
             <a class="navbar-brand" href="view_cart.php">shopping Cart</a>
+			<span class="dot"> <?php  print(sizeof($_SESSION["title"])); ?> </span>
         </span>
     </nav>
     
