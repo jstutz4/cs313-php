@@ -72,10 +72,9 @@ session_start();
 		print("<br> size of prices array" . sizeof($prices) . "<br>");
 		$totals = 0;
 		for($i = 0; $i < sizeof($prices); $i++){
-			print("<br>" . $_SESSION["price"][$i] ."<br>");
-			$temp = number_format(substr($_SESSION["price"][$i], 2),2);
-			print("<br>" . $temp ."<br>");
-			$totals = floatval($temp);
+			$temp = substr($_SESSION["price"][$i], 2);
+			
+			$totals = number_format(floatval($temp),2);
 			print("<br>" . $totals . "<br>");
 		}
 		
@@ -88,6 +87,9 @@ session_start();
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
+					print("<br>" . $_SESSION["price"][$i] ."<br>");
+					$temp = substr($_SESSION["price"][$i], 2);
+					$totals = totals + number_format(floatval($temp),2);
 			print('</tr>');
 			}
 		?>
