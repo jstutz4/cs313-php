@@ -70,33 +70,25 @@ session_start();
 				$_SESSION["price"] = $prices;
 
 		print(sizeof($prices));
-		$total = array_sum($prices);
-		print("$prices <br>");
-		print("array_sum($prices) <br>");
-		print("$total <br>");
-
 		
-		for($i = 0; $i < sizeof($prices); $i++){
-			$total = $total + $_SESSION["price"][$i];
-		}
-		print('<br>' .$total . '<br>')
 		?>
 		<table>
 		<?php
+		$totals = 0;
 			for($i = 0; $i < sizeof($titles); $i++ ){
 			print('<tr>');
 				
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
-				
+					$totals = $totals + $_SESSION["price"][$i];
 			print('</tr>');
 			}
 		?>
-			<tr id="total">
+			<tr class="align_right">
 				<td></td>
 				<td>Total</td>
-				<td> <?php print('$' . array_sum($_SESSION["price"])); ?> </td>
+				<td> <?php print('$' . print($totals); ?> </td>
 			</tr>
 		</table>
     </div>
