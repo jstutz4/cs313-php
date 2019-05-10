@@ -18,8 +18,8 @@ session_start();
     <h1 class="mainColor">Online Mom's Catolog</h1>
     <nav class="navbar">
         <span class="navbar-text">
-            <a class="navbar-brand" href="#">Browse</a>
-            <a class="navbar-brand" href="#">shopping Cart</a>
+            <a class="navbar-brand" href="browse.php">Browse</a>
+            <a class="navbar-brand" href="view_cart.php">shopping Cart</a>
         </span>
     </nav>
     
