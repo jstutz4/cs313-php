@@ -74,22 +74,21 @@ session_start();
 		for($i = 0; $i < sizeof($prices); $i++){
 			$temp = substr($_SESSION["price"][$i], 2);
 			
-			$totals = number_format(floatval($temp),2);
+			$totals = $totals + number_format(floatval($temp),2);
 			print("<br>" . $totals . "<br>");
 		}
 		
 		?>
 		<table>
 		<?php
-		$totals = 0;
+		
 			for($i = 0; $i < sizeof($titles); $i++ ){
 			print('<tr>');
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
 					print("<br>" . $_SESSION["price"][$i] ."<br>");
-					$temp = substr($_SESSION["price"][$i], 2);
-					$totals = totals + floatval($temp);
+					
 			print('</tr>');
 			}
 		?>
