@@ -33,7 +33,7 @@ session_start();
 				}
 				else {
 					$titles = $_SESSION["title"];
-					if(!(in_array($_GET["title"], $titles)){
+					if(!(in_array($_GET["title"], $titles))){
 						$titles[] = $_GET["title"];
 					}
 				}
