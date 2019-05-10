@@ -56,12 +56,16 @@ session_start();
 				if(!isset($_SESSION["price"])){
 					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
+						$totals	= 0;
+						print($totals);
 					}
 				}
 				else {
 					$prices = $_SESSION["price"];
 					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
+						$totals = $totals + $_GET["price"];
+						print("**" . $totals);
 					}
 				}
 
@@ -70,11 +74,6 @@ session_start();
 				$_SESSION["price"] = $prices;
 
 		print(sizeof($prices));
-		$totals = 0;
-		for($i = 0; $i < sizeof($titles); $i++ ){
-			$totals = $totals + floatval($_SESSION["price"][$i]);
-			print("<br>" . $totals . "<br>");
-		}
 		
 		?>
 		<table>
