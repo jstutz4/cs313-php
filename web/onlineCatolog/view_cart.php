@@ -81,7 +81,7 @@ session_start();
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
-					$totals = $totals + $_SESSION["price"][$i];
+					$totals = $totals + floatval($_SESSION["price"][$i]);
 			print('</tr>');
 			}
 		?>
