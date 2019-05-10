@@ -56,16 +56,12 @@ session_start();
 				if(!isset($_SESSION["price"])){
 					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
-						$totals = floatval($_GET["price"]);
-						print($totals);
 					}
 				}
 				else {
 					$prices = $_SESSION["price"];
 					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
-						$totals = floatval($_GET["price"]);
-						print("**" . $totals);
 					}
 				}
 
@@ -85,7 +81,8 @@ session_start();
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
-					$totals = $totals + floatval($_SESSION["price"][$i]);
+					$temp = $_SESSION["price"][$i];
+					$totals = $totals + floatval($temp);
 					print("<br>" . $totals . "<br>");
 			print('</tr>');
 			}
