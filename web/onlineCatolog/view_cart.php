@@ -43,7 +43,9 @@ session_start();
 				}
 				else {
 					$images = $_SESSION["image_src"];
-					$images[] = $_GET["img_src"];
+					if(!(in_array($_GET["img_src"]))){
+						$images[] = $_GET["img_src"];
+					}
 				}
 
 				if(!isset($_SESSION["price"])){
@@ -51,7 +53,9 @@ session_start();
 				}
 				else {
 					$prices = $_SESSION["price"];
-					$prices[] = $_GET["price"];
+					if(!(in_array($_GET["price"]))){
+						$prices[] = $_GET["price"];
+					}
 				}
 
 				$_SESSION["title"] = $titles;
