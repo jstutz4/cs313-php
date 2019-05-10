@@ -73,7 +73,7 @@ session_start();
 		$totals = 0;
 		for($i = 0; $i < $prices; $i++){
 			$temp = $_SESSION["price"][$i];
-			$totals = $totals + floatval($temp);
+			$totals = floatval($temp);
 			print("<br>" . $totals . "<br>");
 		}
 		
