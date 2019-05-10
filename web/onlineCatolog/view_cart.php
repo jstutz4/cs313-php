@@ -73,7 +73,7 @@ session_start();
 			<tr id="total">
 				<td></td>
 				<td>Total</td>
-				<td>$ 100.00</td>
+				<td><?php print('$' . array_sum($prices)) ?></td>
 			</tr>
 		</table>
     </div>
