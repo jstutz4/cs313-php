@@ -70,8 +70,8 @@ session_start();
 				$_SESSION["price"] = $prices;
 		$total = array_sum($prices);
 		print("$prices <br>");
-		print('array_sum($prices) <br>');
-		print('$total <br>');
+		print("array_sum($prices) <br>");
+		print("$total <br>");
 
 		
 		for($i = 0; $i < sizeof($prices); $i++){
