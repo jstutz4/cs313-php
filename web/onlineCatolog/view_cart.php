@@ -89,7 +89,7 @@ session_start();
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
 					print("<br>" . $_SESSION["price"][$i] ."<br>");
 					$temp = substr($_SESSION["price"][$i], 2);
-					$totals = totals + number_format(floatval($temp),2);
+					$totals = totals + floatval($temp);
 			print('</tr>');
 			}
 		?>
