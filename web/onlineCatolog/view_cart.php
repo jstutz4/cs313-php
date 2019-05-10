@@ -79,6 +79,11 @@ session_start();
 					print('<td>' . $_SESSION["price"][1] . '</td>');
 				?>
 			</tr>
+			<tr>
+				<td></td>
+				<td>total</td>
+				<td>$ 100.00</td>
+			</tr>
 		</table>
     </div>
 
