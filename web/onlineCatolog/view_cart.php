@@ -59,6 +59,11 @@ session_start();
 		print($_SESSION["title"][0]);
 		print('$' . array_sum($_SESSION["price"]));
 		print('<br> $' . array_sum($prices));
+		$total;
+		for($i = 0; $i < sizeof($prices); $i++){
+			$total = total + $prices[$i];
+		}
+		print('<br>' .$total . '<br>')
 		?>
 		<table>
 		<?php
