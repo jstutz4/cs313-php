@@ -53,35 +53,26 @@ session_start();
 		$_SESSION["image_src"] = $images;
 		$_SESSION["price"] = $prices;
 
-		print(sizeof($_SESSION["title"]));
+		print(sizeof($titles));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
 		print($_SESSION["title"][0]);
 		?>
 		<table>
-			<tr>
-				<th></th>
-				<th></th>
-				<th>PRICE</th>
-				<th>Quantity</th>
-			</tr>
-			<tr>
-				<?php
-					print('<td><img src="' . $_SESSION["image_src"][0] . '"/></td>');
-					print('<td>' . $_SESSION["title"][0] . '</td>');
-					print('<td>' . $_SESSION["price"][0] . '</td>');
-				?>
-			</tr>
-			<tr>
-				<?php
-					print('<td><img src="' . $_SESSION["image_src"][1] . '"/></td>');
-					print('<td>' . $_SESSION["title"][1] . '</td>');
-					print('<td>' . $_SESSION["price"][1] . '</td>');
-				?>
-			</tr>
-			<tr>
+		<?php
+			for($i = 0; $i < sizeof($titles); $i++ ){
+			print('<tr>');
+				
+					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
+					print('<td>' . $_SESSION["title"][$i] . '</td>');
+					print('<td>' . $_SESSION["price"][$i] . '</td>');
+				
+			print('</tr>');
+			}
+		?>
+			<tr id="total">
 				<td></td>
-				<td>total</td>
+				<td>Total</td>
 				<td>$ 100.00</td>
 			</tr>
 		</table>
