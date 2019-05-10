@@ -29,7 +29,9 @@ session_start();
 			$images;
 			$prices;
 				if(!isset($_SESSION["title"])){
-					$titles[] = $_GET["title"];
+					if(!(in_array($_GET["title"], $titles))){
+						$titles[] = $_GET["title"];
+					}
 				}
 				else {
 					$titles = $_SESSION["title"];
@@ -39,7 +41,9 @@ session_start();
 				}
 
 				if(!isset($_SESSION["image_src"])){
-					$images[] = $_GET["img_src"];
+					if(!(in_array($_GET["img_src"]))){
+						$images[] = $_GET["img_src"];
+					}
 				}
 				else {
 					$images = $_SESSION["image_src"];
@@ -49,7 +53,9 @@ session_start();
 				}
 
 				if(!isset($_SESSION["price"])){
-					$prices[] = $_GET["price"];
+					if(!(in_array($_GET["price"]))){
+						$prices[] = $_GET["price"];
+					}
 				}
 				else {
 					$prices = $_SESSION["price"];
@@ -62,7 +68,10 @@ session_start();
 				$_SESSION["image_src"] = $images;
 				$_SESSION["price"] = $prices;
 
+		print(sizeof($title));
+		print(sizeof($images));
 		print(sizeof($prices));
+		print('<br>');
 		print(sizeof($_SESSION["title"]));
 		print(sizeof($_SESSION["image_src"]));
 		print(sizeof($_SESSION["price"]));
