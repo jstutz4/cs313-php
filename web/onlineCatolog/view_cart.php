@@ -88,7 +88,7 @@ session_start();
 			<tr class="align_right">
 				<td></td>
 				<td>Total</td>
-				<td> <?php print('$' . print($totals); ?> </td>
+				<td> <?php print('$' . $totals); ?> </td>
 			</tr>
 		</table>
     </div>
