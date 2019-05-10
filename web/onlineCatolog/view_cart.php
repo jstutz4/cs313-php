@@ -11,6 +11,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="onlineCatolog.css">
+    <script src="view_cart.js"></script>
     
     <title>Online Catolog | Shopping Card</title>
 </head>
@@ -41,25 +42,25 @@ session_start();
 				}
 
 				if(!isset($_SESSION["image_src"])){
-					if(!(in_array($_GET["img_src"]))){
+					if(!(in_array($_GET["img_src"], $images))){
 						$images[] = $_GET["img_src"];
 					}
 				}
 				else {
 					$images = $_SESSION["image_src"];
-					if(!(in_array($_GET["img_src"]))){
+					if(!(in_array($_GET["img_src"], $images))){
 						$images[] = $_GET["img_src"];
 					}
 				}
 
 				if(!isset($_SESSION["price"])){
-					if(!(in_array($_GET["price"]))){
+					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
 					}
 				}
 				else {
 					$prices = $_SESSION["price"];
-					if(!(in_array($_GET["price"]))){
+					if(!(in_array($_GET["price"], $prices))){
 						$prices[] = $_GET["price"];
 					}
 				}
