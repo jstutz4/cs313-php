@@ -11,6 +11,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="onlineCatolog.css">
+    <script src="browse.js"></script>
     
     <title>Online Catolog | Shopping Card</title>
 </head>
@@ -28,7 +29,6 @@ session_start();
 			$titles;
 			$images;
 			$prices;
-			if(!in_array($_GET["title"], $_SESSION["title"])){
 				if(!isset($_SESSION["title"])){
 					$titles[] = $_GET["title"];
 				}
@@ -53,10 +53,7 @@ session_start();
 					$prices[] = $_GET["price"];
 				}
 
-				$_SESSION["title"] = $titles;
-				$_SESSION["image_src"] = $images;
-				$_SESSION["price"] = $prices;
-			}
+			
 		else{
 			$_SESSION["title"] = $_SESSION["title"];
 			$_SESSION["image_src"] = $_SESSION["image_src"];
@@ -93,6 +90,12 @@ session_start();
 			</tr>
 		</table>
     </div>
+
+	<div>
+		<form action="Checkout.php" method="POST">
+		<input id="viewCart" type="submit" value="Checkout" onclick="checkOut()"/>
+		</form>
+	</div>
 
     <footer class="mainColor">
         <p class="margin0">Mom's Catolog</p>

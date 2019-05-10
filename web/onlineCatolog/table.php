@@ -76,6 +76,6 @@ for($i = 0; $i < $num_groups; $i++){
 }
 ?>
 	</table>
-	<div id="viewCart">
-		<input type="button" value="View Cart" onclick="viewCart()"/>
+	<div>
+		<input id="viewCart" type="button" value="View Cart" onclick="viewCart()"/>
 	</div>
