@@ -46,6 +46,6 @@ td{
     font-weight: bold;
 }
 
-#total{
+.align_right{
     text-align: right;
 }

@@ -113,3 +113,7 @@ function add_to_session(item) {
     httpRequest.open("GET", url, true);
     httpRequest.send();
 }
+
+function viewCart() {
+    window.location.href = "view_cart.php";
+}
