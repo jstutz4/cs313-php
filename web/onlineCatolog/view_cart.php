@@ -75,7 +75,6 @@ session_start();
 			$temp = substr($_SESSION["price"][$i], 2);
 			
 			$totals = $totals + number_format(floatval($temp),2);
-			print("<br>" . $totals . "<br>");
 		}
 		
 		?>
@@ -87,8 +86,6 @@ session_start();
 					print('<td><img src="' . $_SESSION["image_src"][$i] . '"/></td>');
 					print('<td>' . $_SESSION["title"][$i] . '</td>');
 					print('<td>' . $_SESSION["price"][$i] . '</td>');
-					print("<br>" . $_SESSION["price"][$i] ."<br>");
-					
 			print('</tr>');
 			}
 		?>
