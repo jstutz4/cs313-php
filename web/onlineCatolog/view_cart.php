@@ -75,7 +75,7 @@ session_start();
 
 		
 		for($i = 0; $i < sizeof($prices); $i++){
-			$total = total + $_SESSION["price"][$i];
+			$total = $total + $prices[$i];
 		}
 		print('<br>' .$total . '<br>')
 		?>
