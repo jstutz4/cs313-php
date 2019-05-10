@@ -30,6 +30,8 @@ session_start();
 		$city = htmlspecialchars ($_POST["city"]);
 		$state = htmlspecialchars ($_POST["state"]);
 		$zip = htmlspecialchars ($_POST["zip"]);
+
+		print("$street <br> $city, $state, $zip");
 		?>
 		</p>
 		<?php
