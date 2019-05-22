@@ -1,6 +1,6 @@
 <?php
 $SESSION["user"] = $_POST["user"];
-
+print($SESSION["user"]);
 try
 {
   $dbUrl = getenv('DATABASE_URL');
