@@ -11,8 +11,8 @@ html{
     background-color:floralwhite;
 }
 
-#table{
-    border: solid 3px sandybrown;
+#table, table{
+    border: solid 2px sandybrown;
     width: 100%;
 }
 th {
