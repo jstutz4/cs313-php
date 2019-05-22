@@ -23,7 +23,7 @@ catch (PDOException $ex)
   die();
 }
 $table = "<table><th>user id</th><th>user name</th>";
-foreach ($db->query('SELECT user_id, user_name FROM users WHERE user_name ='. $SESSION["user"]) as $row){
+foreach ($db->query('SELECT user_id, user_name FROM users') as $row){
 $table = $table . "<tr><td>" . $row['user_id'] . "</td> <td>" . $row['user_name']. "</td></tr>";
 }
 
