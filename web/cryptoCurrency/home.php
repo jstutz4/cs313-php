@@ -15,8 +15,9 @@ session_start();
 <p>crypto Currency tracker</p>
 	<div id="table">
 		<form>
-		<input type="text" name="user_id">
-		<input type="button" name="add_user" value="New User">
+		<h4>Enter Your User ID or Click New User</h4>
+		<input id="u_id" type="text" name="user_id" placeholder="user_id">
+		<input type="button" name="add_user" value="New User" onclick="add_user()">
 		</form>
 	</div>
 </body>
