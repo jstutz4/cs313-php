@@ -10,4 +10,3 @@ function add_user() {
     httpRequest.open("POST", url, true);
     httpRequest.send();
 }
-}
