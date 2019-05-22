@@ -8,11 +8,11 @@ session_start();
 <head>
     <meta charset="utf-8" />
     <title>Currency Tracker</title>
-    <!--<link rel="stylesheet" type="text/css" href="home.css" /> !-->
+    <link rel="stylesheet" type="text/css" href="home.css" />
     <script src="add_user.js"></script> 
 </head>
 <body>
-<p>crypto Currency tracker</p>
+<h1>Crypto Currency tracker</h1>
 	<div id="table">
 		<form>
 		<h4>Enter Your User ID or Click New User</h4>
