@@ -22,12 +22,10 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
-foreach ($db->query('SELECT user_id, user_name FROM users') as $row)
-{
-  echo 'user id: ' . $row['user_id'];
-  echo ' user name: ' . $row['user_name'];
-  echo '<br/>';
+$table = "<table><th>user id</td>user name<th>";
+foreach ($db->query('SELECT user_id, user_name FROM users') as $row){
+$table = $table . "<tr><td>" . $row['user_id'] . "</td> <td>" . $row['user_name']. "</td></tr>";
 }
 
+print($table . '<table>');
 ?>
