@@ -17,7 +17,7 @@ session_start();
 		<form>
 		<h4>Enter Your User ID or Click New User</h4>
 		<input id="u_id" type="text" name="user_id" placeholder="user_id">
-		<input type="button" name="add_user" value="New User" onclick="add_user()">
+		<input type="button" name="add_user" value="New User" onclick="adduser()">
 		</form>
 	</div>
 </body>
