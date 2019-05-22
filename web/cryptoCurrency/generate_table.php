@@ -1,5 +1,6 @@
 <?php
 $SESSION["user"] = $_POST["user"];
+$user_name = $_POST["user"];
 print($SESSION["user"]);
 try
 {
@@ -29,5 +30,9 @@ $table = $table . "<tr><td>" . $row['user_id'] . "</td> <td>" . $row['user_name'
 
 print($table . '<table>');
 
-
+$stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
+$stmt->bindValue(':name', $user_name, PDO::PARAM_STR);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print("<br>look here <br>.$rows);
 ?>
