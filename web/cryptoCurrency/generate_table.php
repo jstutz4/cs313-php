@@ -46,7 +46,7 @@ foreach ($rows as $currency_row){
 if(isset($user_name)){
 	noFilter();
 }
-elseif (isset($currency) {
+elseif (isset($currency)) {
 	filter();
 }
 
