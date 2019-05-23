@@ -79,7 +79,7 @@ elseif (isset($currency)) {
 */
 
 
-print($table . '</table>');
+print($table . '</table><br>' . isset($user_name). '<br>'. isset($currency));
 
 
 /*
