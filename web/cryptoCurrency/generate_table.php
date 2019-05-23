@@ -69,14 +69,23 @@ foreach ($rows as $currency_row){
 		$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
 	}
 }
-
+*/
 if(isset($user_name)){
-	noFilter();
+	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
+		if($user_row['user_name'] == $user_name){
+			$userID = $user_row['user_id'];
+			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
+				if($currency_row['user_id'] == $userID){
+					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
+				}
+			}
+		} 
+	}
 }
 elseif (isset($currency)) {
 	filter();
 }
-*/
+
 
 
 print($table . '</table><br>' . isset($user_name). '<br>'. isset($currency));
