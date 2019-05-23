@@ -1,7 +1,7 @@
 <?php
 $SESSION["userName"] = $_POST["user"];
 $SESSION["userID"];
-$user_name = $_POST["user"];
+$user_name = $_GET["user"];
 print($SESSION["user"]);
 try
 {
@@ -39,7 +39,7 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 	}
 }
 
-print($table . '<table>'. $user_name);
+print($table . '</table>'. $user_name);
 /*
 $stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
 $stmt->bindValue(':name', $user_name, PDO::PARAM_STR);
