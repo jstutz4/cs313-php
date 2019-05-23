@@ -3,6 +3,33 @@ $SESSION["userName"] = $_POST["user"];
 $SESSION["userID"];
 $user_name = $_GET["user"];
 
+function noFilter(){
+	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
+		if($user_row['user_name'] == $user_name){
+			$userID = $user_row['user_id'];
+			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
+				if($currency_row['user_id'] == $userID){
+					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
+				}
+			}
+		} 
+	}
+}
+
+
+function filter(){
+	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
+		if($user_row['user_name'] == $user_name){
+			$userID = $user_row['user_id'];
+			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
+				if($currency_row['user_id'] == $userID && $currency_row['name'] == $currency){
+					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
+				}
+			}
+		} 
+	}
+}
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -63,30 +90,5 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print("<br>look here <br>.$rows");
 */
 
-function noFilter(){
-	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
-		if($user_row['user_name'] == $user_name){
-			$userID = $user_row['user_id'];
-			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-				if($currency_row['user_id'] == $userID){
-					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
-				}
-			}
-		} 
-	}
-}
 
-
-function filter(){
-	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
-		if($user_row['user_name'] == $user_name){
-			$userID = $user_row['user_id'];
-			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-				if($currency_row['user_id'] == $userID && $currency_row['name'] == $currency){
-					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
-				}
-			}
-		} 
-	}
-}
 ?>
