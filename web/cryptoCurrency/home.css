@@ -18,3 +18,7 @@ html{
 th {
     border-bottom: dashed sandybrown 3px;
 }
+
+td{
+    text-align: center;
+}
