@@ -19,11 +19,7 @@ try
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+
 $userID;
 $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
 //$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
@@ -55,6 +51,12 @@ foreach ($rows as $currency_row){
 
 
 print($table . '</table>');
+
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
 /*
 $stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
 $stmt->bindValue(':name', $user_name, PDO::PARAM_STR);
