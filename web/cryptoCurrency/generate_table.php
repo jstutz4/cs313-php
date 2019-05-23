@@ -35,7 +35,7 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 
 		foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 			if($currency_row['user_id'] == $userID ){
-				$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td></tr>";
+				$table = $table ."<td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td></tr>";
 			}
 		}
 	} 
