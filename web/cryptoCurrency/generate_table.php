@@ -26,15 +26,15 @@ catch (PDOException $ex)
 }
 $userID;
 $table = "<table><th>user id</th><th>user name</th><th>currency</th><th>price</th><th>volume</th>";
-
+$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
 foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 	
 	if($user_row['user_name'] == $user_name){
 		$userID = $user_row['user_id'];
-		$table = $table . "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
 
 		foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 			if($currency_row['user_id'] == $userID ){
+				$table = $table . $add_user;
 				$table = $table ."<td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td></tr>";
 			}
 		}
