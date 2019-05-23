@@ -18,7 +18,7 @@ try
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
+
 
 $userID;
 $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
@@ -52,6 +52,7 @@ foreach ($rows as $currency_row){
 
 print($table . '</table>');
 
+}
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
