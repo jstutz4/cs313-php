@@ -7,6 +7,6 @@ function adduser() {
             console.log(this.responseText);
         }
     }
-    httpRequest.open("POST", url, true);
+    httpRequest.open("GET", url, true);
     httpRequest.send();
 }
