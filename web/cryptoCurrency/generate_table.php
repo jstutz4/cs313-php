@@ -29,13 +29,13 @@ $userID;
 $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
 //$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
 $addBTN = '<td><input type="button" value="Invest" name="invest"></td>';
-
+$currency = $_GET['currency'];
 foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 	
 	if($user_row['user_name'] == $user_name){
 		$userID = $user_row['user_id'];
 		foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-			if($currency_row['user_id'] == $userID && $currency_row['name'] == 'liteCoin' ){
+			if($currency_row['user_id'] == $userID && $currency_row['name'] == $currency ){
 				$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
 			}
 		}
