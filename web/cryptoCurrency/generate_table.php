@@ -69,14 +69,14 @@ foreach ($rows as $currency_row){
 		$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
 	}
 }
-*/
+
 if(isset($user_name)){
 	noFilter();
 }
 elseif (isset($currency)) {
 	filter();
 }
-
+*/
 
 
 print($table . '</table>');
