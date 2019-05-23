@@ -39,7 +39,7 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 	}
 }
 
-print($table . '<table>');
+print($table . '<table>'. $user_name);
 /*
 $stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
 $stmt->bindValue(':name', $user_name, PDO::PARAM_STR);
