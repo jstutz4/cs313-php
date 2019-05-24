@@ -51,7 +51,7 @@ session_start();
 	  echo 'Error!: ' . $ex->getMessage();
 	  die();
 	}
-	$table ='<tr>hello</tr>';
+	$table ='<tr>hello</tr>' . $_SESSION['userID'] . 'stop';
 	foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
 		if($user_row['user_id'] == $_SESSION["userID"]){
 			$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
