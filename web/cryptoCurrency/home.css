@@ -1,15 +1,13 @@
-body{
+body {
     width: 85%;
     margin: auto;
+    background-color: floralwhite;
 }
 
 h1 {
     background-color: sandybrown;
     padding: 5px 15px;
-}
-
-html{
-    background-color:floralwhite;
+    margin: 0;
 }
 
 #table, table{
@@ -22,4 +20,11 @@ th {
 
 td{
     text-align: center;
+}
+
+nav{
+    background-color: floralwhite;
+    padding: 10px 0;
+    position:relative;
+    left: -15px;
 }
