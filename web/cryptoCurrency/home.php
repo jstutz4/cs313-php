@@ -19,11 +19,13 @@ session_start();
 <h1>Crypto Currency tracker</h1>
 
 	<div id="login">
-		<form>
-		<h4>Enter Your User ID or Click New User</h4>
-		<input id="uid" type="text" name="user_id" placeholder="user_id">
-		<input type="button" name="add_user" value="Login" onclick="adduser()">
-		</form>
+		<div id="table">
+			<form>
+			<h4>Enter Your User ID or Click New User</h4>
+			<input id="uid" type="text" name="user_id" placeholder="user_id">
+			<input type="button" name="add_user" value="Login" onclick="adduser()">
+			</form>
+		</div>
 	</div>
 </body>
 </html>
