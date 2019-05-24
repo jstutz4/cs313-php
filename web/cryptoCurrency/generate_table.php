@@ -2,11 +2,6 @@
 session_start();
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -49,7 +44,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
+$_SESSION['userID'];
 $userID;
 $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
 //$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
