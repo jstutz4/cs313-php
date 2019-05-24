@@ -45,7 +45,7 @@ foreach ($rows as $currency_row){
 }
 */
 
-if (isset($currency)) {
+if (isset($currency) && $currency != "") {
 	//$table = $table . "heres0";
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		if($user_row['user_name'] == $_SESSION["user_name"]){
