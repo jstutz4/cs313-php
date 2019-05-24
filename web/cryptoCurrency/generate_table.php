@@ -70,7 +70,7 @@ elseif (isset($currency)) {
 
 
 
-print($table . '</table>');
+print($table . '</table><br>' . isset($currency));
 
 
 /*
