@@ -2,8 +2,10 @@
 $user_name = $_GET["user"];
 
 if(!isset($user_name)){
+$table = $_SESSION["userID"] . $_SESSION["user_name"] . "<br>";
 $_SESSION["userID"] = $_SESSION["userID"];
 $_SESSION["user_name"] = $_SESSION["user_name"];
+$table = $_SESSION["userID"] . $_SESSION["user_name"] . "<br>";
 }
 
 
