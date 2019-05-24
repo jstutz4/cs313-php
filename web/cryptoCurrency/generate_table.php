@@ -77,9 +77,9 @@ elseif(isset($_SESSION["user_name"])){
 }
 
 
-
-print($table . '</table><br>1' . $currency . isset($currency). isset($_SESSION["user_name"]));
-
+if($currency != ""){
+	print($table . '</table>');
+}
 
 /*
 $stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
