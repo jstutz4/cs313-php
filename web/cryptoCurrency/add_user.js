@@ -28,3 +28,7 @@ function searchName() {
     httpRequest.open("GET", url, true);
     httpRequest.send();
 }
+
+function invest() {
+    window.location.href = "invest.php";
+}
