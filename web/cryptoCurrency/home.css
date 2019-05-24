@@ -16,10 +16,13 @@ h1 {
 }
 th {
     border-bottom: dashed sandybrown 3px;
+    text-align: left;
+    padding: 0 2px;
 }
 
-td{
-    text-align: center;
+td {
+    text-align: left;
+    padding: 0 2px;
 }
 
 nav{
