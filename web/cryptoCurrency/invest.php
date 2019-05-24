@@ -61,7 +61,7 @@ session_start();
 			}
 		} 
 	}
-
+	print($table)
 ?>
 	</table>
 </div>
