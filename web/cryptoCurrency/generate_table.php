@@ -1,6 +1,14 @@
 <?php
 session_start();
-
+?>
+<nav>
+<form class="form-inline active-cyan-3 active-cyan-4">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  <input id="search" class="form-control form-control-sm ml-3 w-25" type="text" placeholder="Search Currency Name" aria-label="Search">
+  <input type="button" value="search" onclick="searchName()">
+</form>
+</nav>
+<?php
 $user_name = $_GET["user"];
 if(isset($user_name)){
 	$_SESSION["user_name"] = $user_name;
@@ -77,9 +85,7 @@ elseif(isset($_SESSION["user_name"])){
 }
 
 
-if($currency != ""){
 	print($table . '</table>');
-}
 
 /*
 $stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
