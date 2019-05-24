@@ -63,10 +63,10 @@ if (isset($currency) && $currency != "") {
 }
 elseif(isset($_SESSION["user_name"])){
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
-		if($user_row['user_name'] == $user_name){
+		if($user_row['user_name'] == $_SESSION["user_name"]){
 			$userID = $user_row['user_id'];
 			$_SESSION["userID"] = $userID;
-			$_SESSION["user_name"] = $user_name;
+			$_SESSION["user_name"] = $_SESSION["user_name"];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 				if($currency_row['user_id'] == $userID){
 					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
