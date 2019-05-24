@@ -46,11 +46,11 @@ foreach ($rows as $currency_row){
 */
 
 if (isset($currency)) {
-	$table = $table . "heres0";
+	//$table = $table . "heres0";
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		if($user_row['user_name'] == $_SESSION["user_name"]){
 			//$userID = $user_row['user_id'];
-			$table = $table . "heres1" . $_SESSION["userID"] . $_SESSION["user_name"];
+			//$table = $table . "heres1" . $_SESSION["userID"] . $_SESSION["user_name"];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 				if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
 					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
@@ -76,7 +76,7 @@ elseif(isset($user_name)){
 
 
 
-print($table . '</table><br>' . $_SESSION["userID"] . $_SESSION["user_name"]);
+print($table . '</table><br>');
 
 
 /*
