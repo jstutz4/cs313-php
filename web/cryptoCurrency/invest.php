@@ -54,11 +54,7 @@ session_start();
 	$table;
 	foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
 		if($user_row['user_id'] == $_SESSION["userID"]){
-			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-				if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
-					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
-				}
-			}
+			$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
 		} 
 	}
 	print($table)
