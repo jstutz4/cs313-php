@@ -3,7 +3,7 @@ $user_name = $_GET["user"];
 
 if(!isset($user_name)){
 $_SESSION["userID"] = $_SESSION["userID"];
-$_SESSION["user_name"] = $_SESSION["user_name"]
+$_SESSION["user_name"] = $_SESSION["user_name"];
 }
 
 
