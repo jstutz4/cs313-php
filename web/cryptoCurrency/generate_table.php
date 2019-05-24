@@ -2,7 +2,9 @@
 session_start();
 
 $user_name = $_GET["user"];
-
+if(isset($user_name){
+	$_SESSION["user_name"] = $user_name;
+}
 
 try
 {
@@ -59,7 +61,7 @@ if (isset($currency) && $currency != "") {
 		} 
 	}
 }
-elseif(isset($user_name)){
+elseif(isset($_SESSION["user_name"])){
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		if($user_row['user_name'] == $user_name){
 			$userID = $user_row['user_id'];
