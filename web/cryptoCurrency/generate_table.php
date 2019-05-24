@@ -52,9 +52,9 @@ if (isset($currency)) {
 			//$userID = $user_row['user_id'];
 			$table = $table . "heres1" . $_SESSION["userID"] . $_SESSION["user_name"];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-				#if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
+				if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
 					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
-				#}
+				}
 			}
 		} 
 	}
