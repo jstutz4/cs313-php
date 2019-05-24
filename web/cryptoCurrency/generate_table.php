@@ -78,7 +78,7 @@ elseif(isset($_SESSION["user_name"])){
 
 
 
-print($table . '</table><br>1' . $currency . isset($currency));
+print($table . '</table><br>1' . $currency . isset($currency). isset($_SESSION["user_name"]));
 
 
 /*
