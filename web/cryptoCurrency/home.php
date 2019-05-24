@@ -20,7 +20,7 @@ session_start();
 <nav>
 <form class="form-inline active-cyan-3 active-cyan-4">
   <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search Currency Name" aria-label="Search">
+  <input id="search" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search Currency Name" aria-label="Search">
 </form>
 </nav>
 	<div id="table">
