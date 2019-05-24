@@ -43,24 +43,25 @@ foreach ($rows as $currency_row){
 	}
 }
 */
-if(isset($user_name)){
+
+if (isset($currency)) {
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		if($user_row['user_name'] == $user_name){
 			$userID = $user_row['user_id'];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-				if($currency_row['user_id'] == $userID){
+				if($currency_row['user_id'] == $userID && $currency_row['name'] == $currency){
 					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
 				}
 			}
 		} 
 	}
 }
-elseif (isset($currency)) {
+elseif(isset($user_name)){
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		if($user_row['user_name'] == $user_name){
 			$userID = $user_row['user_id'];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
-				if($currency_row['user_id'] == $userID && $currency_row['name'] == $currency){
+				if($currency_row['user_id'] == $userID){
 					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
 				}
 			}
