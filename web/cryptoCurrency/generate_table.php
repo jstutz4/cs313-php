@@ -3,11 +3,6 @@ session_start();
 
 $user_name = $_GET["user"];
 
-$table = $_SESSION["userID"] . $_SESSION["user_name"] . "<br>";
-$_SESSION["userID"] = $_SESSION["userID"];
-$_SESSION["user_name"] = $_SESSION["user_name"];
-$table = $_SESSION["userID"] . $_SESSION["user_name"] . "<br>";
-
 
 try
 {
@@ -55,7 +50,7 @@ if (isset($currency)) {
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		if($user_row['user_name'] == $_SESSION["user_name"]){
 			//$userID = $user_row['user_id'];
-			$table = $table . "heres1";
+			$table = $table . "heres1" . $_SESSION["userID"] . $_SESSION["user_name"];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 				#if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
 					$table = $table ."<tr><td>". $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>".$addBTN."</tr>";
