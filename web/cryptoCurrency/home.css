@@ -37,3 +37,11 @@ nav{
     background-color: floralwhite;
     margin: 5px 14px;
 }
+
+nav-link{
+    font-size: small;
+}
+
+navbar {
+    background-color: floralwhite;
+}
