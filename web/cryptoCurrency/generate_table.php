@@ -2,12 +2,11 @@
 session_start();
 ?>
 <nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
+ <!-- <form class="form-inline"> !-->
 	<input type="button" class="nav-link" onclick="<?php print("showCurrency(" . $_SESSION['userID'] . ")" ) ?>" value="View Currency">
 	<input type="button" class="nav-link" onclick="<?php print("invest()") ?>" value="View Investments">
     <input class="form-control mr-sm-2" id="search" type="search" placeholder="Currency (ie bitcoin)" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchName()">Search Currency</button>
-  </form>
 </nav>
 <?php
 $user_name = $_GET["user"];
