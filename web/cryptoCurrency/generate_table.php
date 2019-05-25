@@ -10,7 +10,7 @@ session_start();
 </nav>
 <?php
 $user_name = $_GET["user"];
-$_SESSION['user_name'];
+
 if(isset($user_name)){
 	$_SESSION["user_name"] = $user_name;
 }
@@ -36,6 +36,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+$_SESSION['user_name'];
 $_SESSION['userID'];
 $userID;
 $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
