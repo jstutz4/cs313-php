@@ -35,7 +35,7 @@ function invest() {
 
 function showCurrency(refresh) {
         console.log(refresh);
-        var url = "generate_table.php?user=" + refresh;
+        var url = "generate_table.php?userid=" + refresh;
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
