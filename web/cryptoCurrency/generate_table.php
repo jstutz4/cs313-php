@@ -73,7 +73,7 @@ if (isset($currency) && $currency != "") {
 }
 elseif(isset($_SESSION["user_name"]) || isset($_SESSION['userID'])){
 	foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
-		if($user_row['user_name'] == $_SESSION["user_name"] || $user_row['user_id'] == $_SESSION['user_name']){
+		if($user_row['user_name'] == $_SESSION["user_name"] || $user_row['user_id'] == $_SESSION['userID']){
 			$userID = $user_row['user_id'];
 			$_SESSION["userID"] = $userID;
 			$_SESSION["user_name"] = $_SESSION["user_name"];
