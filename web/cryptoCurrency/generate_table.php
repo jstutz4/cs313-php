@@ -44,7 +44,7 @@ $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
 $addBTN = '<td><input type="button" value="Invest" name="invest" onclick="invest()"></td>';
 $currency = $_GET['currency'];
 
-print('session ' . $_SESSION['userID'] . $_SESSION['user_name']);
+print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency);
 
 /*
 
