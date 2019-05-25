@@ -12,7 +12,7 @@ function adduser(refresh) {
         httpRequest.send();
     }
     else {
-        console.log("refresh");
+        console.log(refresh);
         var url = "generate_table.php?user=" + refresh;
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
