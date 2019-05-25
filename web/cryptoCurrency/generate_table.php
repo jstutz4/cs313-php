@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<nav class="navbar navbar-light bg-light">
+<nav>
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
 	<input type="button" class="nav-linkjs" onclick="<?php print("showCurrency(" . $_SESSION['userID'] . ")" ) ?>" value="View Currency">
