@@ -3,7 +3,7 @@ session_start();
 ?>
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
-	<a class="nav-link" href="home.php?user="JonSTuTZ">Search currency</a>
+	<a class="nav-link" href="adduser()">Search currency</a>
     <input class="form-control mr-sm-2" id="search" type="search" placeholder="bitcoin" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search Currency Name</button>
   </form>
