@@ -36,11 +36,23 @@ nav{
 }
 
 nav-link{
-    font-size: small;
-    padding: .1rem .2rem;
-    margin: .1rem;
+    font-size: small !important;
+    padding: .1rem .2rem !important;
+    margin: .1rem !important;
 }
 
 #search{
     width: 10.5rem;
+}
+
+.form-control {
+    height: calc(1em + .75rem + 2px) !important;
+    position: relative;
+    left: 2rem;
+}
+
+.btn {
+    line-height: 1 !important;
+    position: relative;
+    left: 1.8rem;
 }
