@@ -27,21 +27,20 @@ td {
 }
 
 nav{
-    background-color: floralwhite;
-    padding: 10px 0;
-    position:relative;
-    left: -15px;
+    width: 100%;
 }
 
 .bg-light {
-    background-color: floralwhite;
-    margin: 5px 14px;
+    background-color: floralwhite !important;
+    margin: 5px -2px;
 }
 
 nav-link{
     font-size: small;
+    padding: .1rem .2rem;
+    margin: .1rem;
 }
 
-navbar {
-    background-color: floralwhite;
+#search{
+    width: 10.5rem;
 }
