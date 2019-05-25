@@ -10,6 +10,7 @@ session_start();
 </nav>
 <?php
 $user_name = $_GET["user"];
+$_SESSION['user_name'];
 if(isset($user_name)){
 	$_SESSION["user_name"] = $user_name;
 }
