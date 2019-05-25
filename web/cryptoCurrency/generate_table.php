@@ -3,9 +3,9 @@ session_start();
 ?>
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
-	<a class="form-control mr-sm-2" href="home.php">Search currency</a>
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	<a class="nav-link" href="home.php?user="<?php print($_SESSION['user_name']); ?>">Search currency</a>
+    <input class="form-control mr-sm-2" id="search" type="search" placeholder="bitcoin" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search Currency Name</button>
   </form>
 </nav>
 <?php
@@ -41,6 +41,8 @@ $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
 //$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
 $addBTN = '<td><input type="button" value="Invest" name="invest" onclick="invest()"></td>';
 $currency = $_GET['currency'];
+
+print('session ' . $_SESSION['userID'] . $_SESSION['user_name']);
 
 /*
 
