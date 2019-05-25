@@ -30,6 +30,13 @@ nav{
     width: 100%;
 }
 
+#menujs {
+    text-align: left;
+}
+#searchjs{
+    text-align: right;
+}
+
 .bg-light {
     background-color: floralwhite !important;
     margin: 5px -2px;
@@ -44,14 +51,3 @@ nav-link{
     width: 10.5rem;
 }
 
-.form-control {
-    height: calc(1em + .75rem + 2px) !important;
-    position: relative;
-    left: 2rem;
-}
-
-.btn, .btn-outline-success my-2 my-sm-0 {
-    line-height: 1 !important;
-    position: relative;
-    left: 1.8rem;
-}
