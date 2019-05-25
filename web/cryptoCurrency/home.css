@@ -36,8 +36,7 @@ nav{
 }
 
 nav-link{
-    font-size: small !important;
-    padding: .1rem .2rem !important;
+    padding: .1rem .2rem;
     margin: .1rem !important;
 }
 
@@ -51,7 +50,7 @@ nav-link{
     left: 2rem;
 }
 
-.btn {
+.btn, .btn-outline-success my-2 my-sm-0 {
     line-height: 1 !important;
     position: relative;
     left: 1.8rem;
