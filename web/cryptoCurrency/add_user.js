@@ -32,8 +32,10 @@ function searchName() {
 function invest() {
     window.location.href = "invest.php";
 }
-function home() {
+function home(userid) {
+    console.log(userid);
     window.location.href = "home.php";
+    showCurrency(userid);
 }
 
 function showCurrency(refresh) {
