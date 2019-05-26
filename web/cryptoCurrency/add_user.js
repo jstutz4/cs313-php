@@ -34,8 +34,9 @@ function invest() {
 }
 function home(userid) {
     console.log(userid);
-    window.location.href = "home.php";
     showCurrency(userid);
+    window.location.href = "home.php";
+   
 }
 
 function showCurrency(refresh) {
