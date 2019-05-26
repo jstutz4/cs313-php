@@ -32,6 +32,9 @@ function searchName() {
 function invest() {
     window.location.href = "invest.php";
 }
+function home() {
+    window.location.href = "home.php";
+}
 
 function showCurrency(refresh) {
         console.log(refresh);

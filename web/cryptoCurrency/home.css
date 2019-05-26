@@ -29,11 +29,13 @@ td {
 nav{
     display: flex;
     margin-top: 5px;
+    justify-content: right;
 }
 
 #menujs {
     text-align: left;
     margin-left: 5%;
+    margin-right:auto;
 }
 #searchjs{
     text-align: right;
