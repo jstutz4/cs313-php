@@ -1,38 +1,45 @@
 CREATE TABLE "users" (
-  "user_id" int,
+  "user_id" SERIAL,
   "user_name" text,
   "password" text,
   PRIMARY KEY ("user_id")
 );
 
 CREATE TABLE "currency" (
-  "currency_id" varchar(5),
+  "id" SERIAL,
   "user_id" int NOT NULL REFERENCES public.users(user_id),
+  "currency_id" varchar(5),
   "name" text,
   "price" float,
   "volume" decimal,
-  PRIMARY KEY ("currency_id")
+  PRIMARY KEY ("id")
 );
 CREATE TABLE "amount_invested" (
-  "amount_invested_id" int,
-  "ticker" varchar(5) NOT NULL REFERENCES public.currency(currency_id), 
+  "ID" SERIAL,
+  "user_id" int NOT NULL REFERENCES public.users(user_id),
+  "name" text NOT NULL,
+  "price" float,
   "amount" float,
   "amount_changed" float,
   "precent_changed" float,
-  PRIMARY KEY ("amount_invested_id")
+  PRIMARY KEY ("ID")
 );
-
-INSERT INTO "users" (user_id, user_name, password)
-VALUES
-(123, 'JonSTuTZ', 'jlshellowlittleguy389');
 
 INSERT INTO "currency" (currency_id, user_id, name, price, volume)
 VALUES
 ('btc', 123, 'bitcoin', 5000.83, 2340000000);
 
-INSERT INTO "amount_invested" (amount_invested_id, ticker, amount)
+INSERT INTO "currency" (currency_id, user_id, name, price, volume)
 VALUES
-(001, 'btc', 1000);
+('ltc', 123, 'liteCoin', 83.45, 25630);
+
+INSERT INTO "currency" (currency_id, user_id, name, price, volume)
+VALUES
+('bch', 123, 'bitcoin cash', 368.34, 604230);
+
+INSERT INTO "amount_invested" (user_id, name, amount)
+VALUES
+(123, 'bitcoin', 1000);
 
 
 
