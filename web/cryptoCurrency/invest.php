@@ -24,8 +24,6 @@ session_start();
 	<input type="button" class="nav-linkjs" onclick="<?php print("invest()") ?>" value="View Investments">
     </div>
 	<div id="searchjs">
-	<input class="form-control mr-sm-2" id="search" type="search" placeholder="Currency (ie bitcoin)" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchName()">Search Currency</button>
 	</div>
 </nav>
 <div id="table">
