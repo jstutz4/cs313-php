@@ -14,6 +14,7 @@ print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'e
 	<link rel="stylesheet" href="onlineCatolog.css">
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css"/>
+    <script src="login.js"></script>
 
 	<?php
 		if(isset($_SESSION['userID'])){
@@ -24,7 +25,6 @@ print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'e
 		}
 	?>
 
-    <!--<script src="login.js"></script> !-->
 </head>
 <body>
 <h1>Crypto Currency tracker</h1>
