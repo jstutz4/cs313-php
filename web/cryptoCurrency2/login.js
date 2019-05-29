@@ -12,6 +12,7 @@ function autoLogin(refresh) {
     httpRequest.send();
 }
 
+/*
 function login() {
     console.log("normal login");
     if (document.getElementById("uid").value != "") {
@@ -27,4 +28,5 @@ function login() {
         httpRequest.send();
     }
 }
+*/
 
