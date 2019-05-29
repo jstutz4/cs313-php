@@ -20,13 +20,13 @@ session_start();
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
 		<form action="home.php" method="GET">
-			<input type="button" class="nav-linkjs" onclick="home()" value="View Currency">
 			<input type="button" class="nav-linkjs" onclick="invest()" value="View Investments">
-			</div>
-			<div id="searchjs">
-			<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
-			<input type="submit" value="Filter Currency">
-			<input type="button" value="logout" onclick="logout()">
+			<input type="button" class="nav-linkjs" onclick="home()" value="View Currency">
+	</div>
+	<div id="searchjs">
+		<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+		<input type="submit" value="Filter Currency">
+		<input type="button" value="logout" onclick="logout()">
 		<form>
 	</div>
 </nav>
