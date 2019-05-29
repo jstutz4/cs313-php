@@ -14,20 +14,21 @@ session_start();
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css"/>
     <script src="dataBase.js"></script>
-
+<body>
+<h1>Crypto Currency tracker</h1>
 <nav>
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
-	<input type="button" class="nav-linkjs" onclick="<?php print("showCurrency(" . $_SESSION['userID'] . ")" ) ?>" value="View Currency">
-	<input type="button" class="nav-linkjs" onclick="<?php print("invest()") ?>" value="View Investments">
-    </div>
-	<div id="searchjs">
-	<input class="form-control mr-sm-2" id="search" type="search" placeholder="Currency (ie bitcoin)" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchName()">Filter Currency</button>
+		<form action="home.php" method="GET">
+			<input type="button" class="nav-linkjs" onclick="<?php print("showCurrency(" . $_SESSION['userID'] . ")" ) ?>" value="View Currency">
+			<input type="button" class="nav-linkjs" onclick="<?php print("invest()") ?>" value="View Investments">
+			</div>
+			<div id="searchjs">
+			<input type="search" class="form-control mr-sm-2" id="search"  placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+			<input type="submit">Filter Currency</button>
+		<form>
 	</div>
 </nav>
-<body>
-<h1>Crypto Currency tracker</h1>
 
 <div id="table">
 <?php
