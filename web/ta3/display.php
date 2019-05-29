@@ -35,7 +35,17 @@ if (isset($_POST['3'])){
 
 include 'connectHeroku.php';
 
-$query = 'INSERT INTO Scriptures (book, chapter, verse, content) VALUES('.$book .','. $chapter . ',' .$verse . "," . $content.')';
+$query = 'INSERT INTO Scriptures (book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)';
+$result = $db->prepare($query);
+$result->bindValue(':book', $book);
+$result->bindValue(':chapter', $chapter);
+$result->bindValue(':verse', $verse);
+$result->bindValue(':content', $content);
+
+$result->execute();
+
+
+
 
 $result = pg_quary($db, $query);
 print("here we are " . $result);
