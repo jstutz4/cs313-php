@@ -31,7 +31,7 @@ function searchName() {
 
 function invest() {
     console.log("invest is good");
-    window.location.href = "invest.php";
+    //window.location.href = "invest.php";
 }
 function home(userid) {
     console.log(userid + "invest page");
