@@ -1,0 +1,55 @@
+body {
+    width: 85%;
+    margin: auto;
+    background-color: floralwhite;
+}
+
+h1 {
+    background-color: sandybrown;
+    padding: 5px 15px;
+    margin: 0;
+}
+
+table, #login{
+    border: solid 2px sandybrown;
+    width: 100%;
+    margin: 15px 0;
+}
+th {
+    border-bottom: dashed sandybrown 3px;
+    text-align: left;
+    padding: 0 5px;
+}
+
+td {
+    text-align: left;
+    padding: 0 5px;
+}
+
+nav{
+    display: flex;
+    justify-content: right;
+}
+
+#menujs {
+    text-align: left;
+    margin-right:auto;
+}
+#searchjs{
+    text-align: right;
+}
+
+.bg-light {
+    background-color: floralwhite !important;
+    margin: 5px -2px;
+}
+
+nav-link{
+    padding: .1rem .2rem;
+    margin: .1rem !important;
+}
+
+#search{
+    width: 10.5rem;
+}
+
