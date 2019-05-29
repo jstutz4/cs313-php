@@ -44,10 +44,6 @@ $result->bindValue(':content', $content);
 
 $result->execute();
 
-
-
-
-$result = pg_quary($db, $query);
 print("here we are " . $result);
 ?>
 
