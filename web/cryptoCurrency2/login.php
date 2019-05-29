@@ -18,7 +18,7 @@ print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'e
 
 	<?php
 		if(isset($_SESSION['userID'])){
-			print('<script type="text/javascript">' . 'autoLogin(' . $_SESSION['userID'] .');' . '</script>');
+			print('<script type="text/javascript">' . 'autoLogin();' . '</script>');
 		}
 	?>
 

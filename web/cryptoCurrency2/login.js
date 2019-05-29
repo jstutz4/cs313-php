@@ -1,3 +1,9 @@
+function autoLogin() {
+    window.location.href = "home.php";
+}
+
+
+/*
 function autoLogin(refresh) {
     console.log(refresh);
     var url = "home.php?userid=" + refresh;
@@ -12,7 +18,6 @@ function autoLogin(refresh) {
     httpRequest.send();
 }
 
-/*
 function login() {
     console.log("normal login");
     if (document.getElementById("uid").value != "") {
