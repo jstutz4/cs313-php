@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,27 +28,8 @@ session_start();
 		<th>Price</td>
 		<th>Amount Invested</td>
 <?php
-	try
-	{
-	  $dbUrl = getenv('DATABASE_URL');
+	include 'connectHeroku';
 
-	  $dbOpts = parse_url($dbUrl);
-
-	  $dbHost = $dbOpts["host"];
-	  $dbPort = $dbOpts["port"];
-	  $dbUser = $dbOpts["user"];
-	  $dbPassword = $dbOpts["pass"];
-	  $dbName = ltrim($dbOpts["path"],'/');
-
-	  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-	  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}
-	catch (PDOException $ex)
-	{
-	  echo 'Error!: ' . $ex->getMessage();
-	  die();
-	}
 	$table ='<tr>hello</tr>' . $_SESSION['userID'] . 'stop';
 	foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
 		if($user_row['user_id'] == $_SESSION["userID"]){
