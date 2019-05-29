@@ -10,7 +10,7 @@ $_SESSION['userID'];
 $userID;
 $table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th>";
 //$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
-$addBTN = '<td><input type="button" value="Invest" name="invest" onclick="invest()"></td>';
+$addBTN = '<td><input type="button" value="Invest" name="invest" onclick="investing()"></td>';
 $currency = $_GET['currency'];
 
 print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency);
