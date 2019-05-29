@@ -1,6 +1,6 @@
 <?php
 	session_unset();
-	session_destory();
+	session_destroy();
 ?>
 
 <?php
