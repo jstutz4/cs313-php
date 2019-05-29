@@ -20,9 +20,6 @@ print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'e
 		if(isset($_SESSION['userID'])){
 			print('<script type="text/javascript">' . 'autoLogin(' . $_SESSION['userID'] .');' . '</script>');
 		}
-		else{
-			print('<script type="text/javascript">' . 'login();' . '</script>');
-		}
 	?>
 
 </head>
