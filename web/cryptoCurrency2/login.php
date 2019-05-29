@@ -1,9 +1,6 @@
 <?php
 session_start();
 print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'end');
-if(isset($_SESSION['userID'])){
-	print('<script type="text/javascript">' . 'autoLogin(' . $_SESSION['userID'] .');' . '</script>');
-}
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +14,17 @@ if(isset($_SESSION['userID'])){
 	<link rel="stylesheet" href="onlineCatolog.css">
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css"/>
-    <script src="login.js"></script> 
+
+	<?php
+		if(isset($_SESSION['userID'])){
+			print('<script type="text/javascript">' . 'autoLogin(' . $_SESSION['userID'] .');' . '</script>');
+		}
+		else{
+			print('<script type="text/javascript">' . 'login();' . '</script>');
+		}
+	?>
+
+    <!--<script src="login.js"></script> !-->
 </head>
 <body>
 <h1>Crypto Currency tracker</h1>

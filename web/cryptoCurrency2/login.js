@@ -13,6 +13,7 @@ function autoLogin(refresh) {
 }
 
 function login() {
+    console.log("normal login");
     if (document.getElementById("uid").value != "") {
         var url = "generate_table.php?user=" + document.getElementById("uid").value;
         var httpRequest = new XMLHttpRequest();
