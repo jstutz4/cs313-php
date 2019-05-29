@@ -35,8 +35,5 @@ print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'e
 	<input type="button" name="add_user" value="New User" onclick="adduser()">
 	</form>
 </div>
-<?php
-	
-?>
 </body>
 </html>
