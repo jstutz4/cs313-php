@@ -20,7 +20,7 @@
 <nav>
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
-		<form action="home.php" method="GET">
+		<form action="invest.php" method="GET">
 			<input type="button" class="nav-linkjs" onclick="home()" value="View Currency">
 			<input type="button" class="nav-linkjs" onclick="investing()" value="View Investments">
 
@@ -42,12 +42,26 @@
 <?php
 	include 'connectHeroku.php';
 
+	$name = $_GET['currency'];
+
 	$table ='<tr>hello</tr>' . $_SESSION['userID'] . 'stop';
-	foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
-		if($user_row['user_id'] == $_SESSION["userID"]){
-			$table = $table . "we made it<br>";
-			$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount']."</td></tr>";
-		} 
+	if(isset($name)){
+		foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
+			if($user_row['user_id'] == $_SESSION["userID"]){
+				$table = $table . "we made it<br>";
+				if($user_row['name'] == $name){
+					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount']."</td></tr>";
+				}
+			} 
+		}
+	}
+	elseif(!isset($name)){
+		foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
+			if($user_row['user_id'] == $_SESSION["userID"]){
+				$table = $table . "we made it<br>";
+				$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount']."</td></tr>";
+			} 
+		}
 	}
 	print($table)
 ?>
