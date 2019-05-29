@@ -21,7 +21,7 @@ session_start();
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
 	<input type="button" class="nav-linkjs" onclick="<?php print("home(" . $_SESSION['userID'] . ")" ) ?>" value="View Currency">
-	<input type="button" class="nav-linkjs" onclick="<?php print("invest()") ?>" value="View Investments">
+	<input type="button" class="nav-linkjs" onclick="invest()" value="View Investments">
     </div>
 	<div id="searchjs">
 	</div>

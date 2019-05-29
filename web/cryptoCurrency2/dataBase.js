@@ -5,7 +5,7 @@ function invest() {
 function home() {
     window.location.href = "home.php";
 }
-function home() {
+function logout() {
     window.location.href = "logout.php";
 }
 
