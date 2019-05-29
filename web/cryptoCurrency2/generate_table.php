@@ -1,5 +1,5 @@
 <?php
-$user_name = $_GET["user"];
+$user_name = $_GET["user_id"];
 
 if(isset($user_name)){
 	$_SESSION["user_name"] = $user_name;
