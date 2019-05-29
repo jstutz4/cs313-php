@@ -1,5 +1,9 @@
 <?php
 session_start();
+print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'end');
+if(isset($_SESSION['userID'])){
+	print('<script type="text/javascript">', 'autoLogin(' $_SESSION['userID'].');', '</script>');
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +17,7 @@ session_start();
 	<link rel="stylesheet" href="onlineCatolog.css">
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css"/>
-    <script src="add_user.js"></script> 
+    <script src="login.js"></script> 
 </head>
 <body>
 <h1>Crypto Currency tracker</h1>
@@ -22,13 +26,13 @@ session_start();
 	<form id="login">
 	<h4>Enter Your User ID or Click New User</h4>
 	<input id="uid" type="text" name="user_id" placeholder="user_id">
-	<input type="button" name="add_user" value="Login" onclick="adduser()">
+	<input type="button" name="add_user" value="Login" onclick="login()">
 	<br>
 	<input type="button" name="add_user" value="New User" onclick="adduser()">
 	</form>
 </div>
 <?php
-	print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'end');
+	
 ?>
 </body>
 </html>
