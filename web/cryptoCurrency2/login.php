@@ -29,8 +29,8 @@ print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'e
 <div id="table">
 	<form id="login" action="home.php" method="GET">
 	<h4>Enter Your User ID or Click New User</h4>
-	<input id="uid" type="text" name="user_id" placeholder="user_id">
-	<input type="submit" name="add_user" value="Login" required>
+	<input id="uid" type="text" name="user_id" placeholder="user_id" required>
+	<input type="submit" name="add_user" value="Login">
 	<br>
 	<input type="button" name="add_user" value="New User" onclick="adduser()">
 	</form>
