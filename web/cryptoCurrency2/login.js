@@ -1,6 +1,6 @@
 function autoLogin(refresh) {
     console.log(refresh);
-    var url = "generate_table.php?userid=" + refresh;
+    var url = "home.php?userid=" + refresh;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -15,7 +15,7 @@ function autoLogin(refresh) {
 function login() {
     console.log("normal login");
     if (document.getElementById("uid").value != "") {
-        var url = "generate_table.php?user=" + document.getElementById("uid").value;
+        var url = "home.php?user=" + document.getElementById("uid").value;
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
