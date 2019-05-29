@@ -1,6 +1,5 @@
 <?php
 session_start();
-print('session ' . $_SESSION['userID'] . $_SESSION['user_name'] . $currency . 'end');
 ?>
 
 <!DOCTYPE html>
