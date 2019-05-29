@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="onlineCatolog.css">
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css" />
-    <script src="add_user.js"></script> 
+    <script src="dataBase.js"></script> 
 </head>
 <body>
 <h1>Crypto Currency tracker</h1>

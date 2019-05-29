@@ -1,4 +1,4 @@
-function invest() {
+function investing() {
     console.log("invest is good");
     window.location.href = "invest.php";
 }
