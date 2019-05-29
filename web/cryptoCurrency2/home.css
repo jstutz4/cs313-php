@@ -29,6 +29,7 @@ td {
 nav{
     display: flex;
     justify-content: right;
+    margin-top: 7px;
 }
 
 #menujs {
