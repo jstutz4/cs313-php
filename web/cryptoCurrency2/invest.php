@@ -32,7 +32,7 @@
 		<th>Price</td>
 		<th>Amount Invested</td>
 <?php
-	include 'connectHeroku';
+	include 'connectHeroku.php';
 
 	$table ='<tr>hello</tr>' . $_SESSION['userID'] . 'stop';
 	foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
