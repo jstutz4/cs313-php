@@ -5,6 +5,7 @@ $title = htmlspecialchars($_GET['title']);
 if(!isset($title)){
 	$title = 'Enter In Your User Name or Click New User';
 }
+print("title: " . $title);
 ?>
 
 <!DOCTYPE html>
