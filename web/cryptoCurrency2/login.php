@@ -3,12 +3,16 @@ session_start();
 
 $title = htmlspecialchars($_GET['title']);
 $showUser = true;
+$sorry = substr($title, 0, 4);
 
-if(!isset($title) || $title == ""){
+if(!isset($title) || $title == "" ){
 	$title = 'Enter In Your User Name or Click New User';
-}
 else{
 	$showUser = false;
+	if($sorry == 'sorry'){
+			$showUser = true;
+		}
+	}
 }
 ?>
 

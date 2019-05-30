@@ -17,6 +17,7 @@ $stmt->execute();
 header("Location: login.php?title=Now Login With You New User Name");
 }
 else{
+
 header("Location: login.php?title=sorry that user name is already taken");
 }
 ?>
