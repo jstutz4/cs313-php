@@ -44,7 +44,6 @@
 
 	$name = $_GET['currency'];
 
-	$table ='<tr>hello</tr>' . $_SESSION['userID'] . 'stop';
 	if(isset($name)){
 		foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
 			if($user_row['user_id'] == $_SESSION["userID"]){
