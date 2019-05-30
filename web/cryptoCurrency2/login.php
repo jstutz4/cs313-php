@@ -1,9 +1,5 @@
 <?php
 session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-	print("received data and will execute");
-}
 ?>
 
 <!DOCTYPE html>
