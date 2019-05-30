@@ -5,7 +5,7 @@ $title = htmlspecialchars($_GET['title']);
 $showUser = true;
 
 if(!isset($title) || $title == ""){
-	$title = 'Enter In Your User Name or Click New User';
+	$title = '<h4>Enter In Your User Name or Click New User</h4>';
 }
 else{
 	$showUser = false;
