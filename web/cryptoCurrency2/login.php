@@ -5,12 +5,11 @@ $title = htmlspecialchars($_GET['title']);
 $showUser = true;
 
 if(!isset($title) || $title == ""){
-	$title = '<h4>Enter In Your User Name or Click New User</h4>';
+	$title = 'Enter In Your User Name or Click New User';
 }
 else{
 	$showUser = false;
 }
-print("title: " . $title);
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +37,7 @@ print("title: " . $title);
 
 <div id="table">
 	<form class="login" action="home.php" method="GET">
-	<?php print($title)?>
-	<br>
+	<h4 onload="error(this)"><?php print($title)?></h4>
 	<input id="uid" type="text" name="user_id" placeholder="user_id" required>
 	<input type="submit" name="add_user" value="Login">
 	<br>
