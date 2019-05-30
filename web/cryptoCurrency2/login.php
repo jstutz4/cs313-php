@@ -2,8 +2,11 @@
 session_start();
 
 $title = htmlspecialchars($_GET['title']);
+$showUser = true;
+
 if(!isset($title) || $title == ""){
 	$title = 'Enter In Your User Name or Click New User';
+	$showUser = false;
 }
 print("title: " . $title);
 ?>
@@ -37,7 +40,10 @@ print("title: " . $title);
 	<input id="uid" type="text" name="user_id" placeholder="user_id" required>
 	<input type="submit" name="add_user" value="Login">
 	<br>
-	<input type="button" name="add_user" value="New User" onclick="adduser()">
+	<?php
+	if($showUser){
+		print('<input type="button" name="add_user" value="New User" onclick="adduser()">');
+	}
 	</form>
 </div>
 </body>
