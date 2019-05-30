@@ -44,6 +44,7 @@ print("title: " . $title);
 	if($showUser){
 		print('<input type="button" name="add_user" value="New User" onclick="adduser()">');
 	}
+	?>
 	</form>
 </div>
 </body>
