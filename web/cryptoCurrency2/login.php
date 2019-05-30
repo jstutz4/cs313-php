@@ -8,7 +8,7 @@ if(!isset($title) || $title == ""){
 	$title = 'Enter In Your User Name or Click New User';
 	$showUser = false;
 }
-print("title: " . $title);
+print($showUser."title: " . $title);
 ?>
 
 <!DOCTYPE html>
