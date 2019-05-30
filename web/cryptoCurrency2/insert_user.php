@@ -18,7 +18,7 @@ $stmt->execute();
 print("done with execute");
 ?>
 <php
-$title ='Now Login With You New User Name';
-header('Location: login.php?title=$title');
+$title = "Now Login With You New User Name";
+header("Location: login.php?title=$title");
 die();
 ?>
