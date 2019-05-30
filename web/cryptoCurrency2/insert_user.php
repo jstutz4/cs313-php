@@ -14,13 +14,9 @@ $stmt = $db->prepare('INSERT INTO users(user_name) VALUES(:user_name)');
 $stmt->bindValue(':user_name', $userName);
 $stmt->execute();
 
-
-print("all good");
-
-#header("Location: login.php?title=Now Login With You New User Name");
+header("Location: login.php?title=<h4>Now Login With You New User Name</h4>");
 }
 else{
-print("not right");
-#header("Location: login.php?title=sorry that user name is already taken");
+header("Location: login.php?title=<h1>sorry that user name is already taken</h1>");
 }
 ?>

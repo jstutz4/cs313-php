@@ -38,7 +38,7 @@ print("title: " . $title);
 
 <div id="table">
 	<form class="login" action="home.php" method="GET">
-	<h4><?php print($title) ?></h4>
+	<?php print($title) ?>
 	<input id="uid" type="text" name="user_id" placeholder="user_id" required>
 	<input type="submit" name="add_user" value="Login">
 	<br>
