@@ -1,6 +1,8 @@
 <?PHP
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	print("received data and will execute");
+	$userName = $_POST['user_id'];
+	print($userName);
 	header("Location: login.php"); 
 }
 
