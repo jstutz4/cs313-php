@@ -9,13 +9,13 @@ if(isset($title)){
 
 if(!isset($title) || $title == "" ){
 	$title = 'Enter In Your User Name or Click New User';
+}
 else{
 	$showUser = false;
 	if($sorry == 'sorry'){
 			$showUser = true;
 		}
 	}
-}
 ?>
 
 <!DOCTYPE html>
