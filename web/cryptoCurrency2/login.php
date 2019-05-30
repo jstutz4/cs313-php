@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+$title = htmlspecialchars($_GET['title']);
+if(!isset($title)){
+	$title = 'Enter In Your User Name or Click New User';
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +32,7 @@ session_start();
 
 <div id="table">
 	<form class="login" action="home.php" method="GET">
-	<h4>Enter Your User ID or Click New User</h4>
+	<h4><?php print($title) ?></h4>
 	<input id="uid" type="text" name="user_id" placeholder="user_id" required>
 	<input type="submit" name="add_user" value="Login">
 	<br>
