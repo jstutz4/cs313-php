@@ -10,7 +10,7 @@ $stmt = $db->prepare('INSERT INTO users(user_name) VALUES(:user_name);');
 print("done with prepare");
 ?>
 <?php
-$stmt->bindValue(':user_name', $userName, PDO::PARAM_TEXT);
+$stmt->bindValue(':user_name', $userName);
 print("done with bindValue");
 ?>
 <?php
@@ -18,7 +18,7 @@ $stmt-> execute();
 print("done with execute");
 ?>
 <php
-$title = 'Now Login With You New User Name';
+$title ='Now Login With You New User Name';
 header('Location: login.php?title=$title');
 die();
 ?>
