@@ -14,7 +14,7 @@ $stmt->bindValue(':user_name', $userName);
 print("done with bindValue");
 ?>
 <?php
-$stmt-> execute();
+$stmt->execute();
 print("done with execute");
 ?>
 <php
