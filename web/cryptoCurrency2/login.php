@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 <h1>Crypto Currency tracker</h1>
 
 <div id="table">
-	<form id="login" action="home.php" method="GET">
+	<form class="login" action="home.php" method="GET">
 	<h4>Enter Your User ID or Click New User</h4>
 	<input id="uid" type="text" name="user_id" placeholder="user_id" required>
 	<input type="submit" name="add_user" value="Login">
