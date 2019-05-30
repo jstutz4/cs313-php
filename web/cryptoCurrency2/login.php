@@ -4,7 +4,7 @@ session_start();
 $title = htmlspecialchars($_GET['title']);
 $showUser = true;
 
-$sorry = substr($title, 0, 4);
+$sorry = substr($title, 0, 5);
 
 
 if(!isset($title) || $title == "" ){
