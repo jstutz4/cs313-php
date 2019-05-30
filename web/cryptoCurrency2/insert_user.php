@@ -16,8 +16,5 @@ print("done with bindValue");
 <?php
 $stmt->execute();
 print("done with execute");
-?>
-<php
 header("Location: login.php?title=Now Login With You New User Name");
-die();
 ?>
