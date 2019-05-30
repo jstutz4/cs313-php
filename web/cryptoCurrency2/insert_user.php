@@ -6,7 +6,7 @@ include 'connectHeroku.php';
 print("done with connect");
 ?>
 <?php
-$stmt = $db->prepare('INSERT INTO users(user_name) VALUES(:user_name);');
+$stmt = $db->prepare('INSERT INTO users(user_name) VALUES(:user_name)');
 print("done with prepare");
 ?>
 <?php
