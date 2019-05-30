@@ -1,0 +1,6 @@
+a_first_name,a_middle_name,a_last_name,DOB,age,gender,citizen,street,city,state,zip,parent_first_name,parent_last_name,parent_number,parent_email,parents_first_name,parents_last_name,parents_number,parents_email
+vally,A,dude,01/20/2010,9,M,Y,"vally dude","idaho falls",UT,83492,Mom,sutz,208-200-2222,parent2@gmail.com,,,,
+dad,A,smtih,01/02/2010,,M,Y,"home 1222","idaho falls",UT,83492,Mom,sutz,208-200-2222,parent2@gmail.com,,,,
+what,S,up,07/29/2091,,M,N,"135 main street","ocean ave.",ID,,Mom,sutz,208-200-2222,parent2@gmail.com,dad,stutz,,welcome@gamil.com,"4 grade",Y-large
+joe,a,smith,07/29/2091,8,F,Y,whooooo,here,ID,27345,martha,smtih,201-454-2335,familymail@gamil.com,,,,,"8 grade",Y-sm
+"Marry Ann",a,Stutz,07/29/2055,8,F,N,"123 west ave","idaho falls",ID,83456,super,stutz,201-454-2335,family_stutzmail@gamil.com,,,,,"4 grade",Y-med

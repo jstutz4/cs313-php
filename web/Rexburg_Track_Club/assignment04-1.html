@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 608px)" href="assignment04.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 419px)
+          and (max-width: 607px)" href="assignment04Med.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 418px)" href="assignment04Small.css">
+    <script src="formCheck.js"></script>
+    <script src="formAppear.js"></script>
+    <style>
+        .signUp, #old_athlete{
+            display: none;
+        }
+
+        #changeForms * {
+            width: 90%;
+            font-size: medium;
+        }
+    </style>
+    <title>Rexburg Track Club | SignUp and Register</title>
+</head>
+<body>
+  <header>
+  
+    <nav>
+    <img id="logo" src="logo.png" alt="club logo"> 
+	    <div class="black">
+	      <p>This is black</p>
+      </div>
+      
+      <div class="red">
+          <ul class="navBar">
+              <li><a href="assignment04.html">Home</a></li>
+              <li><a href="assignment04-1.html">Sign Up</a></li>
+              <li><a href="course.html">Current Meet</a></li>
+              <li><a href="programs.html">Programs</a></li>
+          </ul>
+      </div>
+      
+      <div class="black">
+	      <p>This is black</p>
+      </div>
+    </nav>
+    
+  </header>
+  
+  <div class="middle">
+     <h1 class="grayText title">Rexburg Track Club: Sign Up</h1>
+      <img id="clubImg" src="club.png" alt="photo of club members at the starting line">
+  
+      <div id="changeForms">
+          <hr />
+          <form>
+              <input type="button" value="New Athlete" onclick="showBlank()" />
+              <br />
+              <input type="button" value="Past Athlete" onclick="showInfo(this)" />
+          </form>
+          <form id="old_athlete">
+              <fieldset>
+                  <legend> Athlete</legend>
+                  <input type="text" name="a" placeholder="First Name" />
+                  <input type="text" name="b" placeholder="Last Name" />
+                  <input type="text" name="c" placeholder="DOB 01/01/2001" />
+                  <input type="button" value="Get Athlete" onclick="getAthlete()" />
+              </fieldset>
+          </form>
+      </div>
+
+    <div class="signUp">
+     <hr>
+      <!--<p class="grayText">Sign up form HERE</p>!-->
+      <form onsubmit="return checkForm()" onload="checkForm()" method="post" action="saveAthlete.php">
+	      <fieldset id="firstForm">
+        <legend> Athlete</legend>
+        
+          <div id="aName">
+           <label> First Name:</label>
+            <input type="text" id="a_f_name" name="fName" placeholder="Sally" maxlength="12" onchange="checkName(this)">
+            <label>MI</label>
+            <input type="text" name="mName" placeholder="A" maxlength=1 style="width: 15px; text-align: center;">
+            <label>Last Name:</label>
+            <input type="text"id="a_l_name" name="lName" placeholder="Smith" maxlength=20 onchange="checkName(this)">
+          </div>
+          
+          <div id="ageQ">
+            <label>Date of Birth:</label>
+            <input type="text" id="birth_date" name="DOB" placeholder="01/01/2001" onchange="checkDOB(this)">
+            <br />
+            <label><span style="font-weight: bold">Age</span> As of July 13, 2019</label>
+            <input type="number" name="age" placeholder="age" min="7" max="12" onchange="checkData(this)">
+            <br />
+            <label><span style="font-weight: bold">Grade</span> As of August, 2019</label>
+            <select id="grades" name="grade" style="width: 85px;">
+                <option value="NONE" disabled selected>------------</option>
+                <option value="3 grade">3rd Grade</option>
+                <option value="4 grade">4th Grade</option>
+                <option value="5 grade">5th Grade</option>
+                <option value="6 grade">6th Grade</option>
+                <option value="7 grade">7th Grade</option>
+                <option value="8 grade">8th Grade</option>
+            </select>
+            <br/>
+          </div>
+          
+          <div id="ID">
+            <label id="genders">Gender:</label>
+            <input class="radio" type="radio" name="gender" value="M"> Male
+            <input class="radio" type="radio" name="gender" value="F">Female
+            <br/>
+            <label id="citizens">US Citizen:</label>
+            <input class="radio" type="radio" name="citizen" value="Y"> Yes
+            <input class="radio" type="radio" name="citizen" value="N">No
+          </div>
+
+          <div id="uniform">
+              <label>Uniform Size</label>
+              <select id="uniforms" name="uniformSize" style="width: 110px;">
+                  <option value="NONE" disabled selected>------------</option>
+                  <option value="Y-sm">Youth Small</option>
+                  <option value="Y-med">Youth Medium</option>
+                  <option value="Y-large">Youth Large</option>
+                  <option value="Y-XL">Youth XL</option>
+                  <option value="A-sm">Adult Small</option>
+                  <option value="A-med">Adult Medium</option>
+              </select>
+          </div>
+
+          <div id="adress">
+            <label>Street Adress</label>
+            <input id="street_adress" class="adress" type="text" name="street" maxlength=30 onchange="checkData(this)">
+            <br/>
+            <label>City</label>
+            <input id="cities" class="adress" type="text" name="city" maxlength=15 onchange="checkData(this)">
+            <br/>
+            <label>State</label>
+            <select id="states" name="state">
+              <option value="NONE" disabled selected>--</option>
+              <option value="ID">ID</option>
+              <option value="UT">UT</option>
+            </select>
+            <label>Zip Code</label>
+            <input type="number" name="zip" min="00001" max="99999">
+          </div>
+        </fieldset>
+
+      <div id="parents">
+      <div id="p1">
+      <fieldset>
+      <legend>Parent1</legend>
+        <label>First Name:</label>
+        <input id="p1FN"type="text" name="p1fName" placeholder="Martha" maxlength="12">
+        <br />
+        <label>Last Name:</label>
+        <input id="p1LN" type="text" name="p1lName" placeholder="Smith" maxlength=20>
+        <br>
+        <label>Cell Phone:</label>
+        <input id="phone" type="tel" name="p1Number" placeholder="201-555-1234">
+        <br>
+        <label >Email:</label> 
+        <input style="width: 165px" id="p1Emails" type="email" name="p1Email">
+      </fieldset>
+     </div>
+     
+  <br>   <div id="p2"> 
+       <fieldset>
+      <legend>Parent2</legend>
+        <label for="fn2">First Name:</label>
+        <input id="fn2"type="text" name="p2fName" placeholder="Steve" maxlength="12">
+        <br />
+        <label for="p1LN2">Last Name:</label>
+        <input id="p1LN2" type="text" name="p2lName" placeholder="Smith" maxlength=20>
+        <br>
+        <label for="phone2">Cell Phone:</label>
+        <input id="phone2" type="tel" name="p2Number">
+        <br>
+        <label >Email:</label> 
+        <input style="width: 168px" id="email2" type="email" name="p2Email">
+      </fieldset>
+      </div>
+      </div>
+      <input id="reset" type="reset" value="Reset">
+      <input type="submit" value="Register">
+      </form>
+    </div>
+    
+    <div class="about grayText">
+        <hr />
+        <p>President: Doug Stutz</p>
+        <p> Phone: 208-403-8471</p>
+        <p style="padding-bottom: 5px;"> Email: rexburgstutz@gmail.com</p>
+    </div>
+  </div>
+  <div class="spacer">
+  </div>
+</body>
+</html>
