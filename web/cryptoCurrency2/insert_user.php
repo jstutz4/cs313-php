@@ -10,7 +10,7 @@ $stmt = $db->prepare('INSERT INTO users(user_name) VALUES(:user_name);');
 print("done with prepare");
 ?>
 <?php
-$stmt->bindValue(':user_name', $userName, PDO::PRAM_TEXT);
+$stmt->bindValue(':user_name', $userName, PDO::PARAM_TEXT);
 print("done with bindValue");
 ?>
 <?php
