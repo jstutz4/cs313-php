@@ -2,7 +2,7 @@
 session_start();
 
 $title = htmlspecialchars($_GET['title']);
-if(!isset($title)){
+if(!isset($title) || $title == ""){
 	$title = 'Enter In Your User Name or Click New User';
 }
 print("title: " . $title);
