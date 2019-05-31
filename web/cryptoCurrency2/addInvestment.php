@@ -1,5 +1,5 @@
 <?php
-$name = htmlspecialchars($_GET['name']);
+$name = htmlspecialchars($_GET['currency']);
 $price = htmlspecialchars($_GET['price']);
 $amount = htmlspecialchars($_GET['amount']);
 
