@@ -16,10 +16,3 @@ function adduser() {
     httpRequest.send();
 }
 
-function error(tag) {
-    var error = tag.value;
-    console.log("red " + error + "  " + error.substring(0, 4));
-    if (error.substring(0, 4) == "sorry") {
-        tag.style.color = "darkviolet";
-    }
-}

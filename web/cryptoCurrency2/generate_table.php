@@ -58,11 +58,5 @@ elseif(isset($_SESSION["user_name"]) || isset($_SESSION['userID'])){
 
 	print($table . '</table>');
 
-/*
-$stmt = $db->prepare('SELECT * FROM table WHERE name=:name');
-$stmt->bindValue(':name', $user_name, PDO::PARAM_STR);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print("<br>look here <br>.$rows");
-*/
+
 ?>
