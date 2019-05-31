@@ -3,9 +3,9 @@ function investing(button) {
     var currency = button.name;
     var row = document.getElementsByClassName(currency);
 
-    var name = currency;
-    var price = row[1].value;
-    var amount = row[2].value;
+    var name = row[2].firstChild.innerHTML;
+    var price = row[1].innerHTML;
+    var amount = row[2].firstChild.value;
     console.log(row);
     console.log("currency " + currency + " name " + name + "\n price " + price + "\n amount " + amount);
     var url = "addInvestment.php?currency=" + name + "&price=" + price + "&amount=" + amount;
