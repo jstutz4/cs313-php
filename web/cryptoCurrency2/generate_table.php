@@ -56,7 +56,7 @@ elseif(isset($_SESSION["user_name"]) || isset($_SESSION['userID'])){
 }
 
 
-	print($table . '</table>' . $_SESSION['userID']. $_SESSION['user_name']);
+	print($table . '</table>' . '<input type="hidden" id="hidden" name="'. $_SESSION['user_name'] . '" value="' . $_SESSION['user_name'] . '" readonly>');
 
 
 ?>
