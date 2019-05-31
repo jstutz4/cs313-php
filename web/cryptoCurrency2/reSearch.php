@@ -34,10 +34,7 @@ session_start();
 </nav>
 
 <div id="table">
-<?php
-include 'connectHeroku.php';
-include 'generate_table.php';
-?>
+
 </div>
 </body>
 </html>
