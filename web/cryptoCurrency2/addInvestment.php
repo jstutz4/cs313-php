@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['userID'] = $_SESSION['userID']
 
 $name = htmlspecialchars($_GET['currency']);
 $price = htmlspecialchars($_GET['price']);
@@ -7,7 +8,13 @@ $amount = htmlspecialchars($_GET['amount']);
 
 include 'connectHeroku.php';
 
-print($name. $_SESSION['userID'] . $price . $amount);
+foreach ($db->query('SELECT user_name FROM users') as $user_row){
+	if($user_row['user_name'] == $_SESSION['user_name']){
+		$unique = false;
+	}
+}
+
+print($_SESSION['user_name'] . $name. $_SESSION['userID'] . $price . $amount);
 $stmt = $db->prepare('INSERT INTO amount_invested(user_id, name, price,amount) VALUES(:user_id, :name, :price, :amount)');
 
 $stmt->bindValue(':user_id', $_SESSION['userID']);
