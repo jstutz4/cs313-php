@@ -19,7 +19,7 @@ $stmt->bindValue(':user_id', $user_id);
 $stmt->bindValue(':name', $name);
 $stmt->bindValue(':price', $price);
 $stmt->bindValue(':amount', $amount);
-#$stmt->execute();
+$stmt->execute();
 
 print($user_name. $name . $price . $amount .$user_id);
 
