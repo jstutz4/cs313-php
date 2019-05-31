@@ -2,10 +2,10 @@ function investing(button) {
     console.log("invest is good");
     var currency = button.name;
     var row = document.getElementsByClassName(currency);
-    
-    var name = row[0][0];
-    var price = row[1];
-    var amount = row[4];
+
+    var name = currency;
+    var price = row[1].value;
+    var amount = row[2].value;
     console.log(row);
     console.log("currency " + currency + " name " + name + "\n price " + price + "\n amount " + amount);
     var url = "addInvestment.php?currency=" + name + "&price=" + price + "&amount=" + amount;
