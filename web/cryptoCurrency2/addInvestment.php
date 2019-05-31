@@ -33,7 +33,6 @@ if($update){
 else{
 
 	$stmt = $db->prepare('INSERT INTO amount_invested(user_id, name, price,amount) VALUES(:user_id, :name, :price, :amount)');
-
 	$stmt->bindValue(':user_id', $user_id);
 	$stmt->bindValue(':name', $name);
 	$stmt->bindValue(':price', $price);
