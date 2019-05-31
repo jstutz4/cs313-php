@@ -18,7 +18,7 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 
 foreach ($db->query('SELECT ID, user_id, name, amount FROM amount_invested') as $user_row){
 	if($user_row['user_id'] == $user_id && $user_row['name'] == $name){
-		$update = true
+		$update = true;
 		$rowID = $user_row['ID'];
 		$start_amount = $user_row['amount'] + $amount;
 	}
