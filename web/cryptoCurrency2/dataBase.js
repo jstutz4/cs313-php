@@ -32,3 +32,6 @@ function logout() {
     window.location.href = "logout.php";
 }
 
+function reSearch() {
+    window.location.href = "reSearch.php";
+}
