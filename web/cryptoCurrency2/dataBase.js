@@ -3,7 +3,7 @@ function investing(button) {
     var currency = button.name;
     var row = document.getElementsByClassName(currency);
     
-    var name = row[0];
+    var name = row[0][0];
     var price = row[1];
     var amount = row[4];
     console.log(row);

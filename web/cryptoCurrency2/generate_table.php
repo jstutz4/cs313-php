@@ -48,7 +48,7 @@ elseif(isset($_SESSION["user_name"]) || isset($_SESSION['userID'])){
 			$_SESSION["user_name"] = $_SESSION["user_name"];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 				if($currency_row['user_id'] == $userID){
-					$table = $table .'<tr class="'. $currency_row['name'] . '"><td>'. $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>". '<td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td><input type="number"> </td>' ."</tr>";
+					$table = $table .'<tr class="'. $currency_row['name'] . '"><form action="addInvestment.php" method="GET"><td>'. $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>". '<td><input type="submit" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td><input type="number"> </td>' ."</form></tr>";
 				}
 			}
 		} 
