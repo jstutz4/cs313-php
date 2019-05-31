@@ -34,7 +34,7 @@ if (isset($currency) && $currency != "") {
 			//$table = $table . "heres1" . $_SESSION["userID"] . $_SESSION["user_name"];
 			foreach ($db->query('SELECT user_id, name, price, volume FROM currency') as $currency_row){
 				if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
-					$table = $table .'<tr clas="'. $currency_row['name'] . '"><form action="addInvestment.php" method="GET"><td>'. $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>". '<td><input type="submit" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td><input type="number"> </td>' ."</form></tr>";
+					$table = $table .'<tr class="'. $currency_row['name'] . '"><form action="addInvestment.php" method="GET"><td>'. $currency_row['name']."</td><td>".$currency_row['price']."</td><td>". $currency_row['volume']."</td>". '<td><input type="submit" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td><input type="number"> </td>' ."</form></tr>";
 				}
 			}
 		} 
