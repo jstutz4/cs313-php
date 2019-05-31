@@ -6,8 +6,6 @@ function investing(button) {
     var name = currency;
     var price = row[1].innerHTML;
     var amount = row[2].firstChild.value;
-    console.log(row);
-    console.log("currency " + currency + " name " + name + "\n price " + price + "\n amount " + amount);
     var url = "addInvestment.php?currency=" + name + "&price=" + price + "&amount=" + amount;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
@@ -20,6 +18,10 @@ function investing(button) {
 
 
    // window.location.href = "invest.php";
+}
+
+function invester(button) {
+    window.location.href = "invest.php";
 }
 
 function home() {

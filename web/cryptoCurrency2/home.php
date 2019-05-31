@@ -21,7 +21,7 @@ session_start();
 	<div id="menujs">
 		<form action="home.php" method="GET">
 			<input type="button" class="nav-linkjs" onclick="home()" value="View Currency">
-			<input type="button" class="nav-linkjs" onclick="investing()" value="View Investments">
+			<input type="button" class="nav-linkjs" onclick="invester()" value="View Investments">
 
 		</div>
 			<div id="searchjs">
