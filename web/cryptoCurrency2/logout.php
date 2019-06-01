@@ -5,5 +5,5 @@
 ?>
 
 <?php
-include 'login.php';
+header('location: login.php');
 ?>
