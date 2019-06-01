@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="home.css"/>
 	<link rel="stylesheet" type="text/css" href="research.css"/>
     <script src="dataBase.js"></script>
-	<script src="API_currency.js"></script>
+	<script src="get_currency.js"></script>
 <body>
 <h1>Crypto Currency tracker</h1>
 <nav>
