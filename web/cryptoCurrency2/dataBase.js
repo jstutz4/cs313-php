@@ -16,8 +16,6 @@ function investing(button) {
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
-
-
     window.location.href = "invest.php";
 }
 
@@ -34,4 +32,16 @@ function logout() {
 
 function reSearch() {
     window.location.href = "reSearch.php";
+}
+
+function deleteRow(button) {
+    var url = 'delete_row.php'
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    }
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
 }
