@@ -46,11 +46,4 @@ function deleteRow(table, id) {
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
-
-    if (table == "currency") {
-        window.location.href = "home.php";
-    }
-    else {
-        window.location.href = "invest.php";
-    }
 }

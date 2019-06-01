@@ -16,4 +16,6 @@ $stmt = $db->prepare($query);
 	$stmt->execute();
 
 print("varible " . $table . $rowID);
+
+header('location: home.php');
 ?>
