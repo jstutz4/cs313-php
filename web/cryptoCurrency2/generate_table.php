@@ -57,7 +57,7 @@ if($isUser){
 	print($table . '</table>' . '<input type="hidden" id="hidden" name="'. $_SESSION['user_name'] . '" value="' . $_SESSION['user_name'] . '" readonly>');
 }
 else{
-	header('Location: logout.php');
+	header('Location: login.php?title=User Name Not Valid');
 }
 
 ?>
