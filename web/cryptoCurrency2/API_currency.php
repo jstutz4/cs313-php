@@ -1,7 +1,3 @@
-<!--
-  Requires curl enabled in php.ini
-!-->
-
 <?php
 $symbol = $_GET['currency'];
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
@@ -28,6 +24,6 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl); // Send the request, save the response
-print_r(json_decode($response)); // print json decoded response
+print_r(json_decode($response, true)); // print json decoded response
 curl_close($curl); // Close request
 ?>
