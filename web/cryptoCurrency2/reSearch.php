@@ -25,9 +25,9 @@ session_start();
 			<input type="button" class="nav-linkjs" onclick="invester()" value="View Investments">
 
 		</div>
+			<br>
 			<div id="searchjs">
 				<input type="search" class="form-control mr-lg-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
-				<input type="submit" value="Find Currency">
 				<input type="button" value="getCurrency" onclick="getCurrency">
 			</div>
 		<form>
