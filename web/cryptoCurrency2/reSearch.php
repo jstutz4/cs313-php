@@ -34,7 +34,8 @@ session_start();
 	<input type="search" class="dimension" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
 </div>
-
+<?php
+print('
 <div id="table">
 	<table>
 		<th>Currency</th><th>Price</th><th>Volume</th><th>Save</th>
@@ -42,6 +43,7 @@ session_start();
 
 		</span>
 	</table>
-</div>
+</div>');
+?>
 </body>
 </html>
