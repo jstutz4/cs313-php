@@ -47,7 +47,6 @@ function insertCurrency(button) {
     var currency = (row.firstChild.innerHTML);
     var prices = (row.childNodes[1].innerHTML);
     var volumes = (row.childNodes[2].innerHTML);
-    console.log("var" + currency + prices + volumes);
 
     var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes;
     var httpRequest = new XMLHttpRequest();

@@ -1,5 +1,11 @@
 <?php
 $user_name = $_GET["user_id"];
+$isUser = false;
+foreach ($db->query('SELECT user_id, name FROM users') as $user_row){
+	if($user_name == $user_row['name']){
+		$isUser = true;
+	}
+}
 
 if(isset($user_name)){
 	$_SESSION["user_name"] = $user_name;
@@ -8,7 +14,7 @@ if(isset($user_name)){
 if(!isset($_SESSION['user_name'])){
 	header('Location: logout.php');
 }
-
+if($isUser){
 $_SESSION['user_name'];
 $_SESSION['userID'];
 $userID;
@@ -42,6 +48,7 @@ if (isset($currency) && $currency != "") {
 				}
 			}
 		} 
+		//
 	}
 }
 elseif(isset($_SESSION["user_name"]) || isset($_SESSION['userID'])){
@@ -61,6 +68,10 @@ elseif(isset($_SESSION["user_name"]) || isset($_SESSION['userID'])){
 
 
 	print($table . '</table>' . '<input type="hidden" id="hidden" name="'. $_SESSION['user_name'] . '" value="' . $_SESSION['user_name'] . '" readonly>');
+}
+else{
+	header('Location: logout.php');
 
+}
 
 ?>
