@@ -10,12 +10,14 @@ $volume = htmlspecialchars($_GET['volume']);
 $unique = true;
 include 'connectHeroku.php';
 
+print("checking dulication");
 foreach ($db->query('SELECT user_id, name FROM currency') as $user_row){
 	if($user_row['user_id'] == $_SESSION['userID'] && $user_row['name'] == $name){
 		$unique = false;
 	}
 }
 
+print("passing and now inserting");
 if($unique){
 	$stmt = $db->prepare('INSERT INTO currency(name, price, volume) VALUES(:name, :price, :volume)');
 	$stmt->bindValue(':name', $name);
