@@ -13,6 +13,7 @@ session_start();
 	<link rel="stylesheet" href="onlineCatolog.css">
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css"/>
+	 <link rel="stylesheet" type="text/css" href="research.css"/>
     <script src="dataBase.js"></script>
 <body>
 <h1>Crypto Currency tracker</h1>
@@ -27,9 +28,10 @@ session_start();
 		</div>
 		<form>
 </nav>
+<h4>Start looking up your favourite crypto currency by entering its name</h4>
 <div id="searchjs">
-	<input type="search" class="form-control mr-lg-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
-	<input type="button" value="getCurrency" onclick="Get Currency">
+	<input type="search" class="dimension" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+	<input class="dimension" type="button" value="getCurrency" onclick="Get Currency">
 </div>
 
 <div id="table">

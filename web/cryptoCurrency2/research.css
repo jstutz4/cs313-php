@@ -1,0 +1,11 @@
+#searchjs{
+    text-align: left;
+    width: 98%;
+    margin: 10px;
+    margin-left: 0;
+    border: orange 3px groove;
+}
+
+.dimension{
+    height: 2rem;
+}
