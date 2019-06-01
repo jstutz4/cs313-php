@@ -28,5 +28,5 @@ else {
 }
 
 
-
+print("varibles: $name , $price , $volume");
 ?>
