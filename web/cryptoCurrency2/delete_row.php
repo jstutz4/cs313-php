@@ -9,8 +9,9 @@ $rowID = htmlspecialchars($_GET['rowID']);
 
 
 include 'connectHeroku.php';
+$query = 'DELETE FROM' . $table . ' WHERE id = '. $rowID;
 
-foreach ($db->query('SELECT '. $rowID . ' FROM ' . $table) as $worker){
+foreach ($db->query('SELECT * FROM currency') as $worker){
 	print($worker);
 }
 
