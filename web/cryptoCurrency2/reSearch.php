@@ -39,11 +39,9 @@ print('
 <div id="table">
 	<table>
 		<th>Currency</th><th>Price</th><th>Volume</th><th>Save</th>
-		<span id="content">
-
-		</span>
 	</table>
-</div>');
+</div>
+<span id="hiddens"> </span>);
 ?>
 </body>
 </html>
