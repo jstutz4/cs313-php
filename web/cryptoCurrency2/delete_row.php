@@ -9,10 +9,9 @@ $rowID = htmlspecialchars($_GET['rowID']);
 
 
 
-$stmt = $db->prepare('SELECT :rowsID FROM :table');
-	$stmt->bindValue(':table', $table);
-	$stmt->bindValue(':rowID', $rowID);
-	$stmt->execute();
+foreach($db->prepare('SELECT ' . $rowID 'FROM ' . $table) as $worker){
+	print($worker);
+}
 
 print("varible " . $table . $rowID);
 ?>
