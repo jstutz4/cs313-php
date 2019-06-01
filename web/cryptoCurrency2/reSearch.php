@@ -41,7 +41,7 @@ print('
 		<th>Currency</th><th>Price</th><th>Volume</th><th>Save</th>
 	</table>
 </div>
-<span id="hiddens"> </span>');
+<div id="hiddens"> </div>');
 ?>
 </body>
 </html>
