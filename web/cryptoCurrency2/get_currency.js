@@ -5,6 +5,7 @@ function getCurrency() {
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             var info = JSON.parse(this.responseText);
             console.log(info);
             console.log(info[data]);
