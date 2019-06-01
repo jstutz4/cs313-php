@@ -37,6 +37,7 @@ function reSearch() {
 function deleteRow(table, id) {
 
     var url = 'delete_row.php?rowID=' + id + '&table=' + table;
+    console.log(url);
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -45,6 +46,7 @@ function deleteRow(table, id) {
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
+
     if (table == "currency") {
         window.location.href = "home.php";
     }
