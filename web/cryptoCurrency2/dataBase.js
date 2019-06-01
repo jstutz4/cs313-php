@@ -34,8 +34,9 @@ function reSearch() {
     window.location.href = "reSearch.php";
 }
 
-function deleteRow(button) {
-    var url = 'delete_row.php'
+function deleteRow(id, table) {
+
+    var url = 'delete_row.php?rowID=' + id + '&table='
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
