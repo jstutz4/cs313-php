@@ -9,7 +9,7 @@ function getCurrency() {
             var info = JSON.parse(this.responseText);
             console.log(info.data.currency.quote.USD.price);
             console.log(info.data.currency.quote.USD.volume_24h);
-            console.log((info.data.currency.quote.USD.percent_change_24h).toFixed(2);
+            console.log((info.data.currency.quote.USD.percent_change_24h).toFixed(2));
         }
     }
     httpRequest.open("GET", url, true);
