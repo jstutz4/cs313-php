@@ -13,7 +13,7 @@ function getCurrency() {
                 var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
                 var name = ((info["data"][currency]["slug"]));
                 if (document.getElementById(name) == null) {
-                    rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '"></td></tr>';
+                    rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
                     document.getElementById("hiddens").innerHTML = escapeHtml(rows);
                     document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
                 }
@@ -39,4 +39,20 @@ function escapeHtml(text) {
 function htmlDecode(input) {
     var doc = new DOMParser().parseFromString(input, "text/html");
     return doc.documentElement.textContent;
+}
+
+function insertCurrency(button) {
+    var name = button.name;
+    var row = document.getElementById(name);
+    console.log(row.firstChild.innerHTML);
+    console.log(row.firstElementChild.value);
+    var url = 'insert_currency.php'
+    httpRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
+            }
+        }
+    }
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
 }

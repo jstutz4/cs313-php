@@ -29,9 +29,9 @@ session_start();
 		</div>
 		<form>
 </nav>
-<h4>Start looking up your favourite crypto currency by entering its name</h4>
+<h4>Start looking up your favourite crypto currency by entering its symbol</h4>
 <div id="searchjs">
-	<input type="search" class="dimension" id="search"  name="currency" placeholder="Currency (ie BTC)" aria-label="Search">
+	<input type="search" class="dimension" id="search"  name="currency" placeholder="(ie BTC, LTC, BCH, ETH)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
 </div>
 <?php
