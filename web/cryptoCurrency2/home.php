@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(!isset($_Session['userID'])){
-	header('Location: logout.php');
-}
 ?>
 
 <!DOCTYPE html>

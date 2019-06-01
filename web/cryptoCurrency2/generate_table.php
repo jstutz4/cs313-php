@@ -5,6 +5,10 @@ if(isset($user_name)){
 	$_SESSION["user_name"] = $user_name;
 }
 
+if(!isset($_Session['user_name'])){
+	header('Location: logout.php');
+}
+
 $_SESSION['user_name'];
 $_SESSION['userID'];
 $userID;
