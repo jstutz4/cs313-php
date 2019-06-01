@@ -42,7 +42,7 @@ session_start();
 		<tr>
 			<td>bitcoin</td>
 			<td>1000</td>
-			<td>23534563463</td
+			<td>23534563463</td>
 			<td><input type="button" value="Track"></td>
 		</tr>
 		</span>
