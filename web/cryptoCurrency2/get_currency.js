@@ -1,6 +1,6 @@
 function getCurrency() {
     var currency = document.getElementById("search").value;
-    var table = document.getElementById("table").innerHTML;
+    var table = document.getElementById("content").innerHTML;
     var url = "API_currency.php?currency=" + currency;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
@@ -11,6 +11,8 @@ function getCurrency() {
             var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
             var name = ((info["data"][currency]["slug"]));
 
+            table = table + '<tr><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '"></td></tr>';
+            document.getElementById("content").innerHTML = table;
         }
     }
     httpRequest.open("GET", url, true);
