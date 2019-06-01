@@ -15,10 +15,22 @@ function getCurrency() {
 
             rows = rows + '<tr><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '"></td></tr>';
             console.log(rows);
-            document.getElementById("hiddens").innerHTML = rows;
+            document.getElementById("hiddens").innerHTML = escapeHtml(rows);
             document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
         }
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
+}
+
+function escapeHtml(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+
+    return text.replace(/[&<>"']/g, function (m) { return map[m]; });
 }
