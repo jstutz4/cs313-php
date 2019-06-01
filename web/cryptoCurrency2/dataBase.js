@@ -36,7 +36,7 @@ function reSearch() {
 
 function deleteRow(id, table) {
 
-    var url = 'delete_row.php?rowID=' + id + '&table='
+    var url = 'delete_row.php?rowID=' + id + '&table=' + table;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
