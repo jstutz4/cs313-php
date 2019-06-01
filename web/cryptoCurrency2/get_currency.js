@@ -14,7 +14,8 @@ function getCurrency() {
             var name = ((info["data"][currency]["slug"]));
 
             rows = rows + '<tr><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '"></td></tr>';
-            document.getElementById("hiddens").innerHTML = rows;
+            console.log(rows);
+            document.getElementById("hiddens").value = rows;
             document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
         }
     }
