@@ -1,8 +1,8 @@
 <?php
 $user_name = $_GET["user_id"];
 $isUser = false;
-foreach ($db->query('SELECT user_id, name FROM users') as $user_row){
-	if($user_name == $user_row['name']){
+foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
+	if($user_name == $user_row['user_name']){
 		$isUser = true;
 	}
 }
