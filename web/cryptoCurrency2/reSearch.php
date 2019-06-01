@@ -42,6 +42,8 @@ htmlspecialchars(print('
 	</table>
 </div>
 <div id="hiddens"> </div>'));
+
+print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
 ?>
 </body>
 </html>

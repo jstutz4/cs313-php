@@ -38,7 +38,7 @@ session_start();
 include 'connectHeroku.php';
 include 'generate_table.php';
 
-print($_SESSION['user_name'] . $_SESSION['userID']);
+print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
 ?>
 </div>
 </body>
