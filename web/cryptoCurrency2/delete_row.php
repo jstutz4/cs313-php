@@ -9,7 +9,7 @@ $rowID = htmlspecialchars($_GET['rowID']);
 
 
 include 'connectHeroku.php';
-$query = 'DELETE FROM' . $table . ' WHERE id = '. $rowID;
+$query = 'DELETE FROM ' . $table . ' WHERE id = '. $rowID;
 print($query);
 
 $stmt = $db->prepare($query);
