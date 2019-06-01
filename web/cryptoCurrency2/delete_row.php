@@ -8,8 +8,9 @@ $table = htmlspecialchars($_GET['table']);
 $rowID = htmlspecialchars($_GET['rowID']);
 
 
+include 'connectHeroku.php';
 
-foreach($db->prepare('SELECT '. $rowID ' FROM ' . $table) as $worker){
+foreach ($db->query('SELECT '. $rowID . ' FROM ' . $table) as $worker){
 	print($worker);
 }
 
