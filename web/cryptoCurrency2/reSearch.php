@@ -31,7 +31,7 @@ session_start();
 </nav>
 <h4>Start looking up your favourite crypto currency by entering its name</h4>
 <div id="searchjs">
-	<input type="search" class="dimension" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+	<input type="search" class="dimension" id="search"  name="currency" placeholder="Currency (ie BTC)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
 </div>
 <?php

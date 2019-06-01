@@ -5,22 +5,23 @@ function getCurrency() {
     var tableClosing = '</table>'
     var url = "API_currency.php?currency=" + currency;
     var httpRequest = new XMLHttpRequest();
-    
-    httpRequest.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var info = JSON.parse(this.responseText);
-            var price = ((info["data"][currency]["quote"]["USD"]["price"]).toFixed(2));
-            var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
-            var name = ((info["data"][currency]["slug"]));
-            if (document.getElementById(name) == null) {
-                rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '"></td></tr>';
-                document.getElementById("hiddens").innerHTML = escapeHtml(rows);
-                document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
+    if (currency != "") {
+        httpRequest.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var info = JSON.parse(this.responseText);
+                var price = ((info["data"][currency]["quote"]["USD"]["price"]).toFixed(2));
+                var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
+                var name = ((info["data"][currency]["slug"]));
+                if (document.getElementById(name) == null) {
+                    rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '"></td></tr>';
+                    document.getElementById("hiddens").innerHTML = escapeHtml(rows);
+                    document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
+                }
             }
         }
+        httpRequest.open("GET", url, true);
+        httpRequest.send();
     }
-    httpRequest.open("GET", url, true);
-    httpRequest.send();
 }
 
 function escapeHtml(text) {
