@@ -35,13 +35,13 @@ session_start();
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
 </div>
 <?php
-print('
+htmlspecialchars(print('
 <div id="table">
 	<table>
 		<th>Currency</th><th>Price</th><th>Volume</th><th>Save</th>
 	</table>
 </div>
-<div id="hiddens"> </div>');
+<div id="hiddens"> </div>'));
 ?>
 </body>
 </html>
