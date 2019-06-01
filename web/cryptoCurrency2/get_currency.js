@@ -1,6 +1,7 @@
 function getCurrency() {
     var currency = document.getElementById("search").value;
     var rows = document.getElementById("hiddens").innerHTML;
+    console.log(rows);
     var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume</th> <th>Save</th>';
     var tableClosing = '</table>'
     var url = "API_currency.php?currency=" + currency;
