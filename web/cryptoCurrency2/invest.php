@@ -46,7 +46,7 @@
 	$name = $_GET['currency'];
 
 	if(isset($name)){
-		foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
+		foreach ($db->query('SELECT invest_id, user_id, name, price, amount FROM amount_invested') as $user_row){
 			if($user_row['user_id'] == $_SESSION["userID"]){
 				if($user_row['name'] == $name){
 					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="' .$user_row['name'] .'" onclick="deleteRow()"</td></tr>';
@@ -55,9 +55,9 @@
 		}
 	}
 	elseif(!isset($name)){
-		foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
+		foreach ($db->query('SELECT invest_id, user_id, name, price, amount FROM amount_invested') as $user_row){
 			if($user_row['user_id'] == $_SESSION["userID"]){
-				$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="' .$user_row['name'] .'" onclick="deleteRow()"</td></tr>';
+				$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="' .$user_row['name'] .'" onclick="deleteRow("'.$user_row['invest_id'].'")"</td></tr>';
 			} 
 		}
 	}
