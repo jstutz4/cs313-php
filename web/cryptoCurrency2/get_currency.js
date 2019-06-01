@@ -1,6 +1,6 @@
 function getCurrency() {
     var currency = document.getElementById("search").value;
-    var rows = escapeHtml(document.getElementById("hiddens").innerHTML);
+    var rows = unEscapeHtml(document.getElementById("hiddens").innerHTML);
     console.log(rows);
     var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume</th> <th>Save</th>';
     var tableClosing = '</table>'
@@ -36,14 +36,14 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, function (m) { return map[m]; });
 }
 
-function escapeHtml(text) {
+function unEscapeHtml(text) {
     var map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
+        '&amp;': '&',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&quot;': '"',
+        "&#039;": "'"
     };
 
-    return text.replace(/[&<>"']/g, function (m) { return map[m]; });
+    return text.replace(/[&amp;&lt;&gt;&quot;&#039;]/g, function (m) { return map[m]; });
 }
