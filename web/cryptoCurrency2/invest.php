@@ -39,6 +39,7 @@
 		<th>Currency</td>
 		<th>Price</td>
 		<th>Amount Invested</td>
+		<th>Delete Investment</td>
 <?php
 	include 'connectHeroku.php';
 
@@ -48,7 +49,7 @@
 		foreach ($db->query('SELECT user_id, name, price, amount FROM amount_invested') as $user_row){
 			if($user_row['user_id'] == $_SESSION["userID"]){
 				if($user_row['name'] == $name){
-					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount']."</td></tr>";
+					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="' .$user_row['name'] .'" onclick="deleteRow()</tr>';
 				}
 			} 
 		}
@@ -60,7 +61,9 @@
 			} 
 		}
 	}
-	print($table)
+	print($table);
+print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
+
 ?>
 	</table>
 </div>
