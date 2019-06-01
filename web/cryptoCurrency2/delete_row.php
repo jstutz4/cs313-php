@@ -9,7 +9,7 @@ $rowID = htmlspecialchars($_GET['rowID']);
 
 
 
-$stmt = $db->prepare('DELETE FROM :table WHERE id = :rowID');
+$stmt = $db->prepare('SELECT :rowsID FROM :table');
 	$stmt->bindValue(':table', $table);
 	$stmt->bindValue(':rowID', $rowID);
 	$stmt->execute();
