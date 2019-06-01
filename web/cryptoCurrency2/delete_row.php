@@ -9,7 +9,7 @@ $rowID = htmlspecialchars($_GET['rowID']);
 
 
 
-foreach($db->prepare('SELECT ' . $rowID 'FROM ' . $table) as $worker){
+foreach($db->prepare('SELECT '. $rowID ' FROM ' . $table) as $worker){
 	print($worker);
 }
 
