@@ -45,8 +45,13 @@ function insertCurrency(button) {
     var name = button.name;
     var row = document.getElementById(name);
     console.log(row.firstChild.innerHTML);
-    console.log(row.firstElementChild.value);
+    console.log(row.childNodes[1].innerHTML);
+    console.log(row.childNodes[2].innerHTML);
+    console.log(row.childNodes[3].innerHTML);
+    console.log(row.childNodes[4].innerHTML);
+
     var url = 'insert_currency.php'
+    var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
