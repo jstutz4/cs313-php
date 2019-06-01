@@ -44,13 +44,11 @@ function htmlDecode(input) {
 function insertCurrency(button) {
     var name = button.name;
     var row = document.getElementById(name);
-    console.log(row.firstChild.innerHTML);
-    console.log(row.childNodes[1].innerHTML);
-    console.log(row.childNodes[2].innerHTML);
-    console.log(row.childNodes[3].innerHTML);
-    console.log(row.childNodes[4].innerHTML);
+    var currency = (row.firstChild.innerHTML);
+    var prices = (row.childNodes[1].innerHTML);
+    var volumes = (row.childNodes[2].innerHTML);
 
-    var url = 'insert_currency.php'
+    var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
