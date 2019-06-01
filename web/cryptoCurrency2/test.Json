@@ -1,0 +1,51 @@
+﻿    [status] => stdClass Object
+        (
+            [timestamp] => 2019-06-01T01:09:11.022Z
+            [error_code] => 0
+            [error_message] => 
+            [elapsed] => 4
+            [credit_count] => 1
+        )
+
+    [data] => stdClass Object
+        (
+            [LTC] => stdClass Object
+                (
+                    [id] => 2
+                    [name] => Litecoin
+                    [symbol] => LTC
+                    [slug] => litecoin
+                    [circulating_supply] => 62023126.437184
+                    [total_supply] => 62023126.437184
+                    [max_supply] => 84000000
+                    [date_added] => 2013-04-28T00:00:00.000Z
+                    [num_market_pairs] => 560
+                    [tags] => Array
+                        (
+                            [0] => mineable
+                        )
+
+                    [platform] => 
+                    [cmc_rank] => 6
+                    [last_updated] => 2019-06-01T01:08:05.000Z
+                    [quote] => stdClass Object
+                        (
+                            [USD] => stdClass Object
+                                (
+                                    [price] => 115.182254297
+                                    [volume_24h] => 4321612462.0264
+                                    [percent_change_1h] => 0.503973
+                                    [percent_change_24h] => 5.60987
+                                    [percent_change_7d] => 14.1236
+                                    [market_cap] => 7143963521.5827
+                                    [last_updated] => 2019-06-01T01:08:05.000Z
+                                )
+
+                        )
+
+                )
+
+        )
+
+
+​
