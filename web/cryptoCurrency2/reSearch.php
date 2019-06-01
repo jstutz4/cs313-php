@@ -38,14 +38,14 @@ session_start();
 <div id="table">
 	<table>
 		<th>Currency</th><th>Price</th><th>Volume</th><th>Save</th>
-		<div>
+		<span>
 		<tr>
 			<td>bitcoin</td>
 			<td>1000</td>
 			<td>23534563463</td
 			<td><input type="button" value="Track"></td>
 		</tr>
-		</div>
+		</span>
 	</table>
 </div>
 </body>
