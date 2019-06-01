@@ -26,6 +26,5 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl); // Send the request, save the response
 print($response);
 $values = (json_decode($response, true));// print json decoded response
-print($values);
 curl_close($curl); // Close request
 ?>

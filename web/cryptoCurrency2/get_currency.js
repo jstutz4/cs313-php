@@ -7,11 +7,10 @@ function getCurrency() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
             var info = JSON.parse(this.responseText);
-            console.log(info);
-            console.log(info[data]);
-            console.log(info[data][LTC]);
-            console.log(info[data][LTC]);
-            console.log(info[data][LTC][quote][USD][price]);
+            console.log(info.data.BTC.quote.USD.price);
+            console.log(info.data.BTC.quote.USD.volume_24h);
+            console.log(info.data.BTC.quote.USD.percent_change_24h);
+            console.log(info[data][BTC][quote][USD][price]);
         }
     }
     httpRequest.open("GET", url, true);
