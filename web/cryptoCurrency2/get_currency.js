@@ -8,8 +8,10 @@ function getCurrency() {
             console.log(this.responseText);
             var info = JSON.parse(this.responseText);
             var prices = "info.data." + currency + ".quote.USD.price";
-            console.log(info["data"][currency]["quote"]["USD"]["price"]);
-            console.log(prices);
+            console.log((info["data"][currency]["quote"]["USD"]["price"]).toFixed(2));
+            console.log((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
+            console.log((info["data"][currency]["slug"]));
+
         }
     }
     httpRequest.open("GET", url, true);
