@@ -20,7 +20,7 @@ foreach ($db->query('SELECT user_id, name FROM currency') as $user_row){
 print("passing and now inserting");
 if($unique){
 	$stmt = $db->prepare('INSERT INTO currency(user_id, name, price, volume) VALUES(:user_id, :name, :price, :volume)');
-	$stmt->bindValue(':user_id', $_SESSION['userID');
+	$stmt->bindValue(':user_id', $_SESSION['userID']);
 	$stmt->bindValue(':name', $name);
 	$stmt->bindValue(':price', $price);
 	$stmt->bindValue(':volume', $volume);
