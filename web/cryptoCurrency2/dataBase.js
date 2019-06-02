@@ -43,6 +43,14 @@ function deleteRow(table, id) {
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
+            if (table == "currency") {
+                window.location.href = 'home.php';
+            }
+            else {
+                window.location.href = 'invest.php';
+
+
+            }
         }
     }
     httpRequest.open("GET", url, true);
