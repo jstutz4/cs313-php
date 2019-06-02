@@ -6,7 +6,7 @@ session_start();
 
 $table = htmlspecialchars($_GET['table']);
 $rowID = htmlspecialchars($_GET['rowID']);
-$query = 'DELETE FROM ' . $table . ' WHERE id = '. $rowID.;
+$query = 'DELETE FROM ' . $table . ' WHERE id = '. $rowID;
 print($query);
 ?>
 <?php
