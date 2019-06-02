@@ -13,6 +13,7 @@ function investing(button) {
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
+            window.location.href = 'invest.php';
         }
     }
     httpRequest.open("GET", url, true);
