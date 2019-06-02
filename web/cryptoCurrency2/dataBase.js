@@ -51,6 +51,6 @@ function deleteRow(table, id) {
         window.location.href = "home.php";
     }
     else {
-       window.location.href = "invest.php";
+       //window.location.href = "invest.php";
     }
 }

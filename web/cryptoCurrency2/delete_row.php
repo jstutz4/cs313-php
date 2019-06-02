@@ -22,5 +22,5 @@ $stmt->execute();
 
 print("varible " . $table . $rowID);
 
-header('location: home.php');
+//header('location: home.php');
 ?>
