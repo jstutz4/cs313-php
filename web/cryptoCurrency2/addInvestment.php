@@ -25,7 +25,7 @@ foreach ($db->query('SELECT invest_id, user_id, name, amount FROM amount_investe
 }
 
 if($update){
-	$stmt = $db->prepare('UPDATE amount_invested' . "SET amount = ':total'" . "WHERE invest_id = ':rowID' ");
+	$stmt = $db->prepare('UPDATE amount_invested' . "SET amount = :total" . "WHERE invest_id = :rowID ");
 	$stmt->bindValue(':total', $start_amount);
 	$stmt->bindValue(':rowID', $rowID);
 	$stmt->execute();
