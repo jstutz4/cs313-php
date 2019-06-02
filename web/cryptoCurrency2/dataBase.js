@@ -6,7 +6,7 @@ function investing(button) {
 
     var name = currency;
     var price = row[1].innerHTML;
-    var amount = row[3].firstChild.value;
+    var amount = row[2].firstChild.value;
     console.log("STOP " + name + price + amount);
     var url = "addInvestment.php?currency=" + name + "&price=" + price + "&amount=" + amount + "&hidden=" + hidden;
     var httpRequest = new XMLHttpRequest();
