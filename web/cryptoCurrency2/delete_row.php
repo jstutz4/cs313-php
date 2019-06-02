@@ -6,7 +6,13 @@ session_start();
 
 $table = htmlspecialchars($_GET['table']);
 $rowID = htmlspecialchars($_GET['rowID']);
+if($table == "currency"){
 $query = 'DELETE FROM ' . $table . ' WHERE money_id = '. $rowID;
+}
+else{
+$query = 'DELETE FROM ' . $table . ' WHERE invest_id = '. $rowID;
+
+}
 print($query);
 
 include 'connectHeroku.php';
