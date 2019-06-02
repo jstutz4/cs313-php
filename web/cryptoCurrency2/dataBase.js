@@ -17,7 +17,7 @@ function investing(button) {
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
-    window.location.href = "invest.php";
+    //window.location.href = "invest.php";
 }
 
 function invester(button) {
