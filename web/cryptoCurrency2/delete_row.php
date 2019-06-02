@@ -8,12 +8,13 @@ $table = htmlspecialchars($_GET['table']);
 $rowID = htmlspecialchars($_GET['rowID']);
 
 
-include 'connectHeroku.php';
+
 $query = 'DELETE FROM ' . $table . ' WHERE id = '. $rowID.';';
 print($query);
 
+include 'connectHeroku.php';
 $stmt = $db->prepare($query);
-	$stmt->execute();
+$stmt->execute();
 
 print("varible " . $table . $rowID);
 
