@@ -41,6 +41,7 @@ else{
 }
 
 print($user_name. $name . $price . $amount .$user_id . $start_amount);
+header('location: invest.php');
 
 
 ?>

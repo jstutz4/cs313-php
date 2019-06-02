@@ -17,7 +17,7 @@ function investing(button) {
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
-    //window.location.href = "invest.php";
+    
 }
 
 function invester(button) {
@@ -47,11 +47,4 @@ function deleteRow(table, id) {
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
-
-    if (table == "currency") {
-        window.location.href = "home.php";
-    }
-    else {
-       //window.location.href = "invest.php";
-    }
 }

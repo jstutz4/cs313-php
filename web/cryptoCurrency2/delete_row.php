@@ -22,5 +22,11 @@ $stmt->execute();
 
 print("varible " . $table . $rowID);
 
-//header('location: home.php');
+  if ($table == "currency") {
+        header('location: home.php');
+    }
+    else {
+       header('location: invest.php');
+
+    }
 ?>
