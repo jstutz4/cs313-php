@@ -62,7 +62,7 @@
 		}
 	}
 	print($table);
-print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
+//print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
 
 ?>
 	</table>
