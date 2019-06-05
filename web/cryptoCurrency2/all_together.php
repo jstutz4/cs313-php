@@ -92,6 +92,6 @@ include 'generate_table.php';
 
 ?>
 </table>
-?>
+</div>
 </body>
 </html>
