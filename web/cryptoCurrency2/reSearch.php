@@ -34,6 +34,7 @@ session_start();
 	<input type="search" class="dimension" id="search"  name="currency" placeholder="(ie BTC, LTC, BCH, ETH)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
 </div>
+<!-- printing reSearch table !-->
 <?php
 htmlspecialchars(print('
 <div id="table">
@@ -42,8 +43,6 @@ htmlspecialchars(print('
 	</table>
 </div>
 <div id="hiddens"> </div>'));
-
-//print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
 ?>
 </body>
 </html>

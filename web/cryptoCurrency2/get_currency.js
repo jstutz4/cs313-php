@@ -1,7 +1,7 @@
 function getCurrency() {
     var currency = document.getElementById("search").value;
     var rows = htmlDecode(document.getElementById("hiddens").innerHTML);
-    var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume</th> <th>Save</th> <th>24h % change</th>';
+    var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume (B)</th> <th>24h % change</th> <th>Save</th>';
     var tableClosing = '</table>'
     var url = "API_currency.php?currency=" + currency;
     var httpRequest = new XMLHttpRequest();
@@ -10,7 +10,7 @@ function getCurrency() {
             if (this.readyState == 4 && this.status == 200) {
                 var info = JSON.parse(this.responseText);
                 var price = ((info["data"][currency]["quote"]["USD"]["price"]).toFixed(2));
-                var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
+                var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]) / 1000000000).toFixed(2);
                 var name = ((info["data"][currency]["slug"]));
                 var change = (info["data"][currency]["quote"]["USD"]["percent_change_24h"]).toFixed(2);
                 console.log("info " + change);
