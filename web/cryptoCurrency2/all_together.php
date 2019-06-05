@@ -87,7 +87,7 @@ include 'generate_table.php';
 			} 
 		}
 	}
-	print($table);
+	//print($table);
 //print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
 
 ?>
