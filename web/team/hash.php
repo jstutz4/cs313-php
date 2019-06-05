@@ -6,7 +6,7 @@ $password = password_hash(($_GET['password']), PASSWORD_DEFAULT);
 
 include 'connectHeroku.php'
 
-$stmt = $db->prepare('INSERT INTO person VALUES(:userName, :password)');
+$stmt = $db->prepare('INSERT INTO person (user_name, password) VALUES(:userName, :password)');
 $stmt->bindValue(':user_name', $user_name);
 $stmt->bindValue(':password', $password);
 $stmt->execute();
