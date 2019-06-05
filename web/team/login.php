@@ -7,7 +7,7 @@
     <title>TA1</title>
 </head>
 <body>
-	<form action="vaild.php action="POST">
+	<form action="vaild.php" method="POST">
 	<fieldset>
 	<label>user name</label>
 	<input type="text" name="user_name">
