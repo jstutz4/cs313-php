@@ -29,15 +29,21 @@ session_start();
 			<input type="button" class="nav-linkjs" onclick="invester()" value="View Investments">
 
 		</div>
+		<input type="button" value="logout" onclick="logout()">
 		<form>
 </nav>
 <h4>Start looking up your favourite crypto currency by entering its symbol</h4>
 <div id="searchjs">
 	<input type="search" class="dimension" id="search"  name="currency" placeholder="(ie BTC, LTC, BCH, ETH)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
-	<input type="button" value="logout" onclick="logout()">
 </div>
 <!-- printing reSearch table !-->
+<div id="searchjs">
+				<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+				<input type="submit" value="Filter Currency">
+				<input type="button" value="logout" onclick="logout()">
+		
+</div>
 <?php
 htmlspecialchars(print('
 <div id="table">
