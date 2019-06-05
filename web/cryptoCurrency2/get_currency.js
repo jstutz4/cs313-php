@@ -1,7 +1,7 @@
 function getCurrency() {
     var currency = document.getElementById("search").value;
     var rows = htmlDecode(document.getElementById("hiddens").innerHTML);
-    var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume</th> <th>Save</th>';
+    var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume</th> <th>Save</th> <th>24h % change</th>';
     var tableClosing = '</table>'
     var url = "API_currency.php?currency=" + currency;
     var httpRequest = new XMLHttpRequest();
@@ -12,8 +12,9 @@ function getCurrency() {
                 var price = ((info["data"][currency]["quote"]["USD"]["price"]).toFixed(2));
                 var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]).toFixed(2));
                 var name = ((info["data"][currency]["slug"]));
+                var change = (info["data"][currency]["quote"]["USD"]["percent_change_24h"]).toFixed(2);
                 if (document.getElementById(name) == null) {
-                    rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
+                    rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td>' + change '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
                     document.getElementById("hiddens").innerHTML = escapeHtml(rows);
                     document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
                 }
