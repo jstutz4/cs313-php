@@ -14,6 +14,7 @@
 	<br>
 	<label>password</label>
 	<input type="password" name="password">
+	<input type="button" value="sign in" name="goodness">
 	</fieldset>
 	</form>
 </body>

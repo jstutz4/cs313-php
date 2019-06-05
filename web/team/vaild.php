@@ -14,7 +14,7 @@ include 'connectHeroku.php';
 
 if(isset($user_name) && isset($password){
 foreach ($db->query('SELECT user_name, password FROM person') as $user_row){
-	if($user_row['user_name'] == $user_name){
+	if($user_row['user_name'] == $user_name && $user_row['password'] == password_hash($password, PASSWORD_DEFAULT){
 		$_SESSION['userName'] = $user_name;
 	}
 }
