@@ -12,10 +12,11 @@ print($user_name . $password);
 
 include 'connectHeroku.php';
 
-if(isset($user_name) && isset($password){
-foreach ($db->query('SELECT user_name, password FROM person') as $user_row){
-	if($user_row['user_name'] == $user_name && $user_row['password'] == $password){
-		$_SESSION['userName'] = $user_name;
+if(isset($user_name) && isset($password)){
+	foreach ($db->query('SELECT user_name, password FROM person') as $user_row){
+		if($user_row['user_name'] == $user_name && $user_row['password'] == $password){
+			$_SESSION['userName'] = $user_name;
+		}
 	}
 }
 if(isset($_SESSION['userName'])){
@@ -25,7 +26,9 @@ if(isset($_SESSION['userName'])){
 	$stmt->execute();
 
 	header('location: welcome.php');
+	die();
 }
 
 print($user_name . $password);
+
 ?>
