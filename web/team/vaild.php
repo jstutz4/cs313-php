@@ -3,8 +3,8 @@ session.start();
 ?>
 
 <?php
-$user_name = htmlspecialchars($_POST['user_name']);
-$password = password_hash(($_POST['password']), PASSWORD_DEFAULT);
+$user_name = htmlspecialchars($_GET['user_name']);
+$password = password_hash(($_GET['password']), PASSWORD_DEFAULT);
 
 $_SESSION['userName'];
 
