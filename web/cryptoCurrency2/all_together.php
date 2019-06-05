@@ -60,7 +60,6 @@ include 'generate_table.php';
 //print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
 ?>
 <!-- printing amount invested table !-->
-<?php
 <div id="table">
 	<table>
 		<th>Currency</td>
