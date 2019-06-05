@@ -61,14 +61,9 @@ include 'generate_table.php';
 ?>
 <!-- printing amount invested table !-->
 <div id="table">
-	<table>
-		<th>Currency</td>
-		<th>Price</td>
-		<th>Amount Invested</td>
-		<th>Delete Investment</td>
 <?php
 	include 'connectHeroku.php';
-
+	$table = '<table><th>Currency</td><th>Price</td><th>Amount Invested</td><th>Delete Investment</td>';
 	$name = $_GET['currency'];
 
 	if(isset($name)){
@@ -87,11 +82,10 @@ include 'generate_table.php';
 			} 
 		}
 	}
-	//print($table);
+	print($table . '</table>');
 //print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
 
 ?>
-</table>
 </div>
 </body>
 </html>
