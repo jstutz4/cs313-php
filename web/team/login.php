@@ -8,8 +8,6 @@ session.start();
 <head>
     <meta charset="utf-8" />
     <title>TA1</title>
-    <link rel="stylesheet" type="text/css" href="home.css" />
-    <script src=""></script>
 </head>
 <body>
 	<form action="hash.php" method="POST">
