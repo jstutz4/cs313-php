@@ -1,6 +1,3 @@
-<?php
-session.start();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +7,7 @@ session.start();
     <title>TA1</title>
 </head>
 <body>
-	<form action="hash.php" method="POST">
+	<form>
 	<input type="text" name="user_name">
 	<input type="password" name="password">
 	</form>
