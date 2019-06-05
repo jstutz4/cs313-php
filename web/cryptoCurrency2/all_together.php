@@ -38,12 +38,7 @@ session_start();
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
 </div>
 <!-- printing reSearch table !-->
-<div id="searchjs">
-				<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
-				<input type="submit" value="Filter Currency">
-				<input type="button" value="logout" onclick="logout()">
-		
-</div>
+
 <?php
 htmlspecialchars(print('
 <div id="table">
@@ -66,6 +61,10 @@ include 'generate_table.php';
 //print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
 ?>
 <!-- printing amount invested table !-->
+<div id="searchjs">
+				<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+				<input type="submit" value="Filter Currency">
+</div>
 <div id="table">
 <?php
 	include 'connectHeroku.php';
