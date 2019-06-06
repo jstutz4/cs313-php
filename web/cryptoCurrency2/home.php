@@ -37,7 +37,7 @@ session_start();
 <?php
 include 'connectHeroku.php';
 include 'generate_table.php';
-include 'update_currency.php';
+//include 'update_currency.php';
 
 //print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
 ?>
