@@ -36,7 +36,6 @@ session_start();
 <div id="searchjs">
 	<input type="search" class="dimension" id="search"  name="currency" placeholder="(ie BTC, LTC, BCH, ETH)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
-	<input class="dimension" type="button" value="Update Currency" onclick="updateCurrency()">
 </div>
 <!-- printing reSearch table !-->
 
@@ -63,9 +62,12 @@ include 'generate_table.php';
 ?>
 <!-- printing amount invested table !-->
 <div id="searchjs">
-				<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
-				<input type="submit" value="Filter Currency">
+	<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+	<input type="submit" value="Filter Currency">
 </div>
+<input class="dimension" type="button" value="Update Currency" onclick="updateCurrency()">
+
+
 <div id="table">
 <?php
 	include 'connectHeroku.php';
