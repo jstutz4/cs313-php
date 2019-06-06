@@ -5,11 +5,13 @@ session_start();
 print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
 
 include 'update_currency.php';
+$const = array("data", "quote", "USD", "price");
+$info = $_POST['info'];
+$test = $info['data'][$money_name]['quote']['USD']['price'];
+print($test);
 
-$info = $_POST['info']
-print($info["data"][$money_name]["quote"]["USD"]["price"])
 include 'connectHeroku.php';
-foreach($currency_names as $money_name{
+foreach($currency_names as $money_name){
 	$price = $info["data"][$money_name]["quote"]["USD"]["price"];
 
 	$stmt = $db->prepare('UPDATE currency SET price = :total WHERE name = :nameid AND user_id = :userID ');
