@@ -8,12 +8,12 @@ function getCurrency() {
     if (currency != "") {
         httpRequest.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
                 var info = JSON.parse(this.responseText);
                 var price = ((info["data"][currency]["quote"]["USD"]["price"]).toFixed(2));
                 var volume = ((info["data"][currency]["quote"]["USD"]["volume_24h"]) / 1000000000).toFixed(2);
                 var name = ((info["data"][currency]["slug"]));
                 var change = (info["data"][currency]["quote"]["USD"]["percent_change_24h"]).toFixed(2);
-                console.log("info " + change);
                 if (document.getElementById(name) == null) {
                     rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
                     document.getElementById("hiddens").innerHTML = escapeHtml(rows);
