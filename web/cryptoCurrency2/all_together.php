@@ -51,9 +51,9 @@ htmlspecialchars(print('
 <div id="searchjs">
 	<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
 	<input type="button" value="Filter Currency" onclick=>
+<input class="dimension" type="button" value="Update Currency" onclick="alterTable()">
 	
 </div>
-<input class="dimension" type="button" value="Update Currency" onclick="updateCurrency()">
 
 <!-- printing view currency table !-->
 <?php

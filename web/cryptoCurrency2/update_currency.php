@@ -3,7 +3,6 @@ session_start();
 ?>
 
 <?php
-print("session" . $_SESSION['user_name'] . $_SESSION['userID'] . '<br>');
 $currency_names = array();
 include 'connectHeroku.php';
 
@@ -16,6 +15,5 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		}
 	} 
 }
-
-print ($currency_names[0] . ' and ' . $currency_names[1]);
+print($currency_names);
 ?>
