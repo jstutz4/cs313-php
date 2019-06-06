@@ -15,5 +15,7 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		}
 	} 
 }
-print($currency_names);
+for($i = 0 $i < count($currency_names)){
+print($currency_names[$i]);
+}
 ?>
