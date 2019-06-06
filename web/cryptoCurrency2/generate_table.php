@@ -18,7 +18,7 @@ if($isUser){
 	$_SESSION['user_name'];
 	$_SESSION['userID'];
 	$userID;
-	$table = "<table><th>currency</th><th>price</th><th>volume</th><th>Invest</th><th>Invest Amount</th><th>delete</th>";
+	$table = '<table id="tableCurrency"><th>currency</th><th>price</th><th>volume</th><th>Invest</th><th>Invest Amount</th><th>delete</th>';
 	//$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
 	$addBTN = '<td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing()"></td><td><input type="number"> </td>';
 	$currency = $_GET['currency'];

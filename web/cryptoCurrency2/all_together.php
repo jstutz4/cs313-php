@@ -36,6 +36,7 @@ session_start();
 <div id="searchjs">
 	<input type="search" class="dimension" id="search"  name="currency" placeholder="(ie BTC, LTC, BCH, ETH)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
+	<input class="dimension" type="button" value="Update Currency" onclick="updateCurrency()">
 </div>
 <!-- printing reSearch table !-->
 
