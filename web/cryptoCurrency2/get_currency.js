@@ -46,7 +46,6 @@ function htmlDecode(input) {
 function insertCurrency(button) {
     var name = button.name;
     var row = document.getElementById(name);
-    var currency = (row.firstNodes[0].innerHTML);
     var prices = (row.childNodes[1].innerHTML);
     var volumes = (row.childNodes[2].innerHTML);
     var change = (row.childNodes[3].innerHTML);
