@@ -36,11 +36,13 @@ for($i = 0; $i < count($currency_names); $i++){
 	print("starting loop <br>");
 	$price = $values["data"][$symbols[$i]]["quote"]["USD"]["price"];
 	$volume = $values["data"][$symbols[$i]]["quote"]["USD"]["volume_24h"];
+	$change = $values["data"][$symbols[$i]]["quote"]["USD"]["percent_change_24h"];
 	print("looking " . number_format($price, 2, '.', '') . number_format(($volume/1000000000),1, '.', '') . $currency_names[$i] . $_SESSION['userID'] . "<br>");
 
-	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
-	$stmt->bindValue(':prices', number_format($price, 2));
-	$stmt->bindValue(':volumes', number_format(($volume/1000000000),2));
+	$stmt = $db->prepare('UPDATE currency SET price = :prices, change = :changes, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
+	$stmt->bindValue(':prices', number_format($price, 2, '.', ''));
+	$stmt->bindValue(':changes', number_format($change, 2, '.', ''));
+	$stmt->bindValue(':volumes', number_format(($volume/1000000000),2, '.', ''));
 	$stmt->bindValue(':currencyID', $currency_names[$i]);
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
