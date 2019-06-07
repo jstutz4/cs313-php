@@ -49,8 +49,12 @@ function insertCurrency(button) {
     var currency = (row.firstChild.innerHTML);
     var prices = (row.childNodes[1].innerHTML);
     var volumes = (row.childNodes[2].innerHTML);
+    var change = (row.childNodes[3].innerHTML);
+    var symbol = document.getElementById("symbol").value;
 
-    var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes;
+
+    var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes + '&change=' + change + '&symbol=' + symbol;
+    console.log("url: " + url);
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
