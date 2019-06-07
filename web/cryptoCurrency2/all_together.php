@@ -14,6 +14,7 @@ session_start();
 	!-->
     <link rel="stylesheet" type="text/css" href="home.css"/>
 	<link rel="stylesheet" type="text/css" href="research.css"/>
+	<link rel="stylesheet" type="text/css" href="all.css"/>
     <script src="dataBase.js"></script>
 	<script src="get_currency.js"></script>
 	<script src="all_AJAX.js"></script>
@@ -72,7 +73,7 @@ include 'generate_table.php';
 <div id="table">
 <?php
 	include 'connectHeroku.php';
-	$table = '<table><th>Currency</td><th>Price</td><th>Amount Invested</td><th>Delete Investment</td>';
+	$table = '<table id="investments"><th>Currency</td><th>Price</td><th>Amount Invested</td><th>Delete Investment</td>';
 	$name = $_GET['currency'];
 
 	if(isset($name)){
