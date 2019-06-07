@@ -42,7 +42,7 @@ for($i = 0; $i < count($currency_names); $i++){
 	$stmt->bindValue(':user_id', $_SESSION['userID']);
 	$stmt->execute();
 
-	print("looking " . $price . $volume . "<br>")
+	print("looking " . $price . $volume . "<br>");
 }
 
 curl_close($curl); // Close request
