@@ -16,6 +16,7 @@ $prechange = number_format(((($coin*$price) - $amount)/$amount), 3, '.', '');
 $amount_change = number_format(((($coin*$price) - $amount)), 3, '.', '');
 
 include 'connectHeroku.php';
+print('session ' . $_SESSION['userID'] . $name . $amount .$user_id . $start_amount);
 
 print('if add to investment <br>');
 foreach ($db->query('SELECT invest_id, user_id, name, amount, coin FROM amount_invested') as $user_row){
@@ -48,7 +49,6 @@ print('inserting new  investment <br>');
 	$stmt->execute();
 }
 
-//print($user_name. $name . $price . $amount .$user_id . $start_amount);
 print('all done');
 header('location: updateInvestTable.php');
 
