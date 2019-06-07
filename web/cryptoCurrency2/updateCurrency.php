@@ -36,9 +36,9 @@ for($i = 0; $i < count($currency_names); $i++){
 	print("starting loop <br>");
 	$price = $values["data"][$symbols[$i]]["quote"]["USD"]["price"];
 	$volume = $values["data"][$symbols[$i]]["quote"]["USD"]["volume_24h"];
-	print("looking " .$symbols[$i] . $price . $volume . "<br>");
+	//print("looking " . $symbols[$i] . $price . $volume . "<br>");
 
-	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
+	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = \':currencyID\' AND user_id = :userID');
 	$stmt->bindValue(':prices', $price);
 	$stmt->bindValue(':volumes', $volume);
 	$stmt->bindValue(':currencyID', $currency_names[$i]);
