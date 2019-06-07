@@ -32,9 +32,10 @@ $response = curl_exec($curl); // Send the request, save the response
 $values = (json_decode($response));// print json decoded response
 // now update the currency table
 include 'connectHeroku.php';
-for($i = 0; $i < count($symbols); $i++){
-	$price = $values["data"][$symbols[$i]]["quote"]["USD"]["price"];
-	$volume = $values["data"][$symbols[$i]]["quote"]["USD"]["price"];
+for($i = 0; $i < count($currency_names); $i++){
+	print("starting loop <br>");
+	$price = $values["data"][$currency_names[$i]]["quote"]["USD"]["price"];
+	$volume = $values["data"][$currency_names[$i]]["quote"]["USD"]["price"];
 	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
 	$stmt->bindValue(':prices', $price);
 	$stmt->bindValue(':volumes', $volume);
