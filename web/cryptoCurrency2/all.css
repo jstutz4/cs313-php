@@ -6,3 +6,9 @@
 .investments, .investments th {
     border-color: crimson;
 }
+
+input[type=number] {
+    width: 100px;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+}

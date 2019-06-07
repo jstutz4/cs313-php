@@ -68,31 +68,14 @@ include 'generate_table.php';
 <div id="searchjs">
 	<input type="search" class="form-control mr-sm-2 investments" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
 	<input type="submit" value="Filter Currency">
+	<input class="dimension" type="button" value="Update Currency" onclick="alterInvest()">
+
 </div>
 
 <div id="table">
 <?php
 	include 'connectHeroku.php';
-	$table = '<table class="investments"><th>Currency</td><th>Price</td><th>Amount Invested</td><th>Delete Investment</td>';
-	$name = $_GET['currency'];
-
-	if(isset($name)){
-		foreach ($db->query('SELECT invest_id, user_id, name, price, amount FROM amount_invested') as $user_row){
-			if($user_row['user_id'] == $_SESSION["userID"]){
-				if($user_row['name'] == $name){
-					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="amount_invested" onclick="deleteRow(\'amount_invested\', ' . $user_row['invest_id'] .')"></td></tr>';
-				}
-			} 
-		}
-	}
-	elseif(!isset($name)){
-		foreach ($db->query('SELECT invest_id, user_id, name, price, amount FROM amount_invested') as $user_row){
-			if($user_row['user_id'] == $_SESSION["userID"]){
-				$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="amount_invested" onclick="deleteRow(\'amount_invested\', ' . $user_row['invest_id'] .')"></td></tr>';
-			} 
-		}
-	}
-	print($table . '</table>');
+	include 'updateInvestTable.php';
 //print("session" . $_SESSION['user_name'] . $_SESSION['userID']);
 
 ?>
