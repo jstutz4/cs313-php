@@ -17,35 +17,39 @@ $amount_change = number_format(((($coin*$price) - $amount)), 3, '.', '');
 
 include 'connectHeroku.php';
 
-
-foreach ($db->query('SELECT invest_id, user_id, name, amount FROM amount_invested') as $user_row){
+print('if add to investment <br>');
+foreach ($db->query('SELECT invest_id, user_id, name, amount, coin FROM amount_invested') as $user_row){
 	if($user_row['user_id'] == $user_id && $user_row['name'] == $name){
 		$update = true;
 		$rowID = $user_row['invest_id'];
 		$start_amount = $user_row['amount'] + $amount;
 	}
 }
+print('after check investment <br>');
 
 if($update){
+print('stop adding to  investment <br>');
+
 	$stmt = $db->prepare('UPDATE amount_invested SET amount = :total WHERE invest_id = :rowID ');
 	$stmt->bindValue(':total', $start_amount);
 	$stmt->bindValue(':rowID', $rowID);
 	$stmt->execute();
 }
 else{
+print('inserting new  investment <br>');
 
 	$stmt = $db->prepare('INSERT INTO amount_invested(user_id, name, amount, coin, prechange, amount_change) VALUES(:user_id, :name, :amount, :coins, :prechanges, :amount_changes)');
 	$stmt->bindValue(':user_id', $user_id);
 	$stmt->bindValue(':name', $name);
 	$stmt->bindValue(':amount', $amount);
-	$stmt->bindValue(':coin', $coins);
-	$stmt->bindValue(':prechange', $prechange);
+	$stmt->bindValue(':coins', $coins);
+	$stmt->bindValue(':prechanges', $prechange);
 	$stmt->bindValue(':amount_changes', $amount_change);
 	$stmt->execute();
 }
 
 //print($user_name. $name . $price . $amount .$user_id . $start_amount);
-
+print('all done');
 header('location: updateInvestTable.php');
 
 
