@@ -15,7 +15,7 @@ function getCurrency() {
                 var name = ((info["data"][currency]["slug"]));
                 var change = (info["data"][currency]["quote"]["USD"]["percent_change_24h"]).toFixed(2);
                 if (document.getElementById(name) == null) {
-                    rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
+                    rows = rows + '<tr id="' + name + '"><td name="' + currency + '">' + name + '</td><td>' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
                     document.getElementById("hiddens").innerHTML = escapeHtml(rows);
                     document.getElementById("table").innerHTML = tableHeader + rows + tableClosing;
                 }
@@ -50,7 +50,7 @@ function insertCurrency(button) {
     var prices = (row.childNodes[1].innerHTML);
     var volumes = (row.childNodes[2].innerHTML);
     var change = (row.childNodes[3].innerHTML);
-    var symbol = document.getElementById("symbol").value;
+    var symbol = row.firstChild.name;
 
 
     var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes + '&change=' + change + '&symbol=' + symbol;
