@@ -15,13 +15,14 @@ foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 		}
 	} 
 }
+$string_name;
 for($i = 0; $i < count($currency_names); $i++){
 	if($i == count($currency_names)-1){
-	print($currency_names[$i]);
+	$string_name = $string_name . $currency_names[$i];
 	}
 	else{
-	print($currency_names[$i].',');
-
+	$string_name = $string_name . $currency_names[$i].',';
 	}
 }
+print("strings " .$string_name);
 ?>

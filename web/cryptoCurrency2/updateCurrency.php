@@ -2,22 +2,51 @@
 session_start();
 ?>
 <?php
-print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
-
 include 'update_currency.php';
-$const = array("data", "quote", "USD", "price");
-$info = $_POST['info'];
-$test = $info['data'][$money_name]['quote']['USD']['price'];
-print($test);
 
+<?php
+$url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
+$parameters = [
+  #'start' => '1',
+  'symbol' => $string_name,
+  'convert' => 'USD'
+];
+
+$headers = [
+  'Accepts: application/json',
+  'X-CMC_PRO_API_KEY: b33eb643-f565-48ab-a45d-8cbc3cc59b1e'
+];
+$qs = http_build_query($parameters); // query string encode the parameters
+$request = "{$url}?{$qs}"; // create the request URL
+
+
+$curl = curl_init(); // Get cURL resource
+// Set cURL options
+curl_setopt_array($curl, array(
+  CURLOPT_URL => $request,            // set the request URL
+  CURLOPT_HTTPHEADER => $headers,     // set the headers 
+  CURLOPT_RETURNTRANSFER => 1         // ask for raw response instead of bool
+));
+
+$response = curl_exec($curl); // Send the request, save the response
+print($response);
+$values = (json_decode($response, true));// print json decoded response
+// now update the currency table
 include 'connectHeroku.php';
-foreach($currency_names as $money_name){
-	$price = $info["data"][$money_name]["quote"]["USD"]["price"];
-
-	$stmt = $db->prepare('UPDATE currency SET price = :total WHERE name = :nameid AND user_id = :userID ');
-	$stmt->bindValue(':total', $price);
-	$stmt->bindValue(':rowid', $money_name);
-	$stmt->bindValue(':rowID', $_SESSION['userID']);
+for($i = 0; $i < count($currency_names); $i++){
+	$price = info["data"][$currency_names]["quote"]["USD"]["price"];
+	$volume = info["data"][$currency_names]["quote"]["USD"]["price"];
+	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
+	$stmt->bindValue(':prices', $price);
+	$stmt->bindValue(':volumes', $volume);
+	$stmt->bindValue(':currencyID', $currency_names);
+	$stmt->bindValue(':user_id', $_SESSION['userID']);
 	$stmt->execute();
+
+	print("looking " . $price . $volume . "<br>")
 }
+
+curl_close($curl); // Close request
+
+header('location: updateCurrencyTable.php');
 ?>

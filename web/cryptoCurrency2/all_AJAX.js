@@ -30,7 +30,7 @@ function updateCurrency() {
 }
 
 function alterTable() {
-    var url = 'updateCurrency.php?info=' + updateCurrency();
+    var url = 'updateCurrency.php';
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
