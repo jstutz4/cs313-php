@@ -4,7 +4,6 @@ session_start();
 <?php
 include 'update_currency.php';
 
-<?php
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
 $parameters = [
   #'start' => '1',
