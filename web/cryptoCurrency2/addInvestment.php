@@ -7,13 +7,13 @@ $name = htmlspecialchars($_GET['currency']);
 $price = htmlspecialchars($_GET['price']);
 $amount = htmlspecialchars($_GET['amount']);
 $symbol = htmlspecialchars($_GET['symbol']);
-$user_id $_SESSION['userID'];
+$user_id = $_SESSION['userID'];
 $update = false;
 $start_amount = 0;
 $rowID;
 $coins = number_format(($amount/$price), 3, '.', "");
-$prechange = (number_format((($coin*$price) - $amount)/$amount), 3, '.', '');
-$amount_change = (number_format((($coin*$price) - $amount)), 3, '.', '');
+$prechange = number_format(((($coin*$price) - $amount)/$amount), 3, '.', '');
+$amount_change = number_format(((($coin*$price) - $amount)), 3, '.', '');
 
 include 'connectHeroku.php';
 
