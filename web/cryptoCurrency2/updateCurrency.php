@@ -38,11 +38,11 @@ for($i = 0; $i < count($currency_names); $i++){
 	$volume = $values["data"][$symbols[$i]]["quote"]["USD"]["volume_24h"];
 	print("looking " . $price . $volume . $currency_names[$i] . $_SESSION['userID'] . "<br>");
 
-	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :\'currencyID\' AND user_id = :userID');
+	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
 	$stmt->bindValue(':prices', $price);
 	$stmt->bindValue(':volumes', $volume);
 	$stmt->bindValue(':currencyID', $currency_names[$i]);
-	$stmt->bindValue(':user_id', $_SESSION['userID']);
+	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 
 	print("looking " . $price . $volume . "<br>");
