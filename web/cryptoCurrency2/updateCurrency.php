@@ -39,8 +39,8 @@ for($i = 0; $i < count($currency_names); $i++){
 	print("looking " . $price . $volume . $currency_names[$i] . $_SESSION['userID'] . "<br>");
 
 	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
-	$stmt->bindValue(':prices', $price);
-	$stmt->bindValue(':volumes', $volume);
+	$stmt->bindValue(':prices', number_format($price, 2));
+	$stmt->bindValue(':volumes', number_format(($volume/1000000),2));
 	$stmt->bindValue(':currencyID', $currency_names[$i]);
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
