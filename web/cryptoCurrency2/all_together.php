@@ -54,7 +54,7 @@ htmlspecialchars(print('
 <input class="dimension" type="button" value="Update Currency" onclick="alterTable()">
 	
 </div>
-
+<div id="tableMoney">
 <!-- printing view currency table !-->
 <?php
 //include 'connectHeroku.php';
@@ -62,6 +62,7 @@ include 'generate_table.php';
 
 //print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
 ?>
+</div>
 <!-- printing amount invested table !-->
 <div id="searchjs">
 	<input type="search" class="form-control mr-sm-2" id="search"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
