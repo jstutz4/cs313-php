@@ -35,7 +35,7 @@ include 'connectHeroku.php';
 for($i = 0; $i < count($currency_names); $i++){
 	print("starting loop <br>");
 	$price = $values["data"][$currency_names[$i]]["quote"]["USD"]["price"];
-	$volume = $values->"data"->$currency_names[$i]->"quote"->"USD"->"volume_24h";
+	$volume = $values["data"][$currency_names[$i]]["quote"]["USD"]["volume_24h"];
 	print("looking " . $price . $volume . "<br>");
 
 	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
