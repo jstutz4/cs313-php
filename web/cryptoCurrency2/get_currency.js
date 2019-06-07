@@ -1,5 +1,5 @@
 function getCurrency() {
-    var currency = document.getElementById("search").value;
+    var currency = document.getElementById("symbol").value;
     var rows = htmlDecode(document.getElementById("hiddens").innerHTML);
     var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume (B)</th> <th>24h % change</th> <th>Save</th>';
     var tableClosing = '</table>'
