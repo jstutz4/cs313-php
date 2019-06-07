@@ -50,7 +50,7 @@ function insertCurrency(button) {
     var prices = (row.childNodes[1].innerHTML);
     var volumes = (row.childNodes[2].innerHTML);
     var change = (row.childNodes[3].innerHTML);
-    var symbol = row.childNodes[0].getAttribute("getAttribute");
+    var symbol = row.childNodes[1].getAttribute("getAttribute");
 
 
     var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes + '&change=' + change + '&symbol=' + symbol;
