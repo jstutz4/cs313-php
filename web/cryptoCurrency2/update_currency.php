@@ -4,24 +4,26 @@ session_start();
 
 <?php
 $currency_names = array();
+$symbols = array();
 include 'connectHeroku.php';
 
 foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){
 	if($user_row['user_id'] == $_SESSION["userID"]){
-		foreach ($db->query('SELECT money_id, user_id, currency_id FROM currency') as $currency_row){
+		foreach ($db->query('SELECT money_id, user_id, currency_id, name FROM currency') as $currency_row){
 			if($currency_row['user_id'] == $_SESSION['userID']){
-				$currency_names[] = $currency_row['currency_id'];
+				$symbols[] = $currency_row['currency_id'];
+				$currency_names[] = $currency_row['name'];
 			}
 		}
 	} 
 }
 $string_name;
-for($i = 0; $i < count($currency_names); $i++){
-	if($i == count($currency_names)-1){
-	$string_name = $string_name . $currency_names[$i];
+for($i = 0; $i < count($symbols); $i++){
+	if($i == count($symbols)-1){
+	$string_name = $string_name . $symbols[$i];
 	}
 	else{
-	$string_name = $string_name . $currency_names[$i].',';
+	$string_name = $string_name . $symbols[$i].',';
 	}
 }
 print("strings " .$string_name);
