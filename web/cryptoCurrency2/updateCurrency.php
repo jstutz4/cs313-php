@@ -40,7 +40,7 @@ for($i = 0; $i < count($currency_names); $i++){
 	print("looking " . number_format($price, 2, '.', '') . number_format(($volume/1000000000),1, '.', '') . $currency_names[$i] . $_SESSION['userID'] . "<br>");
 
 	$stmt = $db->prepare('UPDATE currency SET price = :prices, change = :changes, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
-	$stmt->bindValue(':prices', number_format($price, 2, '.', ''));
+	$stmt->bindValue(':prices', number_format($price, 3, '.', ''));
 	$stmt->bindValue(':changes', number_format($change, 2, '.', ''));
 	$stmt->bindValue(':volumes', number_format(($volume/1000000000),2, '.', ''));
 	$stmt->bindValue(':currencyID', $currency_names[$i]);

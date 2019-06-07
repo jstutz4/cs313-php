@@ -1,7 +1,7 @@
 function getCurrency() {
     var currency = document.getElementById("symbol").value;
     var rows = htmlDecode(document.getElementById("hiddens").innerHTML);
-    var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume (B)</th> <th>24h % change</th> <th>Save</th>';
+    var tableHeader = '<table><th> Currency</th> <th>Price</th> <th>Volume (B)</th> <th>24hr % change</th> <th>Save</th>';
     var tableClosing = '</table>'
     var url = "API_currency.php?currency=" + currency;
     var httpRequest = new XMLHttpRequest();

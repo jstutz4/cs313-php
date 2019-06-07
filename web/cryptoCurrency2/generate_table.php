@@ -22,7 +22,7 @@ if($isUser){
 	$_SESSION['user_name'];
 	$_SESSION['userID'];
 	$userID;
-	$table = '<table class="tableCurrency"><th>currency</th><th>price</th><th>volume (B)</th><th>Invest</th><th>Invest Amount</th><th>delete</th>';
+	$table = '<table class="tableCurrency"><th>currency</th><th>price</th><th>volume (B)</th><th>24hr % Change<th>Invest</th><th>Invest Amount</th><th>delete</th>';
 	//$add_user = "<tr><td>" . $user_row['user_id'] . "</td> <td>" . $user_row['user_name']. "</td>";
 	$addBTN = '<td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing()"></td><td><input type="number"> </td>';
 	$currency = $_GET['currency'];
@@ -34,9 +34,9 @@ if($isUser){
 			if($user_row['user_name'] == $_SESSION["user_name"]){
 				//$userID = $user_row['user_id'];
 				//$table = $table . "heres1" . $_SESSION["userID"] . $_SESSION["user_name"];
-				foreach ($db->query('SELECT money_id, user_id, name, price, volume FROM currency') as $currency_row){
+				foreach ($db->query('SELECT money_id, user_id, name, price, change, volume FROM currency') as $currency_row){
 					if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
-						$table = $table .'<tr><td class="'. $currency_row['name'] . '">'. $currency_row['name'].'</td><td class="'. $currency_row['name'] . '">'.$currency_row['price']."</td><td>". $currency_row['volume']."</td>". '<td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td class="'. $currency_row['name'] . '"><input type="number"> </td><td><input type="button" value="delete" onclick="deleteRow(\'currency\', ' . $currency_row['money_id'].')"></td></tr>';  
+						$table = $table .'<tr><td class="'. $currency_row['name'] . '">'. $currency_row['name'].'</td><td class="'. $currency_row['name'] . '">'.$currency_row['price']."</td><td>". $currency_row['volume']."</td><td>".$currency_row['change'] . '</td><td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td class="'. $currency_row['name'] . '"><input type="number"> </td><td><input type="button" value="delete" onclick="deleteRow(\'currency\', ' . $currency_row['money_id'].')"></td></tr>';  
 					}
 				}
 			} 
@@ -48,9 +48,9 @@ if($isUser){
 				$userID = $user_row['user_id'];
 				$_SESSION["userID"] = $userID;
 				$_SESSION["user_name"] = $_SESSION["user_name"];
-				foreach ($db->query('SELECT money_id, user_id, name, price, volume FROM currency') as $currency_row){
+				foreach ($db->query('SELECT money_id, user_id, name, price, change, volume FROM currency') as $currency_row){
 					if($currency_row['user_id'] == $userID){
-						$table = $table .'<tr><td class="'. $currency_row['name'] . '">'. $currency_row['name'].'</td><td class="'. $currency_row['name'] . '">'.$currency_row['price']."</td><td>". $currency_row['volume']."</td>". '<td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td class="'. $currency_row['name'] . '"><input type="number"> </td><td><input type="button" value="delete" onclick="deleteRow(\'currency\', ' . $currency_row['money_id'].')"></td></tr>';  
+						$table = $table .'<tr><td class="'. $currency_row['name'] . '">'. $currency_row['name'].'</td><td class="'. $currency_row['name'] . '">'.$currency_row['price']."</td><td>". $currency_row['volume']."</td><td>". $currency_row['change'] . '</td><td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td class="'. $currency_row['name'] . '"><input type="number"> </td><td><input type="button" value="delete" onclick="deleteRow(\'currency\', ' . $currency_row['money_id'].')"></td></tr>';  
 					}
 				}
 			} 
