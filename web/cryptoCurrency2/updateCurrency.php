@@ -28,17 +28,17 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl); // Send the request, save the response
-print($response);
-$values = (json_decode($response, true));// print json decoded response
+//print($response);
+$values = (json_decode($response));// print json decoded response
 // now update the currency table
 include 'connectHeroku.php';
 for($i = 0; $i < count($symbols); $i++){
-	$price = info["data"][$symbols[$i]]["quote"]["USD"]["price"];
-	$volume = info["data"][$symbols[$i]]["quote"]["USD"]["price"];
+	$price = $values["data"][$symbols[$i]]["quote"]["USD"]["price"];
+	$volume = $values["data"][$symbols[$i]]["quote"]["USD"]["price"];
 	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
 	$stmt->bindValue(':prices', $price);
 	$stmt->bindValue(':volumes', $volume);
-	$stmt->bindValue(':currencyID', $symbols[$i]);
+	$stmt->bindValue(':currencyID', $currency_names[$i]);
 	$stmt->bindValue(':user_id', $_SESSION['userID']);
 	$stmt->execute();
 
