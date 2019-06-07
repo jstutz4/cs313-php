@@ -50,5 +50,6 @@ for($i = 0; $i < count($currency_names); $i++){
 
 curl_close($curl); // Close request
 
-header('location: updateCurrencyTable.php');
+header('location: generate_table.php');
+die();
 ?>

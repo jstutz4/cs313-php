@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+<?php
+include 'conncectHeroku.php';
 $user_name = $_GET["user_id"];
 $isUser = false;
 foreach ($db->query('SELECT user_id, user_name FROM users') as $user_row){

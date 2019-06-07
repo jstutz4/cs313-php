@@ -57,7 +57,7 @@ htmlspecialchars(print('
 
 <!-- printing view currency table !-->
 <?php
-include 'connectHeroku.php';
+//include 'connectHeroku.php';
 include 'generate_table.php';
 
 //print("session " .$_SESSION['user_name'] . $_SESSION['userID']);
