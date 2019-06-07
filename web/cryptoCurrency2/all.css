@@ -1,8 +1,8 @@
-#tableCurrency, #tableCurrency th{
+.tableCurrency, .tableCurrency th{
     border-color: darkblue;
 
 }
 
-#investments, #investments th {
+.investments, .investments th {
     border-color: crimson;
 }
