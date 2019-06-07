@@ -23,14 +23,14 @@ session_start();
 <nav>
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
-		<form action="home.php" method="GET">
+		<!--<form action="home.php" method="GET">!-->
 			<input type="button" class="nav-linkjs" onclick="reSearch()" value="ReSearch Currency">
 			<input type="button" class="nav-linkjs" onclick="home()" value="View Currency">
 			<input type="button" class="nav-linkjs" onclick="invester()" value="View Investments">
 
 		</div>
 		<input type="button" value="logout" onclick="logout()">
-		<form>
+		<!--<form>!-->
 </nav>
 <h4>Start looking up your favourite crypto currency by entering its symbol</h4>
 <div id="searchjs">
