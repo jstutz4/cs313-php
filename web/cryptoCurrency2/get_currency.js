@@ -46,11 +46,11 @@ function htmlDecode(input) {
 function insertCurrency(button) {
     var name = button.name;
     var row = document.getElementById(name);
-    var currency = (row.firstChild.innerHTML);
+    var currency = (row.firstNodes[0].innerHTML);
     var prices = (row.childNodes[1].innerHTML);
     var volumes = (row.childNodes[2].innerHTML);
     var change = (row.childNodes[3].innerHTML);
-    var symbol = row.firstChild.getAttribute("getAttribute");
+    var symbol = row.childNodes[0].getAttribute("getAttribute");
 
 
     var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes + '&change=' + change + '&symbol=' + symbol;
