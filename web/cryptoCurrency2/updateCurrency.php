@@ -34,8 +34,8 @@ $values = (json_decode($response));// print json decoded response
 include 'connectHeroku.php';
 for($i = 0; $i < count($currency_names); $i++){
 	print("starting loop <br>");
-	$price = $response["data"][$currency_names[$i]]["quote"]["USD"]["price"];
 	$volume = $values["data"][$currency_names[$i]]["quote"]["USD"]["price"];
+	$price = $response["data"][$currency_names[$i]]["quote"]["USD"]["price"];
 	print("looking " . $price . $volume . "<br>");
 
 	$stmt = $db->prepare('UPDATE currency SET price = :prices, volume = :volumes WHERE name = :currencyID AND user_id = :userID');
