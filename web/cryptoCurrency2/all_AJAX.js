@@ -50,7 +50,7 @@ function deleteRow(table, id) {
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
-            
+            alterTable();
         }
     }
     httpRequest.open("GET", url, true);
