@@ -19,6 +19,7 @@ function getCurrency() {
                     
                 }
                 else {
+                    document.getElementById(name).innerHTML = "";
                     document.getElementById(name).innerHTML = rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td name="' + currency + '">' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
                 }
                 document.getElementById("hiddens").innerHTML = escapeHtml(rows);
