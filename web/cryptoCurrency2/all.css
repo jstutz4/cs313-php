@@ -1,4 +1,4 @@
-.tableCurrency, .tableCurrency th{
+.tableCurrency, .tableCurrency th, #searchMoney{
     border-color: darkblue;
 
 }
@@ -10,4 +10,8 @@
 input[type=number] {
     width: 60px;
     -moz-appearance: textfield;
+}
+
+#investTable, #investTable th, searchInvest{
+    border-color: forestgreen;
 }
