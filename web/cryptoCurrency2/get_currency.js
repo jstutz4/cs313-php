@@ -16,9 +16,13 @@ function getCurrency() {
                 var change = (info["data"][currency]["quote"]["USD"]["percent_change_24h"]).toFixed(2);
                 if (document.getElementById(name) == null) {
                     rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td name="' + currency + '">' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
-                    document.getElementById("hiddens").innerHTML = escapeHtml(rows);
-                    document.getElementById("researchTable").innerHTML = tableHeader + rows + tableClosing;
+                    
                 }
+                else {
+                    document.getElementById(name).innerHTML = rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td name="' + currency + '">' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
+                }
+                document.getElementById("hiddens").innerHTML = escapeHtml(rows);
+                document.getElementById("researchTable").innerHTML = tableHeader + rows + tableClosing;
             }
         }
         httpRequest.open("GET", url, true);

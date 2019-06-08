@@ -159,6 +159,7 @@ function reSearch() {
 }
 
 function home() {
+    alterTable();
     var table = document.getElementById('tableMoney').style.display;
     if (table == "") {
         document.getElementById('tableMoney').style.display = 'none';
@@ -169,6 +170,7 @@ function home() {
 }
 
 function invester() {
+    alterInvest();
     var table = document.getElementById('investTable').style.display;
     if (table == "") {
         document.getElementById('investTable').style.display = 'none';

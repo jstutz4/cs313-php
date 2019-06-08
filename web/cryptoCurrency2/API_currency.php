@@ -1,5 +1,5 @@
 <?php
-$symbol = $_GET['currency'];
+$symbol = htmlspecialchars($_GET['currency']);
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
 $parameters = [
   #'start' => '1',
