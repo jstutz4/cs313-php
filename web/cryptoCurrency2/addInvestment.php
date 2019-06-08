@@ -30,8 +30,9 @@ foreach ($db->query('SELECT invest_id, user_id, name, amount, coin FROM amount_i
 		$rowID = $user_row['invest_id'];
 		$updateCoin = $coins + $user_row['coin'];
 		$updateAmount = $user_row['amount'] + $amount;
-		$updatePreChange = number_format(((($coins * $price)- $updateAmount)/$updateAmount)100, 2, '.', '');
-		$updateChange = number_format(($coins * $price) - $updateAmount), 2, '.', '');
+		$updatePreChange = number_format(((($coins * $price) - $updateAmount)/$updateAmount)/100, 2, '.', '');
+		$updateChange = number_format((($coins * $price) - $updateAmount), 2, '.', '');
+		$updateChange = number_format((($coins * $price) - $updateAmount), 2, '.', '');
 	}
 }
 print('after check investment <br>');
