@@ -7,7 +7,7 @@ session_start();
 $table = htmlspecialchars($_GET['table']);
 $currency = htmlspecialchars($_GET['name']);
 
-print("working  $_SESSION['userID'] <br>");
+print("working" . $_SESSION['userID']. "<br>");
 if($table == 'currency'){
 print("working currency table <br>");
 
