@@ -15,7 +15,7 @@ input[type=number] {
 #searchInvest {
     padding: 2px;
 }
-table tr::firstChild{
-    width:100px;
+td:nth-child(0) {
+    width: 100px;
 }
 

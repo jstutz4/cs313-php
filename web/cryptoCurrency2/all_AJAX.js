@@ -168,7 +168,7 @@ function home() {
     }
 }
 
-function reSearch() {
+function invester() {
     var table = document.getElementById('investTable').style.display;
     if (table == "") {
         document.getElementById('investTable').style.display = 'none';
