@@ -8,7 +8,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#investTable, #investTable th, #searchInvest{
+#investTable, #investTable th, #searchInvesting{
     border-color: forestgreen;
     padding: 2px;
 }
