@@ -19,7 +19,7 @@ session_start();
 	<script src="get_currency.js"></script>
 	<script src="all_AJAX.js"></script>
 
-<body>
+<body onload="updateTables()">
 <h1>Crypto Currency tracker</h1>
 <nav>
  <!-- <form class="form-inline"> !-->
@@ -79,5 +79,9 @@ include 'generate_table.php';
 
 ?>
 </div>
+<script type="text/javascript">
+alterTable();
+alterInvest();
+</script>
 </body>
 </html>

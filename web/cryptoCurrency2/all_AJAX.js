@@ -178,3 +178,8 @@ function invester() {
     }
 
 }
+
+function updateTables() {
+    alterTable();
+    alterInvest();
+}
