@@ -72,7 +72,7 @@ include 'generate_table.php';
 
 </div>
 
-<div id="table">
+<div id="investTable">
 <?php
 	include 'connectHeroku.php';
 	include 'updateInvestTable.php';

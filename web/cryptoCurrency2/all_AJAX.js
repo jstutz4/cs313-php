@@ -50,12 +50,14 @@ function deleteRow(table, id) {
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
-            alterTable();
+            document.getElementById("investTable").innerHTML = this.responseText;
+
         }
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
 }
+
 
 function investing(button) {
     console.log("invest is good");

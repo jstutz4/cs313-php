@@ -25,7 +25,7 @@ $stmt->execute();
         header('location: home.php');
     }
     else {
-       header('location: invest.php');
+       header('location: updateInvestTable.php');
 
     }
 ?>
