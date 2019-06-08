@@ -1,6 +1,6 @@
-.tableCurrency, .tableCurrency th, #searchMoney{
+.tableCurrency, .tableCurrency th, #searchMoney {
     border-color: darkblue;
-
+    padding: 2px;
 }
 
 input[type=number] {
@@ -8,6 +8,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#investTable, #investTable th, #searchInvest, .investments, .investments th {
+#investTable, #investTable th, #searchInvest{
     border-color: forestgreen;
+    padding: 2px;
 }

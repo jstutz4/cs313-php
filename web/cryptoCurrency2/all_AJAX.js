@@ -128,7 +128,7 @@ function filter(table) {
         var currency = document.getElementById('searchCurrency').value;
     }
     else {
-        var currency = document.getElementById('searchInvest').value;
+        var currency = document.getElementById('searchInvesting').value;
     }
     var url = 'filterTable.php?table=' + table + '&name=' + currency;
     console.log("url: " + url);

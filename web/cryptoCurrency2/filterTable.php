@@ -7,8 +7,10 @@ session_start();
 $table = htmlspecialchars($_GET['table']);
 $currency = htmlspecialchars($_GET['name']);
 
-
+print("working <br>");
 if($table == 'currency'){
+print("working currency table <br>");
+
 	foreach ($db->query('SELECT user_id, name, price, change, volume, symbol FROM currency') as $currency_row){
 		if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
 			$table = $table .'<tr><td class="'. $currency_row['name'] . '">'. $currency_row['name'].'</td><td class="'. $currency_row['name'] . '" name='. $currency_row['symbol'] .'">'.$currency_row['price']."</td><td>". $currency_row['volume']."</td><td>".$currency_row['change'] . '</td><td><input type="button" name="' . $currency_row['name'] . '" value="invest" onclick="investing(this)"></td><td class="'. $currency_row['name'] . '"><input type="number"> </td><td><input type="button" value="delete" onclick="deleteRow(\'currency\', ' . $currency_row['money_id'].')"></td></tr>';  
@@ -16,6 +18,8 @@ if($table == 'currency'){
 	}
 }
 else{
+print("working invest table <br>");
+
 	foreach ($db->query('SELECT user_id, name, amount, coin, prechange, amount_change FROM amount_invested') as $user_row){
 		if($user_row['user_id'] == $_SESSION["userID"]){
 			if($user_row['name'] == $currency){
