@@ -8,18 +8,20 @@ $table = '<table class="investments"><th>Currency</th><th>Amount Invested ($)</t
 	$name = $_GET['currency'];
 
 	if(isset($name)){
-		foreach ($db->query('SELECT invest_id, user_id, name, price, amount FROM amount_invested') as $user_row){
+	//this is the filter 
+		foreach ($db->query('SELECT invest_id, user_id, name, amount, coin, prechange, amount_change FROM amount_invested') as $user_row){
 			if($user_row['user_id'] == $_SESSION["userID"]){
 				if($user_row['name'] == $name){
-					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="amount_invested" onclick="deleteRow(\'amount_invested\', ' . $user_row['invest_id'] .')"></td></tr>';
+					$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['amount']."</td><td>". $user_row['coin'].'</td><td>' . $user_row['prechange'] . '</td><td>'. $user_row['amount_change'].'</td><td><input type="button" value="delete" name="amount_invested" onclick="deleteRow(\'amount_invested\', ' . $user_row['invest_id'] .')"></td></tr>';
 				}
 			} 
 		}
 	}
 	elseif(!isset($name)){
-		foreach ($db->query('SELECT invest_id, user_id, name, price, amount FROM amount_invested') as $user_row){
+	// this is not filtering
+		foreach ($db->query('SELECT invest_id, user_id, name, amount, coin, prechange, amount_change FROM amount_invested') as $user_row){
 			if($user_row['user_id'] == $_SESSION["userID"]){
-				$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['price']."</td><td>". $user_row['amount'].'</td><td><input type="button" value="delete" name="amount_invested" onclick="deleteRow(\'amount_invested\', ' . $user_row['invest_id'] .')"></td></tr>';
+				$table = $table ."<tr><td>". $user_row['name']."</td><td>".$user_row['amount']."</td><td>". $user_row['coin'].'</td><td>' . $user_row['prechange'] . '</td><td>'. $user_row['amount_change'].'</td><td><input type="button" value="delete" name="amount_invested" onclick="deleteRow(\'amount_invested\', ' . $user_row['invest_id'] .')"></td></tr>';
 			} 
 		}
 	}
