@@ -23,16 +23,16 @@ foreach ($db->query('SELECT invest_id, user_id, name, amount, coin FROM amount_i
 	if($user_row['user_id'] == $user_id && $user_row['name'] == $name){
 		$update = true;
 		$rowID = $user_row['invest_id'];
-		$coins = $coins + $user_row['coin'];
-		$amount = $user_row['amount'] + $amount;
-		$prechange = number_format((($coins * $price)- $amount)/100, 2, '.', '');
-		$amount_change = number_format(($coins * $price) - $amount, 2, '.', '');
 	}
 }
 print('after check investment <br>');
 
 if($update){
-print('stop adding to  investment <br>');
+	$coins = $coins + $user_row['coin'];
+	$amount = $user_row['amount'] + $amount;
+	$prechange = number_format((($coins * $price)- $amount)/100, 2, '.', '');
+	$amount_change = number_format(($coins * $price) - $amount, 2, '.', '');
+
 print('$amount <br> $coins <br> $prechange <br> $amount_change <br> $rowID <br>');
 	$stmt = $db->prepare('UPDATE amount_invested SET amount = :total, coin = :coins, prechange = :prechanges, amount_change = :amount_changes WHERE invest_id = :rowID ');
 	$stmt->bindValue(':total', $amount);
