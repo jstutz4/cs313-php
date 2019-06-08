@@ -122,3 +122,28 @@ function insertCurrency(button) {
     httpRequest.open("GET", url, true);
     httpRequest.send();
 }
+
+function filter(table) {
+    if (table == 'currency') {
+        var currency = document.getElementById('searchCurrency').value;
+    }
+    else {
+        var currency = document.getElementById('searchInvest').value;
+    }
+    var url = 'filterTable.php?table=' + table + '&name=' + currency;
+    console.log("url: " + url);
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
+            if (table == 'currency') {
+                document.getElementById("tableMoney").innerHTML = this.responseText;
+            }
+            else {
+                document.getElementById("investTable").innerHTML = this.responseText;
+            }
+        }
+    }
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
+}

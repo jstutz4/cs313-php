@@ -8,6 +8,6 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#investTable, #investTable th, searchInvest, .investments, .investments th{
+#investTable, #investTable th, #searchInvest, .investments, .investments th {
     border-color: forestgreen;
 }
