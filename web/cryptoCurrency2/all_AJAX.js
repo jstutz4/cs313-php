@@ -147,3 +147,34 @@ function filter(table) {
     httpRequest.open("GET", url, true);
     httpRequest.send();
 }
+
+function reSearch() {
+    var table = document.getElementById('researchTable').style.display;
+    if (table == '') {
+        document.getElementById('researchTable').style.display = 'none';
+    } else {
+        document.getElementById('researchTable').style.display = '';
+    }
+
+}
+
+function home() {
+    var table = document.getElementById('tableMoney').style.display;
+    if (table == "") {
+        document.getElementById('tableMoney').style.display = 'none';
+    }
+    else {
+        document.getElementById('tableMoney').style.display = '';
+    }
+}
+
+function reSearch() {
+    var table = document.getElementById('investTable').style.display;
+    if (table == "") {
+        document.getElementById('investTable').style.display = 'none';
+    }
+    else {
+        document.getElementById('investTable').style.display = '';
+    }
+
+}

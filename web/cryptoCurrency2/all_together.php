@@ -42,7 +42,7 @@ session_start();
 
 <?php
 htmlspecialchars(print('
-<div id="table">
+<div id="researchTable">
 	<table>
 		<th>Currency</th><th>Price</th><th>Volume</th><th>Save</th>
 	</table>

@@ -10,10 +10,15 @@ $symbol = htmlspecialchars($_GET['symbol']);
 $user_id = $_SESSION['userID'];
 $update = false;
 $start_amount = 0;
-$rowID;
 $coins = number_format(($amount/$price), 3, '.', "");
 $prechange = number_format((($coins * $price)- $amount)/100, 3, '.', '');
 $amount_change = number_format(($coins * $price) - $amount, 3, '.', '');
+
+$rowID;
+$updateCoin;
+$updateAmount;
+$updatePreChange;
+$updateChange;
 
 include 'connectHeroku.php';
 print('session ' . $_SESSION['userID'] . $name . $amount .$user_id . $start_amount);
@@ -23,22 +28,23 @@ foreach ($db->query('SELECT invest_id, user_id, name, amount, coin FROM amount_i
 	if($user_row['user_id'] == $user_id && $user_row['name'] == $name){
 		$update = true;
 		$rowID = $user_row['invest_id'];
+		$updateCoin = $coins + $user_row['coin'];
+		$updateAmount = $user_row['amount'] + $amount;
+		$updatePreChange = number_format((($coins * $price)- $amount)/100, 2, '.', '');
+		$updateChange = number_format(($coins * $price) - $amount, 2, '.', '');
 	}
 }
 print('after check investment <br>');
 
 if($update){
-	$coins = $coins + $user_row['coin'];
-	$amount = $user_row['amount'] + $amount;
-	$prechange = number_format((($coins * $price)- $amount)/100, 2, '.', '');
-	$amount_change = number_format(($coins * $price) - $amount, 2, '.', '');
+	
 
 print('$amount <br> $coins <br> $prechange <br> $amount_change <br> $rowID <br>');
 	$stmt = $db->prepare('UPDATE amount_invested SET amount = :total, coin = :coins, prechange = :prechanges, amount_change = :amount_changes WHERE invest_id = :rowID ');
-	$stmt->bindValue(':total', $amount);
-	$stmt->bindValue(':coins', $coins);
-	$stmt->bindValue(':prechanges', $prechange);
-	$stmt->bindValue(':amount_changes', $amount_change);
+	$stmt->bindValue(':total', $updateAmount);
+	$stmt->bindValue(':coins', $updateCoin);
+	$stmt->bindValue(':prechanges', $updatePreChange);
+	$stmt->bindValue(':amount_changes', $updateChange);
 	$stmt->bindValue(':rowID', $rowID);
 	$stmt->execute();
 }
