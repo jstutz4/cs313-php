@@ -57,7 +57,7 @@ print('inserting new  investment <br>');
 }
 
 print('all done');
-//header('location: updateInvestTable.php);
+header('location: updateInvestTable.php');
 
 
 ?>

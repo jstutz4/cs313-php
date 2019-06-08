@@ -42,6 +42,19 @@ function alterTable() {
     httpRequest.send();
 }
 
+function alterInvest() {
+    var url = 'updateInvestTable.php';
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            document.getElementById("investTable").innerHTML = this.responseText;
+        }
+    }
+    httpRequest.open("POST", url, true);
+    httpRequest.send();
+}
+
 function deleteRow(table, id) {
 
     var url = 'delete_row.php?rowID=' + id + '&table=' + table;
@@ -79,10 +92,33 @@ function investing(button) {
     httpRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
-            
+            alterInvest();
         }
     }
     httpRequest.open("GET", url, true);
     httpRequest.send();
 
+}
+
+function insertCurrency(button) {
+    var name = button.name;
+    var row = document.getElementById(name);
+    var currency = name;
+    var prices = (row.childNodes[1].innerHTML);
+    var volumes = (row.childNodes[2].innerHTML);
+    var change = (row.childNodes[3].innerHTML);
+    var symbol = row.childNodes[1].getAttribute("name");
+
+
+    var url = 'insert_currency.php?name=' + currency + '&price=' + prices + '&volume=' + volumes + '&change=' + change + '&symbol=' + symbol;
+    console.log("url: " + url);
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
+            alterTable();
+        }
+    }
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
 }
