@@ -15,7 +15,10 @@ input[type=number] {
 #searchInvest {
     padding: 2px;
 }
-td:nth-child(0) {
+td:nth-child(1) {
     width: 100px;
+}
+tr:nth-child(1) {
+    width: 500px;
 }
 

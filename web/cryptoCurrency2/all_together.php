@@ -25,15 +25,15 @@ session_start();
  <!-- <form class="form-inline"> !-->
 	<div id="menujs">
 		<!--<form action="home.php" method="GET">!-->
-			<input type="button" class="nav-linkjs" onclick="reSearch()" value="ReSearch Currency">
-			<input type="button" class="nav-linkjs" onclick="home()" value="View Currency">
-			<input type="button" class="nav-linkjs" onclick="invester()" value="View Investments">
+			<input type="button" class="nav-linkjs" onclick="reSearch()" value="Toggle ReSearch">
+			<input type="button" class="nav-linkjs" onclick="home()" value="Toggle Currency">
+			<input type="button" class="nav-linkjs" onclick="invester()" value="Toggle Investments">
 
 		</div>
 		<input type="button" value="logout" onclick="logout()">
 		<!--<form>!-->
 </nav>
-<h4>Start looking up your favourite crypto currency by entering its symbol</h4>
+<h4>Start looking up your favourite crypto currency and entering its symbol</h4>
 <div id="searchjs">
 	<input type="search" class="dimension" id="symbol"  name="currency" placeholder="(ie BTC, LTC, BCH, ETH)" aria-label="Search">
 	<input class="dimension" type="button" value="Get Currency" onclick="getCurrency()">
@@ -49,6 +49,8 @@ htmlspecialchars(print('
 </div>
 <div id="hiddens"> </div>'));
 ?>
+<h4>View currencies you have selected to track</h4>
+
 <div id="searchMoney">
 	<input type="search" class="form-control mr-sm-2 tableCurrency" id="searchCurrency"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search">
 	<input type="button" value="Filter Currency" onclick="filter('currency')">
@@ -67,6 +69,7 @@ include 'generate_table.php';
 	<input type="search" class="form-control mr-sm-2" id="searchInvesting"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search">
 	<input type="button" value="Filter Currency" onclick="filter('amount_invested')">
 </div>
+<h4>View how your investments are doing</h4>
 
 <div id="investTable">
 <?php
