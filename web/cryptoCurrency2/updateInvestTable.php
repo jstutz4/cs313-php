@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 
 include 'connectHeroku.php';
 $table = '<table class="investments"><th>Currency</th><th>Amount Invested ($)</th><th>Coins Bought</th><th>% Change</th><th>$ Change</th><th>Delete Investment</td>';
