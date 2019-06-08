@@ -50,7 +50,7 @@ htmlspecialchars(print('
 <div id="hiddens"> </div>'));
 ?>
 <div id="searchMoney">
-	<input type="search" class="form-control mr-sm-2 tableCurrency" id="searchCurrency"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+	<input type="search" class="form-control mr-sm-2 tableCurrency" id="searchCurrency"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search">
 	<input type="button" value="Filter Currency" onclick="filter('currency')">
 </div>
 <div id="tableMoney">
@@ -64,7 +64,7 @@ include 'generate_table.php';
 </div>
 <!-- printing amount invested table !-->
 <div id="searchInvest">
-	<input type="search" class="form-control mr-sm-2" id="searchInvesting"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search" required>
+	<input type="search" class="form-control mr-sm-2" id="searchInvesting"  name="currency" placeholder="Currency (ie bitcoin)" aria-label="Search">
 	<input type="button" value="Filter Currency" onclick="filter('amount_invested')">
 </div>
 

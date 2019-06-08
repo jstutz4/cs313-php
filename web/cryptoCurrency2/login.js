@@ -1,5 +1,5 @@
 function autoLogin() {
-    window.location.href = "home.php";
+    window.location.href = "all_together.php";
 }
 
 function adduser() {

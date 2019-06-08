@@ -10,5 +10,8 @@ input[type=number] {
 
 #investTable, #investTable th, #searchInvesting, #searchInvest, .investments{
     border-color: forestgreen;
+}
+
+#searchInvest {
     padding: 2px;
 }

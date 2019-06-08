@@ -7,9 +7,7 @@ session_start();
 $tableID = htmlspecialchars($_GET['table']);
 $currency = htmlspecialchars($_GET['name']);
 include 'connectHeroku.php';
-print("working" . $_SESSION['userID']. "<br>" . $table . $currency);
 if($tableID == 'currency'){
-print("working currency table <br>");
 	$table = '<table class="tableCurrency"><th>currency</th><th>price</th><th>volume (B)</th><th>24hr % Change<th>Invest</th><th>Invest Amount</th><th>delete</th>';
 	foreach ($db->query('SELECT user_id, name, price, change, volume, symbol FROM currency') as $currency_row){
 		if($currency_row['user_id'] == $_SESSION["userID"] && $currency_row['name'] == $currency){
@@ -22,7 +20,6 @@ print("working currency table <br>");
 	print($table);
 }
 else{
-print("working invest table <br>");
 $table = '<table class="investments"><th>Currency</th><th>Amount Invested ($)</th><th>Coins Bought</th><th>% Change</th><th>$ Change</th><th>Delete Investment</td>';
 	foreach ($db->query('SELECT user_id, name, amount, coin, prechange, amount_change FROM amount_invested') as $user_row){
 		if($user_row['user_id'] == $_SESSION["userID"]){
