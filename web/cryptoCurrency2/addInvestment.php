@@ -25,8 +25,8 @@ foreach ($db->query('SELECT invest_id, user_id, name, amount, coin FROM amount_i
 		$rowID = $user_row['invest_id'];
 		$coins = $coins + $user_row['coin'];
 		$amount = $user_row['amount'] + $amount;
-		$prechange = number_format((($coins * $price)- $amount)/100, 3, '.', '');
-		$amount_change = number_format(($coins * $price) - $amount, 3, '.', '');
+		$prechange = number_format((($coins * $price)- $amount)/100, 2, '.', '');
+		$amount_change = number_format(($coins * $price) - $amount, 2, '.', '');
 	}
 }
 print('after check investment <br>');
@@ -36,7 +36,7 @@ print('stop adding to  investment <br>');
 
 	$stmt = $db->prepare('UPDATE amount_invested SET amount = :total, coin = :coins, prechange = :prechanges, amount_change = :amount_changes WHERE invest_id = :rowID ');
 	$stmt->bindValue(':user_id', $user_id);
-	$stmt->bindValue(':amount', $amount);
+	$stmt->bindValue(':total', $amount);
 	$stmt->bindValue(':coins', $coins);
 	$stmt->bindValue(':prechanges', $prechange);
 	$stmt->bindValue(':amount_changes', $amount_change);
