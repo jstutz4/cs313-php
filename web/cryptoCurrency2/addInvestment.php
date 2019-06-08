@@ -33,9 +33,8 @@ print('after check investment <br>');
 
 if($update){
 print('stop adding to  investment <br>');
-
+print('$amount <br> $coins <br> $prechange <br> $amount_change <br> $rowID <br>');
 	$stmt = $db->prepare('UPDATE amount_invested SET amount = :total, coin = :coins, prechange = :prechanges, amount_change = :amount_changes WHERE invest_id = :rowID ');
-	$stmt->bindValue(':user_id', $user_id);
 	$stmt->bindValue(':total', $amount);
 	$stmt->bindValue(':coins', $coins);
 	$stmt->bindValue(':prechanges', $prechange);
