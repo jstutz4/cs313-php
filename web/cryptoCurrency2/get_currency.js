@@ -19,11 +19,12 @@ function getCurrency() {
                     
                 }
                 else {
-                    document.getElementById(name).innerHTML = "";
-                    document.getElementById(name).innerHTML = rows = rows + '<tr id="' + name + '"><td>' + name + '</td><td name="' + currency + '">' + price + '</td><td>' + volume + '</td><td>' + change + '</td><td><input type="button" value="track" name="' + name + '" onclick="insertCurrency(this)"></td></tr>';
+                    document.getElementById(currency).innerHTML = price;
                 }
                 document.getElementById("hiddens").innerHTML = escapeHtml(rows);
                 document.getElementById("researchTable").innerHTML = tableHeader + rows + tableClosing;
+                document.getElementById(currency).innerHTML = price;
+
             }
         }
         httpRequest.open("GET", url, true);
